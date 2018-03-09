@@ -1,0 +1,74 @@
+/* stylelint-disable block-closing-brace-newline-after, at-rule-empty-line-before, rule-empty-line-before */
+
+/**
+ * Convert px to rem or em
+ * Unitless values are assumed to be in px
+ *
+ * NOTE: px-to-rem() is intended as a function for internal use only.
+ *	Favor usage of rem() over px-to-rem(), as rem() is more versatile.
+ *
+ */
+@function _px-to-rem( $px, $em: false, $base-size: 16 ) {
+	@if ( 'em' == unit( $px ) or 'rem' == unit( $px ) ) {
+		@return $px;
+	}
+
+	@if ( 'px' == unit( $px ) ) {
+		$px: $px / 1px;
+	}
+
+	@if $em == true {
+		@return $px / $base-size * 1em;
+	} @else {
+		@return $px / $base-size * 1rem;
+	}
+}
+
+/**
+ * Convert a list of unitless values (or px) to rem or em
+ *
+ * $values: single value or list of values
+ * $em: should output be in em units?
+ * $base-value: font size from which calculations are made
+ */
+@function rem($values, $em: false, $base-value: 16) {
+	$num: length($values);
+	$em-values: ();
+
+	@if $num == 1 {
+		@return _px-to-rem(nth($values, 1), $em, $base-value);
+	}
+
+	@for $i from 1 through $num {
+		$value: nth($values, $i);
+		// It's 'auto'
+		@if (string == type-of($value)) {
+			$em-values: append($em-values, $value);
+		} @else if (number == type-of($value)) {
+			$em-values: append($em-values, _px-to-rem(nth($values, $i), $em, $base-value));
+		}
+	}
+
+	@return $em-values;
+}
+
+@mixin buttonReset {
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	overflow: visible;
+	text-decoration: none;
+}
+
+@mixin screenreaderOnly {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+/* stylelint-enable */

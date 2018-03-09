@@ -1,0 +1,18 @@
+{
+  "plugins": [
+    "syntax-dynamic-import",
+    "transform-object-assign",
+    ["module-resolver", {
+      "root": ["./client/src/"],
+      "alias": {
+        "images": "./images",
+        "components": "./components",
+        "scss": "./scss",
+        "js": "./js",
+      }
+    }]
+  ],
+  "presets": [
+    "env"
+  ]
+}
