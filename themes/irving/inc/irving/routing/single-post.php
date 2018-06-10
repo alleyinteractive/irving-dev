@@ -29,9 +29,9 @@ function post_components( $response, $query, $context ) {
 								'name' => 'jumbotron',
 							]
 						),
-					]
+					],
 				]
-			)
+			),
 		];
 	}
 }

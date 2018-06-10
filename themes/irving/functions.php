@@ -27,7 +27,7 @@ if ( WP_Utils::wp_cli() ) {
 }
 
 // Irving components.
-require_once IRVING_PATH . '/inc/irving/components/post-wrapper.php';
+require_once IRVING_PATH . '/inc/irving/components/class-post-wrapper.php';
 
 // Irving routing.
 require_once IRVING_PATH . '/inc/irving/routing/single-post.php';

@@ -22,6 +22,8 @@
 	<exclude-pattern>tests/</exclude-pattern>
 	<exclude-pattern>vendor/</exclude-pattern>
 
+	<exclude-pattern>plugins/blockchain/lib/</exclude-pattern>
+
 	<rule ref="WordPress" />
 	<!-- The version set here matches the minimum version tested in .travis.yml.  -->
 	<config name="minimum_supported_wp_version" value="4.9" />
@@ -61,6 +63,8 @@
 			 -->
 			<property name="text_domain" type="array" value="irving" />
 		</properties>
+
+		<exclude-pattern>plugins/</exclude-pattern>
 	</rule>
 
 	<rule ref="WordPress.Files.FileName">
@@ -81,5 +85,29 @@
 		<!-- In practice, partials should be loaded outside of the global namespace with get_template_part(). -->
 		<exclude-pattern>themes(/vip)?/[^/]+/template-parts/</exclude-pattern>
 		<exclude-pattern>vendor/</exclude-pattern>
+		<exclude-pattern>plugins/</exclude-pattern>
+
+		<exclude-pattern>inc/classes/class-path-dispatch.php</exclude-pattern>
+		<exclude-pattern>inc/classes/unique-wp-query/</exclude-pattern>
+	</rule>
+
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound">
+		<type>warning</type>
+	</rule>
+
+	<!-- Exclude all VIP Classic rules that are ok on Go sites -->
+	<rule ref="WordPress-VIP">
+		<!-- Users -->
+		<exclude name="WordPress.VIP.RestrictedFunctions.user_meta_get_user_meta" />
+		<exclude name="WordPress.VIP.RestrictedFunctions.user_meta_update_user_meta" />
+		<exclude name="WordPress.VIP.RestrictedFunctions.user_meta_delete_user_meta" />
+		<exclude name="WordPress.VIP.RestrictedFunctions.user_meta_add_user_meta" />
+
+		<!-- Blogs -->
+		<exclude name="WordPress.VIP.RestrictedFunctions.switch_to_blog_switch_to_blog" />
+	</rule>
+
+	<rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace">
+		<exclude-pattern>inc/fields.php</exclude-pattern>
 	</rule>
 </ruleset>
