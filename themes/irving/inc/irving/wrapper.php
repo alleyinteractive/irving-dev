@@ -34,7 +34,7 @@ function wrapper_component_handling( $response, $query, $context ) {
 				Component\component( 'footer' ),
 			],
 		]
-	)->json();
+	);
 }
 add_action( 'wp_irving_route', __NAMESPACE__ . '\wrapper_component_handling', 15, 3 );
 

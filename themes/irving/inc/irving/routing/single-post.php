@@ -12,7 +12,7 @@ use WP_Irving\Component;
 function post_components( $response, $query, $context ) {
 	if ( $query->is_single() || $query->is_page() ) {
 		return [
-			Component\admin_bar()->parse_query( $query )->json(),
+			Component\admin_bar()->parse_query( $query ),
 			Component\post_wrapper(
 				[
 					'children' => [
