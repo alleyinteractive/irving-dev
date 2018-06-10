@@ -26,6 +26,15 @@ if ( WP_Utils::wp_cli() ) {
 	require_once IRVING_PATH . '/inc/cli.php';
 }
 
+// Irving components.
+require_once IRVING_PATH . '/inc/irving/components/class-post-wrapper.php';
+
+// Irving routing.
+require_once IRVING_PATH . '/inc/irving/routing/single-post.php';
+
+// Irving wrapper.
+require_once IRVING_PATH . '/inc/irving/wrapper.php';
+
 // Ad integrations.
 require_once IRVING_PATH . '/inc/ads.php';
 

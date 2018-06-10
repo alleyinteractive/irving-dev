@@ -59,7 +59,7 @@ if ( post_password_required() ) {
 	<?php
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() ) :
-	?>
+		?>
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'irving' ); ?></p>
 	<?php endif; ?>
 
