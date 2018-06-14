@@ -8,7 +8,7 @@
 namespace WP_Irving\Component;
 
 /**
- * Defines the components of the admin bar.
+ * Defines the components of the post wrapper.
  */
 class Post_Wrapper extends Component {
 

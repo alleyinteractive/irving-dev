@@ -29,9 +29,9 @@ function wrapper_component_handling( $response, $query, $context ) {
 		[
 			'name'     => 'site',
 			'children' => [
-				Component\component( 'header' ),
+				Component\header(),
 				$response,
-				Component\component( 'footer' ),
+				Component\footer(),
 			],
 		]
 	);
