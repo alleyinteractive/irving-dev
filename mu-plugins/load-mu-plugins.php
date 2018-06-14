@@ -8,6 +8,7 @@ Version: 1.0
 
 $plugins = array(
 	'/wordpress-fieldmanager/fieldmanager.php',
+	'/wp-irving/wp-irving.php',
 );
 
 // Begin the process of loading the MU Plugins
