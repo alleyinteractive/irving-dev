@@ -10,8 +10,8 @@ namespace WP_Irving\Component;
 /**
  * Defines the components of the content card.
  */
-class Content_Card extends Content_Item {
-	use \Irving\Content_Item;
+class Content_Card extends Component {
+	use \WP_Irving\Content_Item;
 
 	/**
 	 * Unique component slug.

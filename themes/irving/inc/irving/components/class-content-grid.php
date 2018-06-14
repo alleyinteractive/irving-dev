@@ -10,8 +10,8 @@ namespace WP_Irving\Component;
 /**
  * Defines the components of the content grid.
  */
-class Content_Grid extends Content_List {
-	use \Irving\Content_List;
+class Content_Grid extends Component {
+	use \WP_Irving\Content_List;
 
 	/**
 	 * Unique component slug.

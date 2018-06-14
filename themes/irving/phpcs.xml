@@ -61,7 +61,7 @@
 			Verify that the text_domain is set to the desired text-domain.
 			Multiple valid text domains can be provided as a comma-delimited list.
 			 -->
-			<property name="text_domain" type="array" value="irving" />
+			<property name="text_domain" type="array" value="irving-dev" />
 		</properties>
 
 		<exclude-pattern>plugins/</exclude-pattern>

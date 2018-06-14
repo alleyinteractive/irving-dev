@@ -11,7 +11,7 @@
 		<?php
 		printf(
 			/* translators: %s: search query */
-			esc_html__( 'Search Results for: %s', 'irving' ),
+			esc_html__( 'Search Results for: %s', 'irving-dev' ),
 			'<span>' . get_search_query() . '</span>'
 		);
 		?>

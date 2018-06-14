@@ -10,8 +10,8 @@ namespace WP_Irving\Component;
 /**
  * Defines the components of the jumbotron.
  */
-class Jumbotron extends Content_Item {
-	use \Irving\Content_Item;
+class Jumbotron extends Component {
+	use \WP_Irving\Content_Item;
 
 	/**
 	 * Unique component slug.

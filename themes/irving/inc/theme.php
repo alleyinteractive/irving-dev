@@ -19,7 +19,7 @@ function theme_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 *
-	 * load_theme_textdomain( 'irving', THEME_PATH . '/languages' );
+	 * load_theme_textdomain( 'irving-dev', THEME_PATH . '/languages' );
 	 */
 
 	// Add default posts and comments RSS feed links to head.
@@ -45,7 +45,7 @@ function theme_setup() {
 
 	// Set up theme's use of wp_nav_menu().
 	register_nav_menus( array(
-		'menu-1' => __( 'Primary', 'irving' ),
+		'menu-1' => __( 'Primary', 'irving-dev' ),
 	) );
 
 	// Enable support for HTML5 components.
