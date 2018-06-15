@@ -26,14 +26,19 @@ if ( WP_Utils::wp_cli() ) {
 	require_once IRVING_PATH . '/inc/cli.php';
 }
 
-// Irving components.
-require_once IRVING_PATH . '/inc/irving/components/class-post-wrapper.php';
+// WP Irving.
+if ( defined( 'WP_IRVING_VERSION' ) && WP_IRVING_VERSION ) {
+	// Irving components.
+	require_once IRVING_PATH . '/inc/irving/components/class-content-card.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-content-grid.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-jumbotron.php';
 
-// Irving routing.
-require_once IRVING_PATH . '/inc/irving/routing/single-post.php';
+	// Irving routing.
+	require_once IRVING_PATH . '/inc/irving/routing/single-homepage.php';
+	require_once IRVING_PATH . '/inc/irving/routing/single-post.php';
+	require_once IRVING_PATH . '/inc/irving/routing/wrapper.php';
+}
 
-// Irving wrapper.
-require_once IRVING_PATH . '/inc/irving/wrapper.php';
 
 // Ad integrations.
 require_once IRVING_PATH . '/inc/ads.php';

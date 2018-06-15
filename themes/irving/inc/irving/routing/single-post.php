@@ -19,7 +19,7 @@ use WP_Irving\Component;
  */
 function post_components( $response, $query, $context ) {
 	if ( $query->is_single() || $query->is_page() ) {
-		return [
+		$response = [
 			Component\admin_bar()->parse_query( $query ),
 			Component\post_wrapper(
 				[
@@ -34,5 +34,6 @@ function post_components( $response, $query, $context ) {
 			),
 		];
 	}
+	return $response;
 }
 add_action( 'wp_irving_components_route', __NAMESPACE__ . '\post_components', 10, 3 );
