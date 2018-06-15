@@ -27,7 +27,7 @@ function wrapper_component_handling( array $response, \WP_Query $wp_query, strin
 
 	// Return response with wrapping components.
 	return array_merge(
-		[ Component\header() ],
+		[ get_header() ],
 		$response,
 		[ Component\footer() ]
 	);
@@ -48,3 +48,18 @@ function admin_bar_component_handling( array $response, \WP_Query $wp_query ) {
 	);
 }
 add_action( 'wp_irving_components_route', __NAMESPACE__ . '\admin_bar_component_handling', 12, 2 );
+
+/**
+ * Return a header component customized for this site.
+ *
+ * @return \WP_Irving\Component\Header Instance of the header component.
+ */
+function get_header() {
+	return Component\header()
+		->set_children(
+			[
+				Component\menu()->parse_wp_menu_by_location( 'header-left' ),
+				Component\menu()->parse_wp_menu_by_location( 'header-right' ),
+			]
+		);
+}
