@@ -36,7 +36,7 @@ function routing( array $response, \WP_Query $wp_query, string $context, string 
 			break;
 
 		// Single post type.
-		case $wp_query->is_singular( 'post' ):
+		case $wp_query->is_singular():
 			$components = post_components( $wp_query );
 			break;
 
