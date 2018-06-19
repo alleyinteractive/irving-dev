@@ -13,7 +13,7 @@ use WP_Irving\Component;
 /**
  * Setup defaults for the app.
  *
- * @param Array            $response The response of this request.
+ * @param Array            $data     Data for this response.
  * @param \WP_Query        $wp_query WP_Query object corresponding to this
  *                                   request.
  * @param string           $context  The context for this request.
@@ -21,7 +21,7 @@ use WP_Irving\Component;
  * @param \WP_REST_Request $request  WP_REST_Request object.
  * @return array Endpoint response.
  */
-function routing( array $response, \WP_Query $wp_query, string $context, string $path, \WP_REST_Request $request ) : array {
+function routing( array $data, \WP_Query $wp_query, string $context, string $path, \WP_REST_Request $request ) : array {
 
 	// Build array of components.
 	$components = [];
@@ -36,7 +36,7 @@ function routing( array $response, \WP_Query $wp_query, string $context, string 
 			break;
 
 		// Single post type.
-		case $wp_query->is_singular():
+		case $wp_query->is_single():
 			$components = post_components( $wp_query );
 			break;
 
@@ -45,10 +45,15 @@ function routing( array $response, \WP_Query $wp_query, string $context, string 
 			$components = [
 				new Component\Component( 'error' ),
 			];
+
+			// Apply 404 status.
+			add_filter( 'wp_irving_components_route_status', function( $status ) {
+				return 404;
+			} );
 	}
 
-	// Return the full response.
-	$response['page'] = [
+	// Return the full data.
+	$data['page'] = [
 		( new Component\Admin_Bar() )->parse_query( $wp_query )->to_array(),
 		( new Component\Component(
 			'body',
@@ -57,6 +62,6 @@ function routing( array $response, \WP_Query $wp_query, string $context, string 
 		) )->to_array(),
 	];
 
-	return $response;
+	return $data;
 }
 add_action( 'wp_irving_components_route', __NAMESPACE__ . '\routing', 10, 5 );
