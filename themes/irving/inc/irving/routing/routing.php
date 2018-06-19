@@ -42,7 +42,9 @@ function routing( array $response, \WP_Query $wp_query, string $context, string 
 
 		// Errors.
 		default:
-			$components = new Component\Component( 'error' );
+			$components = [
+				new Component\Component( 'error' ),
+			];
 	}
 
 	// Return the full response.
