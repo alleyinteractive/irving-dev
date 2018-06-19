@@ -13,10 +13,10 @@ use WP_Irving\Component;
 /**
  * Return default components.
  *
- * @param Array    $response The response of this request.
- * @param WP_Query $query    WP_Query object corresponding to this
- *                           request.
- * @param string   $context  The context for this request.
+ * @param Array     $response The response of this request.
+ * @param \WP_Query $wp_query WP_Query object corresponding to this
+ *                            request.
+ * @param string    $context  The context for this request.
  * @return array Endpoint response.
  */
 function wp_irving_default_components( array $response, \WP_Query $wp_query, string $context ) : array {

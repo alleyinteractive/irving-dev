@@ -13,12 +13,12 @@ use WP_Irving\Component;
 /**
  * Setup defaults for the app.
  *
- * @param Array           $response The response of this request.
- * @param WP_Query        $query    WP_Query object corresponding to this
- *                                  request.
- * @param string          $context  The context for this request.
- * @param string          $path     The path for this request.
- * @param WP_REST_Request $request  WP_REST_Request object.
+ * @param Array            $response The response of this request.
+ * @param \WP_Query        $wp_query WP_Query object corresponding to this
+ *                                   request.
+ * @param string           $context  The context for this request.
+ * @param string           $path     The path for this request.
+ * @param \WP_REST_Request $request  WP_REST_Request object.
  * @return array Endpoint response.
  */
 function routing( array $response, \WP_Query $wp_query, string $context, string $path, \WP_REST_Request $request ) : array {
