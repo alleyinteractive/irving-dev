@@ -28,6 +28,8 @@ if ( WP_Utils::wp_cli() ) {
 
 // WP Irving.
 if ( defined( 'WP_IRVING_VERSION' ) && WP_IRVING_VERSION ) {
+	require_once IRVING_PATH . '/inc/irving/permalinks.php';
+
 	// Irving components.
 	require_once IRVING_PATH . '/inc/irving/components/class-content-card.php';
 	require_once IRVING_PATH . '/inc/irving/components/class-content-grid.php';
