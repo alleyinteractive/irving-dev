@@ -10,33 +10,7 @@ namespace Irving;
 use WP_Irving\Component;
 
 /**
- * Routing for the homepage.
- *
- * @param  array     $response Endpoint response.
- * @param  \WP_Query $wp_query Endpoint WP_Query object.
- * @param  string    $context  Endpoint context.
- * @param  string    $path     Endpoint path.
- * @return array Endpoint response.
- */
-function homepage_route( array $response, \WP_Query $wp_query, string $context, string $path ) {
-	if ( '/' === $path || '' === $path ) {
-		$response = [
-			Component\component_wrapper(
-				[
-					'config' => [
-						'classes' => [ 'post__wrapper' ],
-					],
-					'children' => homepage_components( $wp_query ),
-				]
-			),
-		];
-	}
-	return $response;
-}
-add_action( 'wp_irving_components_route', __NAMESPACE__ . '\homepage_route', 10, 4 );
-
-/**
- * Return the homepage components.
+ * Return the components for the homepage.
  *
  * @param  \WP_Query $wp_query WP_Query for this route.
  * @return array Components.
@@ -44,6 +18,7 @@ add_action( 'wp_irving_components_route', __NAMESPACE__ . '\homepage_route', 10,
 function homepage_components( \WP_Query $wp_query ) : array {
 
 	$post_ids = wp_list_pluck( $wp_query->posts, 'id' );
+
 
 	// Build array of components.
 	$components = [];
@@ -70,6 +45,20 @@ function homepage_components( \WP_Query $wp_query ) : array {
 	$components[] = Component\content_grid()
 		->set_config( 'title', __( 'Content Grid', 'irving-dev' ) )
 		->set_children_by_post_ids( $post_ids );
+
+	return $components;
+}
+
+/**
+ * Return the components for a post.
+ *
+ * @param  \WP_Query $wp_query WP_Query for this route.
+ * @return array Components.
+ */
+function post_components( \WP_Query $wp_query ) : array {
+
+	// Build array of components.
+	$components = [];
 
 	return $components;
 }
