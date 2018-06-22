@@ -17,8 +17,8 @@ use WP_Irving\Component;
  */
 function homepage_components( \WP_Query $wp_query ) : array {
 
+	// Get only post ids.
 	$post_ids = wp_list_pluck( $wp_query->posts, 'id' );
-
 
 	// Build array of components.
 	$components = [];
