@@ -45,7 +45,9 @@ function theme_setup() {
 
 	// Set up theme's use of wp_nav_menu().
 	register_nav_menus( array(
-		'menu-1' => __( 'Primary', 'irving-dev' ),
+		'header-left'  => __( 'Header Left', 'irving-dev' ),
+		'header-right' => __( 'Header Right', 'irving-dev' ),
+		'footer'       => __( 'Footer', 'irving-dev' ),
 	) );
 
 	// Enable support for HTML5 components.

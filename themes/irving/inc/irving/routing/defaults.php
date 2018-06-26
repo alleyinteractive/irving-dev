@@ -27,7 +27,13 @@ function wp_irving_default_components( array $data, \WP_Query $wp_query, string 
 	}
 
 	$data['defaults'] = [
-		new Component\Header(),
+		( new Component\Header() )
+			->set_children(
+				[
+					Component\menu()->parse_wp_menu_by_location( 'header-left' ),
+					Component\menu()->parse_wp_menu_by_location( 'header-right' ),
+				]
+			),
 		new Component\Admin_Bar(),
 		new Component\Component( 'body' ),
 		new Component\Footer(),
