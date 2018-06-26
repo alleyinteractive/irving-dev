@@ -50,4 +50,15 @@ class WrapperTest extends WP_UnitTestCase {
 		$this->assertSame( $template, $new_template );
 		remove_filter( 'irving_skip_theme_wrapper', '__return_true' );
 	}
+
+	public function test_404() {
+		// Go to a 404 page
+		$this->go_to( '?pagename=' . rand_str() );
+
+		// Irving\Wrapping will filter this to store the base template (404)
+		$template = apply_filters( 'template_include', get_404_template() );
+
+		$this->expectOutputRegex( '/error-404 not-found/' );
+		include $template;
+	}
 }
