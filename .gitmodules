@@ -4,3 +4,6 @@
 [submodule "mu-plugins/wp-irving"]
 	path = mu-plugins/wp-irving
 	url = https://github.com/alleyinteractive/wp-irving
+[submodule "mu-plugins/safe-redirect-manager"]
+	path = mu-plugins/safe-redirect-manager
+	url = https://github.com/10up/safe-redirect-manager
