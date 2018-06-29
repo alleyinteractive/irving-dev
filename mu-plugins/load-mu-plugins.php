@@ -7,6 +7,7 @@ Version: 1.0
 */
 
 $plugins = array(
+	'/safe-redirect-manager/safe-redirect-manager.php',
 	'/wordpress-fieldmanager/fieldmanager.php',
 	'/wp-irving/wp-irving.php',
 );
