@@ -43,7 +43,7 @@ namespace Irving;
 					'resize' => [ 1440, 810 ],
 				],
 				'descriptor' => 1440,
-				'media' => [ 'min' => 'xl']
+				'media' => [ 'min' => 'xl' ],
 			],
 		],
 	],
