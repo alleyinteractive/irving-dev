@@ -18,10 +18,14 @@ use WP_Irving\Component;
 function homepage_components( \WP_Query $wp_query ) : array {
 
 	// Get only post ids.
-	$post_ids = wp_list_pluck( $wp_query->posts, 'id' );
+	$post_ids = wp_list_pluck( $wp_query->posts, 'ID' );
 
 	// Build array of components.
 	$components = [];
+
+	$components[] = Component\image()
+		->set_post_id( array_shift( $post_ids ) )
+		->set_config_for_size( 'feature', true );
 
 	/**
 	 * Jumbotron.
