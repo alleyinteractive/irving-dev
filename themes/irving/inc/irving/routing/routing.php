@@ -40,6 +40,10 @@ function routing( array $data, \WP_Query $wp_query, string $context, string $pat
 			$components = post_components( $wp_query );
 			break;
 
+		case $wp_query->is_archive():
+			$components = archive_components( $wp_query );
+			break;
+
 		// Errors.
 		default:
 			$components = [

@@ -35,6 +35,7 @@ if ( defined( 'WP_IRVING_VERSION' ) && WP_IRVING_VERSION ) {
 	require_once IRVING_PATH . '/inc/irving/components/class-jumbotron.php';
 
 	// Irving routing.
+	require_once IRVING_PATH . '/inc/irving/routing/archive.php';
 	require_once IRVING_PATH . '/inc/irving/routing/defaults.php';
 	require_once IRVING_PATH . '/inc/irving/routing/routing.php';
 	require_once IRVING_PATH . '/inc/irving/routing/single.php';
