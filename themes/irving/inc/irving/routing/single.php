@@ -23,6 +23,10 @@ function homepage_components( \WP_Query $wp_query ) : array {
 	// Build array of components.
 	$components = [];
 
+	$components[] = Component\image()
+		->set_post_id( array_shift( $post_ids ) )
+		->set_config_for_size( 'feature', true );
+
 	/**
 	 * Jumbotron.
 	 *
