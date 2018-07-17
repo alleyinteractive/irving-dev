@@ -20,3 +20,4 @@ plugins/*
 !plugins/meta-inspector
 !plugins/wp-alley-react
 !plugins/wp-redis
+!plugins/gutenberg
