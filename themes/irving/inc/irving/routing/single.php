@@ -62,7 +62,10 @@ function homepage_components( \WP_Query $wp_query ) : array {
 function post_components( \WP_Query $wp_query ) : array {
 
 	// Build array of components.
-	$components = [];
+	$components = [
+		( new Component\Content() )
+			->set_post( $wp_query->post ),
+	];
 
 	return $components;
 }
