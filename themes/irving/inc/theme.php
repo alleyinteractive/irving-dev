@@ -25,8 +25,8 @@ function theme_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-		// Add styles to visual editor.
-		add_editor_style( 'client/build/css/editor.css' );
+	// Add styles to visual editor.
+	add_editor_style( 'http://localhost:3001/static/css/editor.css' );
 
 	/*
 	 * Let WordPress manage the document title.

@@ -80,6 +80,14 @@ function enqueue_admin() {
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\enqueue_admin' );
 
 /**
+ * Enqueues scripts and styles for admin screens
+ */
+function enqueue_gutenberg() {
+	wp_enqueue_style( 'thrive-global-gutenberg-css', 'http://localhost:3001/static/css/editor.css' );
+}
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue_gutenberg' );
+
+/**
  * Removes scripts that could potentially cause style conflicts
  */
 function dequeue_scripts() {
