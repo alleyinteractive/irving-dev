@@ -88,8 +88,13 @@ class Contact_Form extends \WP_Irving\Component\Component {
 
 		// Set up response.
 		if ( $success ) {
-			$response = new \WP_REST_Response( [ 'ok' => true ] );
-			$response->set_status( 200 );
+			$response = new \WP_REST_Response(
+				[
+					'ok'       => true,
+					'redirect' => home_url( '/test' ),
+				]
+			);
+			$response->set_status( 307 );
 		} else {
 			$response = new \WP_REST_Response( [ 'ok' => false ] );
 			$response->set_status( 403 );

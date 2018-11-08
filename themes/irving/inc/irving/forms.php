@@ -16,7 +16,7 @@ namespace Irving;
  */
 function form_endpoints( $form_endpoints ) {
 	$form_endpoints[] = [
-		'slug' => 'contact',
+		'slug' => 'testform',
 		'callback' => [ __NAMESPACE__ . '\Contact_Form', 'get_route_response' ],
 	];
 
