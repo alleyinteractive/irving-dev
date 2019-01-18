@@ -12,6 +12,8 @@
 	</header>
 <?php endif; ?>
 
+<?php ( new \Alleypack\Wp_Component\NOHEAD_481() )->render(); ?>
+
 <?php
 while ( have_posts() ) :
 	the_post();

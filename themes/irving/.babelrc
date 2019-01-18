@@ -3,12 +3,13 @@
     "syntax-dynamic-import",
     "transform-object-assign",
     ["module-resolver", {
-      "root": ["./client/src/"],
+      "root": ["../../"],
       "alias": {
-        "images": "./images",
-        "components": "./components",
-        "scss": "./scss",
-        "js": "./js",
+        "wp-components": "mu-plugins/alleypack/modules/wp-components/1.0/components",
+        "components": "themes/irving/inc/components",
+        "images": "themes/irving/client/src/images",
+        "scss": "themes/irving/client/src/scss",
+        "js": "themes/irving/client/src/js",
       }
     }]
   ],

@@ -10,6 +10,8 @@ namespace Irving;
 define( 'IRVING_PATH', dirname( __FILE__ ) );
 define( 'IRVING_URL', get_template_directory_uri() );
 
+\Alleypack\load_module( 'wp-components', '1.0' );
+
 // WordPress utilities.
 require_once IRVING_PATH . '/inc/class-wp-utils.php';
 
