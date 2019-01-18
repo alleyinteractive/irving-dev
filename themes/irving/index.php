@@ -12,7 +12,7 @@
 	</header>
 <?php endif; ?>
 
-<?php ( new \Alleypack\Wp_Component\NOHEAD_481() )->render(); ?>
+<?php ( new WP_Component\Nohead_481() )->render(); ?>
 
 <?php
 while ( have_posts() ) :

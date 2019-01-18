@@ -10,6 +10,8 @@ $plugins = array(
 	'/safe-redirect-manager/safe-redirect-manager.php',
 	'/wordpress-fieldmanager/fieldmanager.php',
 	'/wp-irving/wp-irving.php',
+	'/wp-components/wp-components.php',
+	'/wp-components-php/wp-components-php.php',
 );
 
 // Begin the process of loading the MU Plugins
