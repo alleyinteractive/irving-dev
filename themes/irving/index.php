@@ -12,7 +12,7 @@
 	</header>
 <?php endif; ?>
 
-<?php ( new WP_Component\Nohead_481() )->render(); ?>
+<?php WP_Component\PHP\Render_Controller::instance()->render( new WP_Component\Nohead_481() ); ?>
 
 <?php
 while ( have_posts() ) :
