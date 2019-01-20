@@ -1,8 +1,10 @@
 /* global ent */
 // Entry points used for all but `admin` webpack build/config
+const path = require('path');
+const paths = require('./paths');
+
 const entry = {
-  article: ['client/src/entries/article/index.js'],
-  home: ['client/src/entries/home/index.js'],
+  image: [path.join(paths.wpComponents, 'image/assets/index.js')],
 };
 
 // Entry used for admin webpack build/config

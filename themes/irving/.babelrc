@@ -3,9 +3,8 @@
     "syntax-dynamic-import",
     "transform-object-assign",
     ["module-resolver", {
-      "root": ["../../"],
+      "root": ["client/src"],
       "alias": {
-        "wp-components": "mu-plugins/alleypack/modules/wp-components/1.0/components",
         "components": "themes/irving/inc/components",
         "images": "themes/irving/client/src/images",
         "scss": "themes/irving/client/src/scss",

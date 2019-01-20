@@ -4,6 +4,7 @@ const paths = require('./paths');
 const exclude = [
   /node_modules/,
   /\.min\.js$/,
+  paths.wpComponents,
 ];
 
 // Loaders used for processing CSS

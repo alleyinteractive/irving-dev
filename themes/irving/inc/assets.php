@@ -10,10 +10,11 @@ namespace Irving;
 /**
  * Get the version for a given asset.
  *
- * @param string $asset_path Entry point and asset type separated by a '.'.
- * @return string The asset version.
+ * @param string $name Entry point name.
+ * @param string $type Asset type, usually one of 'js' or 'css'.
+ * @return string Path to asset relative to build directory
  */
-function ai_get_versioned_asset( $asset_path ) {
+function ai_get_versioned_asset_path( $name, $type ) {
 	static $asset_map;
 
 	if ( ! isset( $asset_map ) ) {
@@ -28,14 +29,15 @@ function ai_get_versioned_asset( $asset_path ) {
 		}
 	}
 
-	/*
-	 * Appending a '.' ensures the explode() doesn't generate a notice while
-	 * allowing the variable names to be more readable via list().
-	 */
-	list( $entrypoint, $type ) = explode( '.', "$asset_path." );
+	$path = $asset_map[ $name ][ $type ] ?? '';
 
-	return isset( $asset_map[ $entrypoint ][ $type ] ) ? $asset_map[ $entrypoint ][ $type ] : '';
+	if ( ! empty( $path ) ) {
+		return get_template_directory_uri() . '/client/build/' . $path;
+	}
+
+	return $path;
 }
+add_filter( 'wp_components_php_resolve_asset', __NAMESPACE__ . '\ai_get_versioned_asset_path', 10, 2 );
 
 /**
  * Enqueues scripts and styles for the frontend
@@ -54,17 +56,17 @@ function enqueue_assets() {
 			false
 		);
 	} else {
-		wp_enqueue_script( 'irving-common-js', get_template_directory_uri() . '/client/build/' . ai_get_versioned_asset( 'common.js' ), array( 'jquery' ), '1.0' );
-		wp_enqueue_style( 'irving-common-js', get_template_directory_uri() . '/client/build/' . ai_get_versioned_asset( 'common.css' ), array(), '1.0' );
+		wp_enqueue_script( 'irving-common-js', ai_get_versioned_asset_path( 'common', 'js' ), array( 'jquery' ), '1.0' );
+		wp_enqueue_style( 'irving-common-css', ai_get_versioned_asset_path( 'common', 'css' ), array(), '1.0' );
 
 		if ( is_home() ) {
-			wp_enqueue_style( 'irving-home', get_template_directory_uri() . '/client/build/' . ai_get_versioned_asset( 'home.css' ), array(), '1.0' );
-			wp_enqueue_script( 'irving-home-js', get_template_directory_uri() . '/client/build/' . ai_get_versioned_asset( 'home.js' ), array( 'irving-common-js' ), '1.0' );
+			wp_enqueue_style( 'irving-home', ai_get_versioned_asset_path( 'home', 'css' ), array(), '1.0' );
+			wp_enqueue_script( 'irving-home-js', ai_get_versioned_asset_path( 'home', 'js' ), array( 'irving-common-js' ), '1.0' );
 		}
 
 		if ( is_single() ) {
-			wp_enqueue_script( 'irving-article-js', get_template_directory_uri() . '/client/build/' . ai_get_versioned_asset( 'article.js' ), array( 'irving-common-js' ), '1.0' );
-			wp_enqueue_style( 'irving-article-css', get_template_directory_uri() . '/client/build/' . ai_get_versioned_asset( 'article.css' ), array(), '1.0' );
+			wp_enqueue_script( 'irving-article-js', ai_get_versioned_asset_path( 'article', 'js' ), array( 'irving-common-js' ), '1.0' );
+			wp_enqueue_style( 'irving-article-css', ai_get_versioned_asset_path( 'article', 'css' ), array(), '1.0' );
 		}
 	}
 }

@@ -14,14 +14,7 @@
 
 <?php
 WP_Component\PHP\render(
-	( new WP_Component\Nohead_481() )
-		->set_children(
-			[
-				new WP_Component\Image(),
-				new WP_Component\Image(),
-				new WP_Component\Menu(),
-			]
-		)
+	new WP_Component\Image()
 );
 ?>
 
