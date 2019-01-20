@@ -12,7 +12,18 @@
 	</header>
 <?php endif; ?>
 
-<?php WP_Component\PHP\Render_Controller::instance()->render( new WP_Component\Nohead_481() ); ?>
+<?php
+WP_Component\PHP\render(
+	( new WP_Component\Nohead_481() )
+		->set_children(
+			[
+				new WP_Component\Image(),
+				new WP_Component\Image(),
+				new WP_Component\Menu(),
+			]
+		)
+);
+?>
 
 <?php
 while ( have_posts() ) :
