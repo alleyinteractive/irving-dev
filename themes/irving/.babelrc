@@ -3,12 +3,12 @@
     "syntax-dynamic-import",
     "transform-object-assign",
     ["module-resolver", {
-      "root": ["client/src"],
+      "root": ["./client/src"],
       "alias": {
-        "components": "themes/irving/inc/components",
-        "images": "themes/irving/client/src/images",
-        "scss": "themes/irving/client/src/scss",
-        "js": "themes/irving/client/src/js",
+        "components": "./components",
+        "images": "./images",
+        "scss": "./scss",
+        "js": "./js",
       }
     }]
   ],

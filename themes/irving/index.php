@@ -13,12 +13,6 @@
 <?php endif; ?>
 
 <?php
-WP_Component\PHP\render(
-	new WP_Component\Image()
-);
-?>
-
-<?php
 while ( have_posts() ) :
 	the_post();
 	?>
