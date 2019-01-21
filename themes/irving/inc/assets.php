@@ -37,7 +37,19 @@ function ai_get_versioned_asset_path( $name, $type ) {
 
 	return $path;
 }
-add_filter( 'wp_components_php_resolve_asset', __NAMESPACE__ . '\ai_get_versioned_asset_path', 10, 2 );
+
+/**
+ * Get the version for a given asset.
+ *
+ * @param string $path Default path for component assets.
+ * @param string $name Entry point name.
+ * @param string $type Asset type, usually one of 'js' or 'css'.
+ * @return string Path to asset relative to build directory
+ */
+function component_asset_path( $path, $name, $type ) {
+	return ai_get_versioned_asset_path( $name, $type );
+}
+add_filter( 'wp_components_php_resolve_asset', __NAMESPACE__ . '\component_asset_path', 10, 3 );
 
 /**
  * Enqueues scripts and styles for the frontend
