@@ -92,12 +92,12 @@ class Render_Controller {
 			}
 
 			// If we have a cache hit, serve it.
-			$partial = get_transient( $cache['key'] );
-			if ( false !== $partial ) {
+			$renderable = get_transient( $cache['key'] );
+			if ( false !== $renderable ) {
 				if ( $return ) {
-					return $partial;
+					return $renderable;
 				} else {
-					echo $partial; // wpcs: xss ok.
+					echo $renderable; // wpcs: xss ok.
 					return;
 				}
 			}
@@ -126,7 +126,7 @@ class Render_Controller {
 	}
 
 	/**
-	 * Load an individual partial.
+	 * Render an individual component's template
 	 *
 	 * @see Partial::render().
 	 * @see Render_Controller::push().
@@ -149,7 +149,7 @@ class Render_Controller {
 	}
 
 	/**
-	 * Render an array of component children
+	 * Render an array of components, by default the current component's children
 	 *
 	 * @param array $children An array of children to render.
 	 */
@@ -172,17 +172,17 @@ class Render_Controller {
 	}
 
 	/**
-	 * Push a partial onto the stack and set it as the current partial.
+	 * Push a renderable onto the stack and set it as the current renderable.
 	 *
-	 * @param  Partial $partial The partial we're loading.
+	 * @param Renderable $renderable The renderable we're loading.
 	 */
-	protected function push( $partial ) {
-		$this->stack[] = $partial;
-		$this->current_renderable = $partial;
+	protected function push( $renderable ) {
+		$this->stack[] = $renderable;
+		$this->current_renderable = $renderable;
 	}
 
 	/**
-	 * Pop a partial off the top of the stack and set the current partial to the
+	 * Pop a renderable off the top of the stack and set the current renderable to the
 	 * next one down.
 	 */
 	protected function pop() {
