@@ -9,4 +9,4 @@
 	url = https://github.com/10up/safe-redirect-manager
 [submodule "mu-plugins/wp-components"]
 	path = mu-plugins/wp-components
-	url = git@github.com:alleyinteractive/wp-components.git
+	url = https://github.com/alleyinteractive/wp-components
