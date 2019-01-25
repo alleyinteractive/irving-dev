@@ -55,10 +55,18 @@ class WrapperTest extends WP_UnitTestCase {
 		// Go to a 404 page
 		$this->go_to( '?pagename=' . rand_str() );
 
+		/**
+		 * For Gutenberg, we need to define `$GLOBALS['pagenow']`.
+		 *
+		 * @see wp_deregister_script()
+		 */
+		$GLOBALS['pagenow'] = 'index.php';
+
 		// Irving\Wrapping will filter this to store the base template (404)
 		$template = apply_filters( 'template_include', get_404_template() );
 
 		$this->expectOutputRegex( '/error-404 not-found/' );
-		include $template;
+		include $template; // phpcs:ignore This is only for unit testing.
+
 	}
 }

@@ -10,6 +10,7 @@ if ( !$_tests_dir ) {
 	$_tests_dir = '/tmp/wordpress-tests-lib';
 }
 
+// phpcs:ignore This is only for unit testing.
 require_once $_tests_dir . '/includes/functions.php';
 
 /**
@@ -34,9 +35,11 @@ function _manually_load_environment() {
 		'jetpack/jetpack.php'
 	) );
 
+	// phpcs:disable This is only for unit testing.
 	if ( ! defined( 'JETPACK_DEV_DEBUG' ) ) {
 		define( 'JETPACK_DEV_DEBUG', true );
 	}
+	// phpcs:enable
 
 	/*
 	 * If Edit Flow is enabled, the notifications module can hit errors because
@@ -61,4 +64,5 @@ function _cache_test_data( $new_value = null ) {
 }
 
 // Include core's bootstrap
+// phpcs:ignore This is only for unit testing.
 require $_tests_dir . '/includes/bootstrap.php';
