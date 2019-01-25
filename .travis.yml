@@ -103,18 +103,8 @@ before_script:
     # Hop into theme's directory.
     - cd ${WP_CORE_DIR}wp-content/themes/$THEME_SLUG/
 
-    # Build the static assets since phpunit will need them in order to run
-    - |
-      if [[ "$BUILD_ASSETS" == "1" ]]; then
-        node --version
-        npm --version
-        pwd
-        ls -la
-        echo "Building assets..."
-        npm run build
-      fi
-
     # For debugging
+    - which phpunit
     - phpunit --version
     - pwd
 
