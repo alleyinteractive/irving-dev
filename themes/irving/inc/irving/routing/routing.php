@@ -22,7 +22,6 @@ use WP_Irving\Component;
  * @return array Endpoint response.
  */
 function routing( array $data, \WP_Query $wp_query, string $context, string $path, \WP_REST_Request $request ) : array {
-
 	// Build array of components.
 	$components = [];
 
@@ -58,8 +57,7 @@ function routing( array $data, \WP_Query $wp_query, string $context, string $pat
 
 	// Return the full data.
 	$data['page'] = [
-		( new Component\Admin_Bar() )->parse_query( $wp_query )->to_array(),
-		( new Component\Component(
+		( new \WP_Components\Component(
 			'body',
 			[ 'body__wrapper' ],
 			$components
@@ -68,4 +66,4 @@ function routing( array $data, \WP_Query $wp_query, string $context, string $pat
 
 	return $data;
 }
-add_action( 'wp_irving_components_route', __NAMESPACE__ . '\routing', 10, 5 );
+add_filter( 'wp_irving_components_route', __NAMESPACE__ . '\routing', 10, 5 );

@@ -8,7 +8,7 @@
 
 namespace Irving;
 
-\WP_Irving\Component\Image::register_breakpoints( [
+\WP_Components\Image::register_breakpoints( [
 	'xxl' => '90rem',
 	'xl' => '80rem',
 	'lg' => '64rem',
@@ -16,7 +16,7 @@ namespace Irving;
 	'sm' => '32rem',
 ] );
 
-\WP_Irving\Component\Image::register_crop_sizes( [
+\WP_Components\Image::register_crop_sizes( [
 	'16:9' => [
 		'card' => [
 			'height' => 1920,
@@ -28,7 +28,7 @@ namespace Irving;
 /**
  * Register image sizes for use by the Image component.
  */
-\WP_Irving\Component\Image::register_sizes( [
+\WP_Components\Image::register_sizes( [
 	'feature' => [
 		'sources' => [
 			[

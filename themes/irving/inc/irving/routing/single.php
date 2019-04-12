@@ -16,14 +16,13 @@ use WP_Irving\Component;
  * @return array Components.
  */
 function homepage_components( \WP_Query $wp_query ) : array {
-
 	// Get only post ids.
 	$post_ids = wp_list_pluck( $wp_query->posts, 'ID' );
 
 	// Build array of components.
 	$components = [];
 
-	$components[] = Component\image()
+	$components[] = ( new \WP_Components\Image() )
 		->set_post_id( array_shift( $post_ids ) )
 		->set_config_for_size( 'feature', true );
 
@@ -32,23 +31,22 @@ function homepage_components( \WP_Query $wp_query ) : array {
 	 *
 	 * Use the first post in the query.
 	 */
-	$components[] = Component\jumbotron()
-		->set_to_post( array_shift( $post_ids ) );
+	$components[] = ( new Components\Jumbotron() )
+		->set_post( array_shift( $post_ids ) );
 
 	/**
 	 * Jumbotron using a term.
 	 *
 	 * Use the first post in the query.
 	 */
-	$components[] = Component\jumbotron()
-		->set_to_term( get_term_by( 'slug', 'uncategorized', 'category' ) );
+	$components[] = ( new Components\Jumbotron() )
+		->set_term( get_term_by( 'slug', 'uncategorized', 'category' ) );
 
 	/**
 	 * Content Grid.
 	 */
-	$components[] = Component\content_grid()
-		->set_config( 'title', __( 'Content Grid', 'irving-dev' ) )
-		->set_children_by_post_ids( $post_ids );
+	$components[] = ( new Components\Content_Grid() )
+		->set_config( 'title', __( 'Content Grid', 'irving-dev' ) );
 
 	return $components;
 }

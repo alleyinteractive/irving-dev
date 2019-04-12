@@ -34,6 +34,9 @@ if ( defined( 'WP_IRVING_VERSION' ) && WP_IRVING_VERSION ) {
 	require_once IRVING_PATH . '/inc/irving/components/class-content-grid.php';
 	require_once IRVING_PATH . '/inc/irving/components/class-jumbotron.php';
 	require_once IRVING_PATH . '/inc/irving/components/class-contact-form.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-header.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-footer.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-menu.php';
 
 	// Irving routing.
 	require_once IRVING_PATH . '/inc/irving/forms.php';
