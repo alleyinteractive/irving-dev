@@ -46,7 +46,8 @@ function routing( array $data, \WP_Query $wp_query, string $context, string $pat
 		// Errors.
 		default:
 			$components = [
-				new Component\Component( 'error' ),
+				( new WP_Components\Component() )
+					->set_name( 'error' ),
 			];
 
 			// Apply 404 status.
@@ -57,11 +58,11 @@ function routing( array $data, \WP_Query $wp_query, string $context, string $pat
 
 	// Return the full data.
 	$data['page'] = [
-		( new \WP_Components\Component(
-			'body',
-			[ 'body__wrapper' ],
-			$components
-		) )->to_array(),
+		( new \WP_Components\Component() )
+			->set_name( 'body' )
+			->set_config( 'body_classes', 'site_wrapper' )
+			->append_children( $components )
+			->to_array(),
 	];
 
 	return $data;

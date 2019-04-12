@@ -58,7 +58,6 @@ function homepage_components( \WP_Query $wp_query ) : array {
  * @return array Components.
  */
 function post_components( \WP_Query $wp_query ) : array {
-
 	// Build array of components.
 	$components = [
 		( new Component\Content() )

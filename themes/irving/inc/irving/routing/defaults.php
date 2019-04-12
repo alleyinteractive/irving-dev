@@ -33,7 +33,8 @@ function wp_irving_default_components( array $data, \WP_Query $wp_query, string 
 					( new Menu() )->set_menu( 'header-right' )->parse_wp_menu(),
 				]
 			),
-		new \WP_Components\Component( 'body' ),
+		( new \WP_Components\Component() )
+			->set_name( 'body' ),
 		new Footer(),
 	];
 
