@@ -26,6 +26,7 @@ function wp_irving_default_components( array $data, \WP_Query $wp_query, string 
 	}
 
 	$data['defaults'] = [
+		new Audio_Element(),
 		( new Header() )
 			->set_children(
 				[

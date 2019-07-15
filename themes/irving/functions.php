@@ -41,6 +41,7 @@ if ( defined( 'WP_IRVING_VERSION' ) && WP_IRVING_VERSION ) {
 	require_once IRVING_PATH . '/inc/irving/components/class-footer.php';
 	require_once IRVING_PATH . '/inc/irving/components/class-menu.php';
 	require_once IRVING_PATH . '/inc/irving/components/class-content.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-audio-element.php';
 
 	// Irving routing.
 	require_once IRVING_PATH . '/inc/irving/forms.php';

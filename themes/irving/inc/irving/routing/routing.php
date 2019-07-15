@@ -46,7 +46,7 @@ function routing( array $data, \WP_Query $wp_query, string $context, string $pat
 		// Errors.
 		default:
 			$components = [
-				( new WP_Components\Component() )
+				( new \WP_Components\Component() )
 					->set_name( 'error' ),
 			];
 
@@ -55,6 +55,13 @@ function routing( array $data, \WP_Query $wp_query, string $context, string $pat
 				return 404;
 			} );
 	}
+
+	// Providers.
+	$data['providers'] = [
+		( new \WP_Components\Component() )
+			->set_name( 'root-provider' )
+			->set_config( 'test_value', '#000000' ),
+	];
 
 	// Return the full data.
 	$data['page'] = [
