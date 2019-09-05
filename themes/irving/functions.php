@@ -11,7 +11,9 @@ define( 'IRVING_PATH', dirname( __FILE__ ) );
 define( 'IRVING_URL', get_template_directory_uri() );
 
 // Alleypack.
-\Alleypack\load_module( 'singleton', '1.0' );
+if ( function_exists( '\Alleypack\load_module' ) ) {
+	\Alleypack\load_module( 'singleton', '1.0' );
+}
 
 // WordPress utilities.
 require_once IRVING_PATH . '/inc/class-wp-utils.php';
@@ -84,6 +86,9 @@ require_once IRVING_PATH . '/inc/feeds.php';
 
 // Media includes.
 require_once IRVING_PATH . '/inc/media.php';
+
+// Attachment includes.
+require_once IRVING_PATH . '/inc/attachment.php';
 
 // Navigation & Menus.
 require_once IRVING_PATH . '/inc/nav.php';
