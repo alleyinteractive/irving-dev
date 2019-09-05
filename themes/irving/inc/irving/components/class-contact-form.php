@@ -5,12 +5,12 @@
  * @package Irving
  */
 
-namespace Irving;
+namespace Irving\Components;
 
 /**
  * Defines the Contact_Form component for Irving.
  */
-class Contact_Form extends \WP_Irving\Component\Component {
+class Contact_Form extends \WP_Components\Component {
 	/**
 	 * Unique component slug.
 	 *
@@ -30,7 +30,7 @@ class Contact_Form extends \WP_Irving\Component\Component {
 	 *
 	 * @return array Default config values for this component.
 	 */
-	public function default_config() {
+	public function default_config(): array {
 		// These config values could be used for sending back validation information,
 		// but they aren't at the moment.
 		return [

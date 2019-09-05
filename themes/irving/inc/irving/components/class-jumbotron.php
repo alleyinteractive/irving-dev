@@ -2,16 +2,17 @@
 /**
  * Class file for Irving's Jumbotron component.
  *
- * @package WP_Irving
+ * @package Irving
  */
 
-namespace WP_Irving\Component;
+namespace Irving\Components;
 
 /**
  * Defines the components of the jumbotron.
  */
-class Jumbotron extends Component {
-	use \WP_Irving\Content_Item;
+class Jumbotron extends \WP_Components\Component {
+	use \WP_Components\WP_Post;
+	use \WP_Components\WP_Term;
 
 	/**
 	 * Unique component slug.
@@ -19,16 +20,4 @@ class Jumbotron extends Component {
 	 * @var string
 	 */
 	public $name = 'jumbotron';
-}
-
-/**
- * Helper to get the component.
- *
- * @param  string $name     Component name or array of properties.
- * @param  array  $config   Component config.
- * @param  array  $children Component children.
- * @return Jumbotron An instance of the Jumbotron class.
- */
-function jumbotron( $name = '', array $config = [], array $children = [] ) {
-	return new Jumbotron( $name, $config, $children );
 }

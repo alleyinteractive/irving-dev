@@ -22,7 +22,6 @@ use WP_Irving\Component;
  * @return array Endpoint response.
  */
 function routing( array $data, \WP_Query $wp_query, string $context, string $path, \WP_REST_Request $request ) : array {
-
 	// Build array of components.
 	$components = [];
 
@@ -47,7 +46,8 @@ function routing( array $data, \WP_Query $wp_query, string $context, string $pat
 		// Errors.
 		default:
 			$components = [
-				new Component\Component( 'error' ),
+				( new \WP_Components\Component() )
+					->set_name( 'error' ),
 			];
 
 			// Apply 404 status.
@@ -56,16 +56,22 @@ function routing( array $data, \WP_Query $wp_query, string $context, string $pat
 			} );
 	}
 
+	// Providers.
+	$data['providers'] = [
+		( new \WP_Components\Component() )
+			->set_name( 'root-provider' )
+			->set_config( 'test_value', '#000000' ),
+	];
+
 	// Return the full data.
 	$data['page'] = [
-		( new Component\Admin_Bar() )->parse_query( $wp_query )->to_array(),
-		( new Component\Component(
-			'body',
-			[ 'body__wrapper' ],
-			$components
-		) )->to_array(),
+		( new \WP_Components\Component() )
+			->set_name( 'body' )
+			->set_config( 'body_classes', 'site_wrapper' )
+			->append_children( $components )
+			->to_array(),
 	];
 
 	return $data;
 }
-add_action( 'wp_irving_components_route', __NAMESPACE__ . '\routing', 10, 5 );
+add_filter( 'wp_irving_components_route', __NAMESPACE__ . '\routing', 10, 5 );

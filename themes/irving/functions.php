@@ -10,6 +10,9 @@ namespace Irving;
 define( 'IRVING_PATH', dirname( __FILE__ ) );
 define( 'IRVING_URL', get_template_directory_uri() );
 
+// Alleypack.
+\Alleypack\load_module( 'singleton', '1.0' );
+
 // WordPress utilities.
 require_once IRVING_PATH . '/inc/class-wp-utils.php';
 
@@ -34,6 +37,11 @@ if ( defined( 'WP_IRVING_VERSION' ) && WP_IRVING_VERSION ) {
 	require_once IRVING_PATH . '/inc/irving/components/class-content-grid.php';
 	require_once IRVING_PATH . '/inc/irving/components/class-jumbotron.php';
 	require_once IRVING_PATH . '/inc/irving/components/class-contact-form.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-header.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-footer.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-menu.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-content.php';
+	require_once IRVING_PATH . '/inc/irving/components/class-audio-element.php';
 
 	// Irving routing.
 	require_once IRVING_PATH . '/inc/irving/forms.php';
@@ -41,6 +49,9 @@ if ( defined( 'WP_IRVING_VERSION' ) && WP_IRVING_VERSION ) {
 	require_once IRVING_PATH . '/inc/irving/routing/defaults.php';
 	require_once IRVING_PATH . '/inc/irving/routing/routing.php';
 	require_once IRVING_PATH . '/inc/irving/routing/single.php';
+
+	// Component data.
+	require_once IRVING_PATH . '/data/class-component-data-endpoint.php';
 }
 
 

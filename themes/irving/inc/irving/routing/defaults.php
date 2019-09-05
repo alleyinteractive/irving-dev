@@ -6,9 +6,9 @@
  * @package Irving
  */
 
-namespace Irving;
+namespace Irving\Components;
 
-use WP_Irving\Component;
+use WP_Components;
 
 /**
  * Return default components.
@@ -20,25 +20,25 @@ use WP_Irving\Component;
  * @return array Endpoint response.
  */
 function wp_irving_default_components( array $data, \WP_Query $wp_query, string $context ) : array {
-
 	// If not a `site` context, return regular response.
 	if ( 'site' !== $context ) {
 		return $data;
 	}
 
 	$data['defaults'] = [
-		( new Component\Header() )
+		new Audio_Element(),
+		( new Header() )
 			->set_children(
 				[
-					( new Component\Menu() )->parse_wp_menu_by_location( 'header-left' ),
-					( new Component\Menu() )->parse_wp_menu_by_location( 'header-right' ),
+					( new Menu() )->set_menu( 'header-left' )->parse_wp_menu(),
+					( new Menu() )->set_menu( 'header-right' )->parse_wp_menu(),
 				]
 			),
-		new Component\Admin_Bar(),
-		new Component\Component( 'body' ),
-		new Component\Footer(),
+		( new \WP_Components\Component() )
+			->set_name( 'body' ),
+		new Footer(),
 	];
 
 	return $data;
 }
-add_action( 'wp_irving_components_route', __NAMESPACE__ . '\wp_irving_default_components', 10, 3 );
+add_filter( 'wp_irving_components_route', __NAMESPACE__ . '\wp_irving_default_components', 10, 3 );
