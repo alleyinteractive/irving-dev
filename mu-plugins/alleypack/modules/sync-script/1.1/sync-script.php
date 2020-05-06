@@ -10,14 +10,14 @@
 namespace Alleypack\Sync_Script;
 
 // Load classes.
-require_once 'class-feed.php';
-require_once 'feed-items/class-feed-item.php';
-require_once 'feed-items/class-post-feed-item.php';
-require_once 'feed-items/class-term-feed-item.php';
-require_once 'feed-items/class-user-feed-item.php';
+require_once __DIR__ . '/class-feed.php';
+require_once __DIR__ . '/feed-items/class-feed-item.php';
+require_once __DIR__ . '/feed-items/class-post-feed-item.php';
+require_once __DIR__ . '/feed-items/class-term-feed-item.php';
+require_once __DIR__ . '/feed-items/class-user-feed-item.php';
 
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
-	require_once 'class-alleypack-sync-cli-command.php';
+	require_once __DIR__ . '/class-alleypack-sync-cli-command.php';
 }
 
 /**

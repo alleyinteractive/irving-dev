@@ -101,7 +101,7 @@ class Partials {
 		$original_post = array_pop( $this->original_posts );
 
 		if ( $original_post !== $post ) {
-			$post = $original_post; // WPCS: override ok.
+			$post = $original_post; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 
 			if ( $post instanceof \WP_Post ) {
 				setup_postdata( $post );
@@ -186,7 +186,7 @@ class Partials {
 				if ( $return ) {
 					return $partial;
 				} else {
-					echo $partial; // wpcs: xss ok.
+					echo $partial; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					return;
 				}
 			}
@@ -223,7 +223,7 @@ class Partials {
 			if ( $return ) {
 				return $contents;
 			} else {
-				echo $contents; // wpcs: xss ok.
+				echo $contents; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		}
 	}
@@ -302,9 +302,9 @@ class Partials {
 		$return = array();
 		global $post;
 
-		foreach ( $posts as $i => $post ) {
+		foreach ( $posts as $i => $post ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			if ( ! ( $post instanceof \WP_Post ) ) {
-				$post = get_post( $post ); // WPCS: override ok.
+				$post = get_post( $post ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			}
 
 			setup_postdata( $post );

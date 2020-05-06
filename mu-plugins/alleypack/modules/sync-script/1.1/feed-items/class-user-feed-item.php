@@ -36,7 +36,7 @@ abstract class User_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 		$users = (array) get_users(
 			[
 				'meta_key'   => $this->unique_id_key,
-				'meta_value' => $this->get_unique_id(),
+				'meta_value' => $this->get_unique_id(), // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 			]
 		);
 
@@ -105,7 +105,7 @@ abstract class User_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 
 		// Get the hash and mapping version from post meta.
 		$cached_hash            = get_user_meta( $user_id, $this->hash_key, true );
-		$cached_mapping_version = (string) get_user_meta( $post_id, $this->mapping_version_key, true );
+		$cached_mapping_version = (string) get_user_meta( $user_id, $this->mapping_version_key, true );
 
 		// If either the hash or mapping versions do not match the cached
 		// values, we should sync.

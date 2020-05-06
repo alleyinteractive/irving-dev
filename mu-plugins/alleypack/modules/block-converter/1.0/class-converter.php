@@ -210,12 +210,18 @@ class Converter {
 	 * @return string The HTML.
 	 */
 	protected function img( \DOMNode $node ) : string {
-		$src_url = $node->getAttribute( 'data-srcset' );
-		$alt     = $node->getAttribute( 'alt' );
+		$image_src = $node->getAttribute( 'data-srcset' );
+		$alt       = $node->getAttribute( 'alt' );
+
+		if ( empty( $image_src ) && ! empty( $node->getAttribute( 'src' ) ) ) {
+			$image_src = $node->getAttribute( 'src' );
+		}
+
+		$image_src = $this->upload_image( $image_src, $alt ?? '' );
 
 		return '<!-- wp:image -->' . PHP_EOL .
 			'<figure class="wp-block-image">' . PHP_EOL .
-				'<img src="' . esc_url( $src_url ?? '' ) . '" alt="' . esc_attr( $alt ?? '' ) . '"/>' . PHP_EOL .
+				'<img src="' . esc_url( $image_src ?? '' ) . '" alt="' . esc_attr( $alt ?? '' ) . '"/>' . PHP_EOL .
 			'</figure>' . PHP_EOL .
 			'<!-- /wp:image -->';
 	}
@@ -303,6 +309,33 @@ class Converter {
 	}
 
 	/**
+	 * Quick way to remove all URL arguments.
+	 *
+	 * @param string $url URL.
+	 * @return string
+	 */
+	public function remove_image_args( $url ) : string {
+		// Split url.
+		$url_parts = wp_parse_url( $url );
+
+		return $url_parts['scheme'] . '://' . $url_parts['host'] . $url_parts['path'];
+	}
+
+	/**
+	 * Upload image.
+	 *
+	 * @param string $src Image url.
+	 * @param string $alt Image alt.
+	 * @return string
+	 */
+	public function upload_image( string $src, string $alt ) : string {
+		// Remove all image arguments.
+		$src = $this->remove_image_args( $src );
+
+		return \Alleypack\create_or_get_attachment_from_url( $src, [ 'alt' => $alt ] );
+	}
+
+	/**
 	 * Remove any empty blocks.
 	 *
 	 * @param string $html The current HTML.
@@ -314,6 +347,23 @@ class Converter {
 // phpcs:disable
 '<!-- wp:html -->
 <div></div>
+<!-- /wp:html -->',
+'<!-- wp:paragraph -->
+<div> </div>
+<!-- /wp:paragraph -->',
+'<!-- wp:html -->
+<div> </div>
+<!-- /wp:html -->',
+'<!-- wp:paragraph -->
+<div>  </div>
+<!-- /wp:paragraph -->',
+'<!-- wp:paragraph --><p><br></p><!-- /wp:paragraph -->',
+'<!-- wp:paragraph --><p><br><br><br></p><!-- /wp:paragraph -->',
+'<!-- wp:paragraph -->
+<p><br></p>
+<!-- /wp:paragraph -->',
+'<!-- wp:html -->
+<div> </div>
 <!-- /wp:html -->',
 '<!-- wp:heading {"level":3} -->
 <h3>
@@ -340,6 +390,9 @@ class Converter {
 // phpcs:disable
 '<!-- wp:paragraph -->
 <p> </p>
+<!-- /wp:paragraph -->',
+'<!-- wp:paragraph -->
+<p><br></p>
 <!-- /wp:paragraph -->',
 '<!-- wp:paragraph -->
 <p>

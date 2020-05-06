@@ -23,9 +23,10 @@ Easily add media fields.
 function add_custom_media_fields() : array {
 	return [
 		'credit' => [
-			'label' => __( 'Credit' ),
-			'input' => 'text',
-			'helps' => __( 'Credit to be shown below the image.' ),
+			'label'     => __( 'Credit' ),
+			'input'     => 'text',
+			'helps'     => __( 'Credit to be shown below the image.' ),
+			'mime_type' => 'image',
 		],
 		'source' => [
 			'label' => __( 'Source' ),

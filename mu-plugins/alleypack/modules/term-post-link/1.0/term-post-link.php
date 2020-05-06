@@ -9,7 +9,11 @@
 namespace Alleypack;
 
 // Load class.
-require_once 'class-term-post-link.php';
+require_once __DIR__ . '/class-term-post-link.php';
+
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	require_once __DIR__ . '/class-term-post-link-cli.php';
+}
 
 /**
  * Create a new link between a taxonomy and a post type.

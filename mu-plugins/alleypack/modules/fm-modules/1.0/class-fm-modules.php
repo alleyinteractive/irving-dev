@@ -56,7 +56,7 @@ class FM_Modules {
 	 */
 	public function __construct( $slug = '', $component_classes = [], $first_empty = true ) {
 		$this->slug              = $slug;
-		$this->component_classes = apply_filters( 'fm_modules_components', $component_classes, $slug );
+		$this->component_classes = apply_filters( 'fm_modules_components', $component_classes, $slug ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 		$this->first_empty       = $first_empty;
 
 		// Get the components.
@@ -95,7 +95,7 @@ class FM_Modules {
 			// Create a group for this component.
 			$fields[ $component->name ] = new \Fieldmanager_Group(
 				[
-					'label'       => $component->get_label(),
+					'label'       => ( $component->show_label ?? true ) ? $component->get_label() : '',
 					'label_macro' => $component->get_label_macro(),
 					'display_if'  => [
 						'src'   => 'module_type',
@@ -146,16 +146,17 @@ class FM_Modules {
 	/**
 	 * Get an array of components using saved FM data.
 	 *
-	 * @param  array $modules Modules stored as FM data.
+	 * @param array $modules Modules stored as FM data.
+	 * @param array $config Config to be merged into the new components.
 	 * @return array Array of components.
 	 */
-	public function get_components_from_fm_data( array $modules ) : array {
+	public function get_components_from_fm_data( array $modules, array $config = [] ) : array {
 
 		// Build components array.
 		$components = [];
 
 		foreach ( $modules as $module ) {
-			$component = $this->get_component_from_fm_data( $module );
+			$component = $this->get_component_from_fm_data( (array) $module, $config );
 			if ( ! empty( $component ) ) {
 				$components[] = $component;
 			}
@@ -167,10 +168,11 @@ class FM_Modules {
 	/**
 	 * Get a component using saved FM data.
 	 *
-	 * @param  array $module Module stored as FM data.
+	 * @param array $module Module stored as FM data.
+	 * @param array $config Config to be merged into the new component.
 	 * @return \WP_Irving\Component\Component|null Component.
 	 */
-	public function get_component_from_fm_data( array $module ) {
+	public function get_component_from_fm_data( array $module, array $config = [] ) {
 		// Get and validate type.
 		$type = $module['module_type'] ?? '';
 		if ( empty( $type ) ) {
@@ -181,7 +183,7 @@ class FM_Modules {
 		foreach ( $this->components as $obj ) {
 			if ( $type === $obj->name ) {
 				// Parse the saved data.
-				$component = ( new $obj() )->parse_from_fm_data( $module[ $type ] ?? [] );
+				$component = ( new $obj() )->merge_config( $config )->parse_from_fm_data( $module[ $type ] ?? [] );
 				break;
 			}
 		}

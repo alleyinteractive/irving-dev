@@ -43,25 +43,25 @@ trait Endpoint {
 			[
 				'methods'  => 'GET',
 				'callback' => [ $this, 'do_endpoint' ],
-				'args' => [
-					'offset' => [
+				'args'     => [
+					'offset'      => [
 						'default'           => 0,
 						'type'              => 'integer',
 						'sanitize_callback' => 'absint',
 						'validate_callback' => 'rest_validate_request_arg',
 					],
-					'limit' => [
+					'limit'       => [
 						'default'           => $this->endpoint_limit,
 						'type'              => 'integer',
 						'sanitize_callback' => 'absint',
 						'validate_callback' => 'rest_validate_request_arg',
 					],
-					'post_id' => [
+					'post_id'     => [
 						'type'              => 'integer',
 						'sanitize_callback' => 'absint',
 						'validate_callback' => 'rest_validate_request_arg',
 					],
-					'unique_id' => [
+					'unique_id'   => [
 						'type'              => 'string',
 						'sanitize_callback' => 'esc_html',
 						'validate_callback' => 'rest_validate_request_arg',

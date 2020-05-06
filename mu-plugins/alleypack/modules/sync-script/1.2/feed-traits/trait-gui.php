@@ -26,9 +26,11 @@ trait GUI {
 	 * Enqueue admin scripts.
 	 */
 	public function enqueue_admin_scripts() {
-		$this->enqueue_post_sync_button();
-		$this->enqueue_term_sync_button();
-		$this->enqueue_user_sync_button();
+		if ( apply_filters( 'alleypack_sync_enable_gui', '__return_false' ) ) {
+			$this->enqueue_post_sync_button();
+			$this->enqueue_term_sync_button();
+			$this->enqueue_user_sync_button();
+		}
 	}
 
 	/**
@@ -160,7 +162,7 @@ trait GUI {
 		];
 
 		if ( isset( $_SERVER['REQUEST_URI'] ) ) {
-			$request_uri = filter_input( INPUT_SERVER, 'REQUEST_URI', FILTER_SANITIZE_URL );
+			$request_uri         = filter_input( INPUT_SERVER, 'REQUEST_URI', FILTER_SANITIZE_URL );
 			$args['redirect_to'] = rawurlencode( site_url( wp_unslash( $request_uri ) ) );
 		}
 

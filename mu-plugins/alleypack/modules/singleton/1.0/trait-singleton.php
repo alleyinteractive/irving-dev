@@ -7,6 +7,8 @@
 
 namespace Alleypack;
 
+/* phpcs:disable WordPressVIPMinimum.Variables.VariableAnalysis.StaticOutsideClass */
+
 /**
  * Make a class into a singleton.
  */

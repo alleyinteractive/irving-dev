@@ -9,5 +9,8 @@
 
 namespace Alleypack\Block;
 
+// Load Alleypack dependencies.
+\Alleypack\load_module( 'attachments', '1.0' );
+
 // Load class.
-require_once 'class-converter.php';
+require_once __DIR__ . '/class-converter.php';

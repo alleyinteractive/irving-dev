@@ -38,7 +38,7 @@ function get_classnames( array $static_classes, array $dynamic_classes = [] ) {
 	// Allow user to pass only dynamic classes as first arg.
 	if ( is_assoc( $static_classes ) && empty( $dynamic_classes ) ) {
 		$dynamic_classes = $static_classes;
-		$static_classes = [];
+		$static_classes  = [];
 	}
 
 	// Loop through static classes and add them to output array.

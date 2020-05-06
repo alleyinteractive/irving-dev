@@ -14,22 +14,22 @@ namespace Alleypack\Sync_Script;
 \Alleypack\load_module( 'singleton', '1.0' );
 
 // Load traits.
-require_once 'feed-traits/trait-endpoint.php';
-require_once 'feed-traits/trait-gui.php';
+require_once __DIR__ . '/feed-traits/trait-endpoint.php';
+require_once __DIR__ . '/feed-traits/trait-gui.php';
 
 // Load classes.
-require_once 'class-feed-manager.php';
-require_once 'class-feed.php';
-require_once 'feed-items/class-feed-item.php';
-require_once 'feed-items/class-post-feed-item.php';
-require_once 'feed-items/class-attachment-feed-item.php';
-require_once 'feed-items/class-guest-author-feed-item.php';
-require_once 'feed-items/class-term-feed-item.php';
-require_once 'feed-items/class-user-feed-item.php';
+require_once __DIR__ . '/class-feed-manager.php';
+require_once __DIR__ . '/class-feed.php';
+require_once __DIR__ . '/feed-items/class-feed-item.php';
+require_once __DIR__ . '/feed-items/class-post-feed-item.php';
+require_once __DIR__ . '/feed-items/class-attachment-feed-item.php';
+require_once __DIR__ . '/feed-items/class-guest-author-feed-item.php';
+require_once __DIR__ . '/feed-items/class-term-feed-item.php';
+require_once __DIR__ . '/feed-items/class-user-feed-item.php';
 
 // Include CLI script.
 if ( defined( 'WP_CLI' ) && WP_CLI ) {
-	require_once 'class-sync-cli.php';
+	require_once __DIR__ . '/class-sync-cli.php';
 }
 
 /**

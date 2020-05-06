@@ -25,7 +25,7 @@ add_action(
 
 		// Register an `About Us` page template with two FM fields.
 		\Alleypack\Page_Templates\register(
-			__( 'About Us', 'cpr' ),
+			__( 'About Us', 'alleypack' ),
 			'about-us',
 			[
 				'name'   => new \Fieldmanager_TextField( __( 'Name', 'alleypack' ) ),
@@ -49,7 +49,7 @@ add_action(
 							'title' => new \Fieldmanager_TextField( __( 'Title', 'alleypack' ) ),
 						],
 					]
-				],
+				),
 			]
 		);
 	}

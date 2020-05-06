@@ -9,6 +9,8 @@ namespace Alleypack\Sync_Script;
 
 use \WP_CLI;
 
+/* phpcs:disable WordPressVIPMinimum.Classes.RestrictedExtendClasses.wp_cli */
+
 /**
  * CLI Commands.
  */
@@ -17,9 +19,32 @@ class Sync_CLI extends \WP_CLI_Command {
 	/**
 	 * Trigger a sync.
 	 *
-	 * ## EXAMPLE
+	 * <sync>
+	 * : Feed item sync slug.
 	 *
-	 *   $ wp alleypack sync articles --url=site.alley.test --limit=5 --offset=0
+	 * [--limit=<number>]
+	 * : Total number of objects to sync.
+	 * ---
+	 * default: 10
+	 * ---
+	 *
+	 * [--offset=<number>]
+	 * : Offset number of objects to sync.
+	 * ---
+	 * default: 0
+	 * ---
+	 *
+	 * [--unique_id=<number>]
+	 * : Unique object ID.
+	 * ---
+	 * default: 0
+	 * ---
+	 *
+	 * ## EXAMPLES
+	 *
+	 *   $ wp alleypack sync articles --limit=5 --offset=0 --url=site.alley.test
+	 *   $ wp alleypack sync articles --unique_id=2615616 --url=site.alley.test
+	 *   $ wp alleypack sync story
 	 *
 	 * @param array $args       CLI args.
 	 * @param array $assoc_args CLI associate args.
@@ -33,27 +58,34 @@ class Sync_CLI extends \WP_CLI_Command {
 			WP_CLI::error( "Invalid feed {$feed_slug}" );
 		}
 
-		$limit  = $assoc_args['limit'] ?? 10;
-		$offset = $assoc_args['offset'] ?? 0;
+		$limit     = $assoc_args['limit'];
+		$offset    = $assoc_args['offset'];
+		$unique_id = $assoc_args['unique_id'];
 
-		// Loop through all data.
-		do {
-			// Setup the source data.
-			$feed->reset_source_data();
-			$feed->load_source_data_by_limit_and_offset( $limit, $offset );
+		if ( ! empty( $unique_id ) ) {
+			$feed->load_source_data_by_unique_id( $unique_id );
+			$feed->sync_source_data();
+			WP_CLI::success( "Syncing {$unique_id}" );
+		} else {
+			// Loop through all data.
+			do {
+				// Setup the source data.
+				$feed->reset_source_data();
+				$feed->load_source_data_by_limit_and_offset( $limit, $offset );
 
-			// Display syncing message.
-			$range_start = $offset + 1;
-			$range_end = $offset + $limit;
-			WP_CLI::success( "Syncing {$range_start} - {$range_end}" );
+				// Display syncing message.
+				$range_start = $offset + 1;
+				$range_end   = $offset + $limit;
+				WP_CLI::success( "Syncing {$range_start} - {$range_end}" );
 
-			// Increase the offset.
-			$offset += $limit;
+				// Increase the offset.
+				$offset += $limit;
 
-			// Clean resources.
-			$this->stop_the_insanity();
+				// Clean resources.
+				$this->stop_the_insanity();
 
-		} while ( $feed->sync_source_data() );
+			} while ( $feed->sync_source_data() );
+		}
 
 		WP_CLI::success( 'Sync completed.' );
 	}
@@ -64,7 +96,7 @@ class Sync_CLI extends \WP_CLI_Command {
 	private function stop_the_insanity() {
 		global $wpdb, $wp_object_cache;
 
-		$wpdb->queries = []; // Or define( 'WP_IMPORTING', true );.
+		$wpdb->queries = [];
 
 		if ( ! is_object( $wp_object_cache ) ) {
 			return;

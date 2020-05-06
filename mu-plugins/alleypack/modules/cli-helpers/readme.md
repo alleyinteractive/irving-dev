@@ -21,14 +21,11 @@ Breaks apart bulk operations when dealing with a large number of WP objects.
 ##### v1.1
 ```php
 class My_Theme_CLI_Command extends \WP_CLI_Command {
-	// Renaming the function on import only is required if both
-	// bulk tasks are being used within the same CLI class.
-	use \Alleypack\CLI_Bulk_User_Task {
-		\Alleypack\CLI_Bulk_User_Task::bulk_task as bulk_user_task;
+	// Required if both traits are being used within the same CLI class.
+	use \Alleypack\CLI_Bulk_Post_Task, \Alleypack\CLI_Bulk_User_Task {
+		\Alleypack\CLI_Bulk_Post_Task::bulk_task insteadof \Alleypack\CLI_Bulk_User_Task;
+        \Alleypack\CLI_Bulk_User_Task::bulk_task as bulk_user_task;
 	}
-	use \Alleypack\CLI_Bulk_Post_Task {
-		\Alleypack\CLI_Bulk_Post_Task::bulk_task as bulk_post_task;
-	};
 
 	/**
 	 * Add post meta for existing posts.
@@ -43,7 +40,7 @@ class My_Theme_CLI_Command extends \WP_CLI_Command {
 	public function add_post_meta( $args, $assoc_args ) {
 		$dry_run = ! empty( $assoc_args['dry-run'] );
 
-		$this->bulk_post_task(
+		$this->bulk_task(
 			[
 				'post_type' => [ 'post' ],
 			],

@@ -10,4 +10,4 @@
 namespace Alleypack;
 
 // Load trait.
-require_once 'trait-cli-bulk-task.php';
+require_once __DIR__ . '/trait-cli-bulk-task.php';

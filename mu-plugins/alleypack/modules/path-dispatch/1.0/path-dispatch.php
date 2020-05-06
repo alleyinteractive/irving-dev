@@ -10,7 +10,7 @@
 namespace Alleypack;
 
 // Load class.
-require_once 'class-path-dispatch.php';
+require_once __DIR__ . '/class-path-dispatch.php';
 
 /**
  * Return the path dispatch instance.

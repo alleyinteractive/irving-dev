@@ -12,7 +12,7 @@ namespace Alleypack\Page_Templates;
 \Alleypack\load_module( 'singleton', '1.0' );
 
 // Load classes.
-require_once 'class-page-templates.php';
+require_once __DIR__ . '/class-page-templates.php';
 
 /**
  * Register a new page template.

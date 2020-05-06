@@ -66,7 +66,7 @@ class Term_Post_Link {
 				}
 
 				// Create linked posts for the first time.
-				$this->create_posts();
+				$this->create_posts(); // phpcs:ignore WordPressVIPMinimum.Variables.VariableAnalysis.UndefinedVariable
 			}
 		);
 
@@ -88,6 +88,9 @@ class Term_Post_Link {
 		add_action( 'created_' . $this->taxonomy, [ $this, 'create_post' ] );
 		add_action( 'delete_' . $this->taxonomy, [ $this, 'delete_post' ] );
 
+		// Update term.
+		add_action( 'clean_term_cache', [ $this, 'update_term_on_cache_purge' ], 10, 2 );
+
 		// Add row action.
 		add_filter( $this->taxonomy . '_row_actions', [ $this, 'term_row_actions' ], 10, 2 );
 
@@ -95,7 +98,7 @@ class Term_Post_Link {
 		add_action( 'save_post', [ $this, 'save_post' ] );
 
 		// On term meta.
-		add_filter( 'get_term_metadata', [ $this, 'get_term_metadata' ], 10, 4 );
+		add_filter( 'get_term_metadata', [ $this, 'get_term_metadata' ], 10, 3 );
 
 		// Fix permalink.
 		add_filter( 'post_type_link', [ $this, 'modify_permalink' ], 10, 2 );
@@ -127,6 +130,69 @@ class Term_Post_Link {
 	}
 
 	/**
+	 * Create a post for a given term_id.
+	 *
+	 * @param int    $term_id   ID of the term.
+	 * @param string $post_type Post type to use.
+	 */
+	public static function create_linked_post( $term_id, $post_type ) {
+
+		// Get term object.
+		$term = get_term( $term_id );
+
+		// Validate.
+		if ( ! $term instanceof \WP_Term ) {
+			return;
+		}
+
+		// Ensure we're not accidently creating more than one post.
+		if ( 0 !== absint( get_term_meta( $term->term_id, '_linked_term_id', true ) ) ) {
+			return;
+		}
+
+		// Determine post parent ID.
+		$parent_linked_post_id = 0;
+		if ( 0 !== $term->parent ) {
+			$parent_linked_post_id = self::get_post_from_term( $term->parent );
+		}
+
+		// Populate WP SEO fields.
+		$wp_seo = get_option( "wp-seo-term-{$term->term_taxonomy_id}" ); // phpcs:ignore WordPressVIPMinimum.Performance.TaxonomyMetaInOptions.PossibleTermMetaInOptions
+		$wp_seo = wp_parse_args(
+			$wp_seo,
+			[
+				'_meta_title'       => '',
+				'_meta_description' => '',
+				'_meta_keywords'    => '',
+			]
+		);
+
+		// Insert post.
+		$post_id = wp_insert_post(
+			[
+				'post_title'   => $term->name,
+				'post_name'    => $term->slug,
+				'post_type'    => $post_type,
+				'post_content' => $term->description,
+				'post_status'  => 'publish',
+				'post_parent'  => $parent_linked_post_id,
+				'meta_input'   => [
+					'_linked_term_id'   => $term_id,
+					'_meta_title'       => $wp_seo['title'] ?? '',
+					'_meta_description' => $wp_seo['description'] ?? '',
+					'_meta_keywords'    => $wp_seo['keywords'] ?? '',
+				],
+			],
+			true
+		);
+
+		// Validate and save in term meta.
+		if ( ! is_wp_error( $post_id ) ) {
+			update_term_meta( $term_id, '_linked_post_id', $post_id );
+		}
+	}
+
+	/**
 	 * Create linked posts for the first time.
 	 */
 	public function create_posts() {
@@ -142,7 +208,7 @@ class Term_Post_Link {
 					'taxonomy'   => $this->taxonomy,
 					'orderby'    => 'parent',
 					'hide_empty' => false,
-					'meta_query' => [
+					'meta_query' => [ // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query
 						[
 							'key'     => '_linked_post_id',
 							'compare' => 'NOT EXISTS',
@@ -169,54 +235,7 @@ class Term_Post_Link {
 	 * @param int $term_id ID of the term.
 	 */
 	public function create_post( $term_id ) {
-
-		// Get term object.
-		$term = get_term( $term_id );
-
-		// Validate.
-		if ( $term instanceof \WP_Term ) {
-
-			// Determine post parent ID.
-			$parent_linked_post_id = 0;
-			if ( 0 !== $term->parent ) {
-				$parent_linked_post_id = self::get_post_from_term( $term->parent );
-			}
-
-			// Populate WP SEO fields.
-			$wp_seo = get_option( "wp-seo-term-{$term->term_taxonomy_id}" );
-			$wp_seo = wp_parse_args(
-				$wp_seo,
-				[
-					'_meta_title'       => '',
-					'_meta_description' => '',
-					'_meta_keywords'    => '',
-				]
-			);
-
-			// Insert post.
-			$post_id = wp_insert_post(
-				[
-					'post_title'   => $term->name,
-					'post_name'    => $term->slug,
-					'post_type'    => $this->post_type,
-					'post_content' => $term->description,
-					'post_status'  => 'publish',
-					'post_parent'  => $parent_linked_post_id,
-					'meta_input'   => [
-						'_linked_term_id'   => $term_id,
-						'_meta_title'       => $wp_seo['title'] ?? '',
-						'_meta_description' => $wp_seo['description'] ?? '',
-						'_meta_keywords'    => $wp_seo['keywords'] ?? '',
-					],
-				],
-				true
-			);
-
-			// Validate and save in term meta.
-			if ( ! is_wp_error( $post_id ) ) {
-				update_term_meta( $term_id, '_linked_post_id', $post_id );
-			}
-		}
+		self::create_linked_post( $term_id, $this->post_type );
 	}
 
 	/**
@@ -245,21 +264,61 @@ class Term_Post_Link {
 			]
 		);
 
-		// Save WP SEO values in an option where it expects.
-		$term = get_term( $term_id );
-		if ( $term instanceof \WP_Term ) {
+		// Integrate with WP SEO.
+		if ( function_exists( 'wp_seo_settings' ) ) {
+			// Save WP SEO values in an option where it expects.
+			$term = get_term( $term_id );
+			if ( $term instanceof \WP_Term ) {
 
-			// Check that it's a valid WP SEO taxonomy.
-			$settings = wp_seo_settings();
-			if ( in_array( $term->taxonomy, array_keys( $settings->get_taxonomies() ), true ) ) {
+				// Check that it's a valid WP SEO taxonomy.
+				$settings = wp_seo_settings();
+				if ( in_array( $term->taxonomy, array_keys( $settings->get_taxonomies() ), true ) ) {
 
-				// Build option.
-				$option_value = [
-					'title'       => get_post_meta( $post_id, '_meta_title', true ),
-					'description' => get_post_meta( $post_id, '_meta_description', true ),
-					'keywords'    => get_post_meta( $post_id, '_meta_keywords', true ),
-				];
-				update_option( "wp-seo-term-{$term->term_taxonomy_id}", $option_value, false );
+					// Build option.
+					$option_value = [
+						'title'       => get_post_meta( $post_id, '_meta_title', true ),
+						'description' => get_post_meta( $post_id, '_meta_description', true ),
+						'keywords'    => get_post_meta( $post_id, '_meta_keywords', true ),
+					];
+					update_option( "wp-seo-term-{$term->term_taxonomy_id}", $option_value, false ); // phpcs:ignore WordPressVIPMinimum.Performance.TaxonomyMetaInOptions.PossibleTermMetaInOptions
+				}
+			}
+		}
+	}
+
+	/**
+	 * Update/create linked term on term cache purge/update.
+	 *
+	 * @param array  $ids      An array of term ids.
+	 * @param string $taxonomy Taxonomy slug.
+	 */
+	public function update_term_on_cache_purge( $ids, $taxonomy ) {
+
+		// Bail early.
+		if ( $this->taxonomy !== $taxonomy || empty( $ids ) ) {
+			return;
+		}
+
+		// Loop thru each term ID.
+		foreach ( $ids as $term_id ) {
+
+			// Get term linked post ID.
+			$post_id = self::get_post_from_term( $term_id );
+
+			// Move on if it already exists.
+			if ( ! empty( $post_id ) ) {
+				continue;
+			}
+
+			// Now see if the linked post exists before trying to create a new one.
+			$posts = $this->get_term_linked_posts( $term_id );
+
+			// Confirmed none exists. Let's create a new one.
+			if ( empty( $posts ) ) {
+				$this->create_post( $term_id );
+			} else {
+				// We have one, let's update the term with this information.
+				update_term_meta( $term_id, '_linked_post_id', $posts[0]->ID );
 			}
 		}
 	}
@@ -272,14 +331,7 @@ class Term_Post_Link {
 	public function delete_post( $term_id ) {
 
 		// Get all posts associated with the deleted term.
-		$posts = get_posts(
-			[
-				'posts_per_page' => 1,
-				'post_type'      => $this->post_type,
-				'meta_key'       => '_linked_term_id',
-				'meta_value'     => $term_id,
-			]
-		);
+		$posts = $this->get_term_linked_posts( $term_id );
 
 		// Delete all posts.
 		if ( ! empty( $posts ) ) {
@@ -297,8 +349,8 @@ class Term_Post_Link {
 		$screen = get_current_screen();
 
 		$force_access = false;
-		if ( isset( $_GET['force-access'] ) ) {
-			$force_access = (bool) $_GET['force-access'];
+		if ( isset( $_GET['force-access'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$force_access = (bool) $_GET['force-access']; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 		}
 
 		/**
@@ -309,18 +361,18 @@ class Term_Post_Link {
 			&& 'term' === $screen->base
 			&& isset( $screen->taxonomy )
 			&& $this->taxonomy === $screen->taxonomy
-			&& isset( $_GET['tag_ID'] )
+			&& isset( $_GET['tag_ID'] ) // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			&& true !== $force_access
 		) {
 			// Get term_id from query vars.
-			$term_id = absint( $_GET['tag_ID'] );
+			$term_id = absint( $_GET['tag_ID'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
 			// Get the linked post.
 			$linked_post_id = $this->get_post_from_term( $term_id );
 
 			// Redirect to post.
 			if ( ! empty( $linked_post_id ) ) {
-				wp_redirect( admin_url( "post.php?post={$linked_post_id}&action=edit" ) );
+				wp_safe_redirect( admin_url( "post.php?post={$linked_post_id}&action=edit" ) );
 				exit();
 			}
 		}
@@ -336,7 +388,7 @@ class Term_Post_Link {
 			&& true !== $force_access
 		) {
 			// Redirect to taxonomy tags.
-			wp_redirect( admin_url( 'edit-tags.php?taxonomy=' . $this->taxonomy ) );
+			wp_safe_redirect( admin_url( 'edit-tags.php?taxonomy=' . $this->taxonomy ) );
 			exit();
 		}
 
@@ -353,7 +405,7 @@ class Term_Post_Link {
 			&& true !== $force_access
 		) {
 			// Redirect to taxonomy tags.
-			wp_redirect( admin_url( 'edit-tags.php?taxonomy=' . $this->taxonomy ) );
+			wp_safe_redirect( admin_url( 'edit-tags.php?taxonomy=' . $this->taxonomy ) );
 			exit();
 		}
 	}
@@ -407,10 +459,9 @@ class Term_Post_Link {
 	 * @param  mixed  $value    Meta value.
 	 * @param  int    $term_id  Term ID.
 	 * @param  string $meta_key Meta key.
-	 * @param  bool   $single   Only return the first value.
 	 * @return mixed            Meta value.
 	 */
-	public function get_term_metadata( $value, $term_id, $meta_key, $single ) {
+	public function get_term_metadata( $value, $term_id, $meta_key ) {
 
 		// Get term.
 		$term = get_term( $term_id );
@@ -469,5 +520,23 @@ class Term_Post_Link {
 		}
 
 		return $columns;
+	}
+
+	/**
+	 * Get all posts associated with linked term.
+	 *
+	 * @param int $term_id Term ID.
+	 * @return array
+	 */
+	private function get_term_linked_posts( $term_id ) {
+		return get_posts( // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_posts
+			[
+				'posts_per_page'   => 1,
+				'post_type'        => $this->post_type,
+				'meta_key'         => '_linked_term_id',
+				'meta_value'       => $term_id, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+				'suppress_filters' => false,
+			]
+		);
 	}
 }

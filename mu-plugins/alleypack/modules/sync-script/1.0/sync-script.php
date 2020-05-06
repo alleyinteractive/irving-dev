@@ -13,9 +13,9 @@ namespace Alleypack\Sync_Script;
 \Alleypack\load_module( 'singleton', '1.0' );
 
 // Load classes.
-require_once 'class-feed.php';
-require_once 'feed-items/class-feed-item.php';
-require_once 'feed-items/class-post-feed-item.php';
+require_once __DIR__ . '/class-feed.php';
+require_once __DIR__ . '/feed-items/class-feed-item.php';
+require_once __DIR__ . '/feed-items/class-post-feed-item.php';
 
 /**
  * Register a new post sync class.

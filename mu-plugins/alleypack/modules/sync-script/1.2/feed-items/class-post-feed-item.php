@@ -52,12 +52,13 @@ abstract class Post_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 			return static::$mapping[ $unique_id ];
 		}
 
-		$posts = (array) get_posts(
+		$posts = (array) get_posts( // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_posts
 			[
-				'meta_key'    => static::get_unique_id_key(),
-				'meta_value'  => $unique_id,
-				'post_status' => [ 'any', 'trash' ],
-				'post_type'   => static::get_post_type(),
+				'meta_key'         => static::get_unique_id_key(),
+				'meta_value'       => $unique_id, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+				'post_status'      => [ 'any', 'trash' ],
+				'post_type'        => static::get_post_type(),
+				'suppress_filters' => false,
 			]
 		);
 
@@ -82,7 +83,9 @@ abstract class Post_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 	public function save_object() {
 
 		// Set correct post type.
-		$this->object['post_type'] = static::get_post_type();
+		if ( empty( $this->object['post_type'] ) ) {
+			$this->object['post_type'] = static::get_post_type();
+		}
 
 		// Insert or update post.
 		$post_id = wp_insert_post( $this->object );

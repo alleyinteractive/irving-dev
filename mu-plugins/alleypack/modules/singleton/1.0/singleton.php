@@ -10,4 +10,4 @@
 namespace Alleypack;
 
 // Load class.
-require_once 'trait-singleton.php';
+require_once __DIR__ . '/trait-singleton.php';

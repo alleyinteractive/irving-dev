@@ -15,6 +15,7 @@ Helpers to manage attachments.
 
 ### create_attachment_from_url( $url, $args )
 
+```php
 /**
  * Create an attachment from an URL address.
  *
@@ -37,3 +38,4 @@ Helpers to manage attachments.
  * }
  * @return int|WP_Error Attachment ID or \WP_Error.
  */
+```

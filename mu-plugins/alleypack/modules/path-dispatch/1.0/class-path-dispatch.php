@@ -200,9 +200,9 @@ class Path_Dispatch {
 				$args = $this->rewrite_paths[ $path ];
 			}
 			if ( empty( $args['action'] ) ) {
-				do_action( 'dispatch_path_' . $path, $args );
+				do_action( 'dispatch_path_' . $path, $args ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 			} else {
-				do_action( $args['action'], $args );
+				do_action( $args['action'], $args ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.DynamicHooknameFound
 			}
 
 			if ( ! empty( $args['template'] ) ) {

@@ -10,4 +10,4 @@
 namespace Alleypack;
 
 // Load class.
-require_once 'class-one-timer.php';
+require_once __DIR__ . '/class-one-timer.php';

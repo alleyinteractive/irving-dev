@@ -65,8 +65,8 @@ abstract class Feed {
 		array_map(
 			function( $method_name ) {
 				// Call setup functions on any included traits.
-				if ( method_exists( $this, $method_name ) ) {
-					$this->$method_name();
+				if ( method_exists( $this, $method_name ) ) { // phpcs:ignore WordPressVIPMinimum.Variables.VariableAnalysis.UndefinedVariable
+					$this->$method_name(); // phpcs:ignore WordPressVIPMinimum.Variables.VariableAnalysis.UndefinedVariable
 				}
 			},
 			[

@@ -195,20 +195,20 @@ abstract class Feed {
 			'rest_api_init',
 			function() {
 				register_rest_route(
-					$this->endpoint_namespace,
-					"/sync/{$this->sync_slug}/",
+					$this->endpoint_namespace, // phpcs:ignore WordPressVIPMinimum.Variables.VariableAnalysis.UndefinedVariable
+					"/sync/{$this->sync_slug}/", // phpcs:ignore WordPressVIPMinimum.Variables.VariableAnalysis.UndefinedVariable
 					[
 						'methods'  => 'GET',
-						'callback' => [ $this, 'do_endpoint' ],
-						'args' => [
+						'callback' => [ $this, 'do_endpoint' ], // phpcs:ignore WordPressVIPMinimum.Variables.VariableAnalysis.UndefinedVariable
+						'args'     => [
 							'offset' => [
 								'default'           => 0,
 								'type'              => 'integer',
 								'sanitize_callback' => 'absint',
 								'validate_callback' => 'rest_validate_request_arg',
 							],
-							'limit' => [
-								'default'           => $this->batch_size,
+							'limit'  => [
+								'default'           => $this->batch_size, // phpcs:ignore WordPressVIPMinimum.Variables.VariableAnalysis.UndefinedVariable
 								'type'              => 'integer',
 								'sanitize_callback' => 'absint',
 								'validate_callback' => 'rest_validate_request_arg',

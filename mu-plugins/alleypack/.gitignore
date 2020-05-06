@@ -1,4 +1,5 @@
 .DS_Store
+.idea
 phpunit.xml
 Thumbs.db
 wp-cli.local.yml
@@ -7,3 +8,4 @@ vendor/
 *.sql
 *.tar.gz
 *.zip
+classnames.json

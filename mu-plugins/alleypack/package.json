@@ -1,0 +1,50 @@
+{
+  "author": "Alley",
+  "bugs": {
+    "url": "https://github.com/alleyinteractive/alleypack/issues"
+  },
+  "dependencies": {
+    "core-js": "^3.6.3",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0"
+  },
+  "description": "Easily share reusable code and functionality.",
+  "engines": {
+    "node": "10",
+    "npm": "6"
+  },
+  "homepage": "https://github.com/alleyinteractive/alleypack#readme",
+  "license": "ISC",
+  "main": "alleypack.php",
+  "name": "alleypack",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alleyinteractive/alleypack.git"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "preinstall": "npx check-node-version --package",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "@babel/core": "^7.8.0",
+    "@babel/preset-env": "^7.8.2",
+    "@babel/preset-react": "^7.8.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "check-node-version": "^4.0.2",
+    "classnames": "^2.2.6",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "jest": "^24.9.0"
+  }
+}

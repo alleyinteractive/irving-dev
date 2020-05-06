@@ -200,7 +200,7 @@ abstract class Feed {
 	 * Update the last synced timestamp to now.
 	 */
 	protected function set_last_synced_timestamp() {
-		update_option( $this->get_last_synced_timestamp_option_key(), date( 'U' ) );
+		update_option( $this->get_last_synced_timestamp_option_key(), gmdate( 'U' ) );
 	}
 
 	/**
@@ -333,11 +333,11 @@ abstract class Feed {
 			'rest_api_init',
 			function() {
 				register_rest_route(
-					$this->endpoint_namespace,
-					"/sync/{$this->sync_slug}/",
+					$this->endpoint_namespace, // phpcs:ignore WordPressVIPMinimum.Variables.VariableAnalysis.UndefinedVariable
+					"/sync/{$this->sync_slug}/", // phpcs:ignore WordPressVIPMinimum.Variables.VariableAnalysis.UndefinedVariable
 					[
 						'methods'  => 'GET',
-						'callback' => [ $this, 'do_endpoint' ],
+						'callback' => [ $this, 'do_endpoint' ], // phpcs:ignore WordPressVIPMinimum.Variables.VariableAnalysis.UndefinedVariable
 					]
 				);
 			}

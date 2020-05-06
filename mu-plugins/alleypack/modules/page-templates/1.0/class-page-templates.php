@@ -75,11 +75,13 @@ class Page_Templates {
 	 */
 	public function add_meta_box() {
 
+		$label = apply_filters( 'alleypack_page_templates_metabox_label', __( 'Template:', 'alleypack' ) );
+
 		// Create template dropdown.
 		$children = [
 			'_wp_page_template' => new \Fieldmanager_Select(
 				[
-					'label'       => __( 'Template:', 'alleypack' ),
+					'label'       => $label,
 					'options'     => $this->get_options(),
 					'first_empty' => true,
 				]
@@ -114,6 +116,9 @@ class Page_Templates {
 				'children'       => $children,
 			]
 		);
-		$fm->add_meta_box( __( 'Templates', 'alleypack' ), [ 'page' ], 'normal', 'high' );
+
+		$context = apply_filters( 'alleypack_page_templates_metabox_context', 'normal' );
+
+		$fm->add_meta_box( __( 'Templates', 'alleypack' ), [ 'page' ], $context, 'high' );
 	}
 }

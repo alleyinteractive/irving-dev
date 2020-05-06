@@ -10,5 +10,5 @@
 namespace Alleypack;
 
 // Load classes.
-require_once 'class-unique-wp-query.php';
-require_once 'class-unique-wp-query-manager.php';
+require_once __DIR__ . '/class-unique-wp-query.php';
+require_once __DIR__ . '/class-unique-wp-query-manager.php';

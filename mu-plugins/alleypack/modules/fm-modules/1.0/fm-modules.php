@@ -10,7 +10,7 @@
 namespace Alleypack;
 
 // Load trait.
-require_once 'trait-fm-module.php';
+require_once __DIR__ . '/trait-fm-module.php';
 
 // Load class.
-require_once 'class-fm-modules.php';
+require_once __DIR__ . '/class-fm-modules.php';

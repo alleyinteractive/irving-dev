@@ -9,6 +9,8 @@ namespace Alleypack\Sync_Script;
 
 use \WP_CLI;
 
+/* phpcs:disable WordPressVIPMinimum.Classes.RestrictedExtendClasses.wp_cli */
+
 /**
  * CLI Commands.
  */
@@ -69,7 +71,7 @@ class Alleypack_Sync_CLI_Command extends \WP_CLI_Command {
 	private function stop_the_insanity() {
 		global $wpdb, $wp_object_cache;
 
-		$wpdb->queries = []; // Or define( 'WP_IMPORTING', true );.
+		$wpdb->queries = [];
 
 		if ( ! is_object( $wp_object_cache ) ) {
 			return;

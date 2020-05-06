@@ -33,12 +33,13 @@ abstract class Post_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 	 */
 	public function load_object() {
 		alleypack_log( 'Loading unique ID key: ', $this->get_unique_id() );
-		$posts = (array) get_posts(
+		$posts = (array) get_posts( // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_posts
 			[
-				'meta_key'    => $this->unique_id_key,
-				'meta_value'  => $this->get_unique_id(),
-				'post_status' => [ 'any', 'trash' ],
-				'post_type'   => static::$post_type,
+				'meta_key'         => $this->unique_id_key,
+				'meta_value'       => $this->get_unique_id(), // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+				'post_status'      => [ 'any', 'trash' ],
+				'post_type'        => static::$post_type,
+				'suppress_filters' => false,
 			]
 		);
 
@@ -53,7 +54,7 @@ abstract class Post_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 		wp_publish_post( $this->get_object_id() );
 
 		// Delete duplicate posts.
-		foreach ( array_values( $posts ) as $index => $post ) {
+		foreach ( array_values( $posts ) as $post ) {
 			wp_delete_post( $post->ID, true );
 		}
 	}
@@ -64,7 +65,7 @@ abstract class Post_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 	public static function mark_existing_content_as_syncing() {
 		global $wpdb;
 
-		$update = $wpdb->update(
+		$wpdb->update( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 			$wpdb->posts,
 			[
 				'post_status' => 'alleypack-syncing',
@@ -82,7 +83,7 @@ abstract class Post_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 	public static function unpublish_unsynced_content() {
 		global $wpdb;
 
-		$post_ids = $wpdb->get_col(
+		$post_ids = $wpdb->get_col( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 			"
 			SELECT ID
 			FROM   $wpdb->posts

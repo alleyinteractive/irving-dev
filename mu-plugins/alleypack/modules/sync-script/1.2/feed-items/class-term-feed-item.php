@@ -48,7 +48,7 @@ abstract class Term_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 			[
 				'hide_empty' => false,
 				'meta_key'   => static::$unique_id_key,
-				'meta_value' => $unique_id,
+				'meta_value' => $unique_id, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 				'taxonomy'   => static::$taxonomy,
 			]
 		);

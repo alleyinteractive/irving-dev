@@ -7,6 +7,12 @@
 
 namespace Alleypack\Sync_Script;
 
+// Silence a few phpcs warnings since there is a newer version of this module. Developers are encouraged to use the latest version.
+/* phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery */
+/* phpcs:disable WordPress.DB.DirectDatabaseQuery.NoCaching */
+/* phpcs:disable WordPress.DB.SlowDBQuery.slow_db_query_meta_value */
+/* phpcs:disable WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_posts */
+
 /**
  * This class is created for any object being sync'd.
  */
@@ -52,7 +58,7 @@ abstract class Post_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 		wp_publish_post( $this->get_object_id() );
 
 		// Delete duplicate posts.
-		foreach ( array_values( $posts ) as $index => $post ) {
+		foreach ( array_values( $posts ) as $post ) {
 			wp_delete_post( $post->ID, true );
 		}
 	}
@@ -63,7 +69,7 @@ abstract class Post_Feed_Item extends \Alleypack\Sync_Script\Feed_Item {
 	public static function mark_existing_content_as_syncing() {
 		global $wpdb;
 
-		$update = $wpdb->update(
+		$wpdb->update(
 			$wpdb->posts,
 			[
 				'post_status' => 'alleypack-syncing',

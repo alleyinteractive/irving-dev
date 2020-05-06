@@ -102,7 +102,7 @@ abstract class Feed_Item {
 
 		// Validate source.
 		if ( empty( $source ) ) {
-			return;
+			return null;
 		}
 
 		// Initialize a new instance and load the source data.
@@ -123,7 +123,7 @@ abstract class Feed_Item {
 		}
 
 		// Something went wrong.
-		return;
+		return null;
 	}
 
 	/**

@@ -34,12 +34,13 @@ abstract class Guest_Author_Feed_Item extends Post_Feed_Item {
 			return static::$mapping[ $unique_id ];
 		}
 
-		$users = (array) get_posts(
+		$users = (array) get_posts( // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_posts_get_posts
 			[
-				'meta_key'    => static::get_unique_id_key(),
-				'meta_value'  => $unique_id,
-				'post_status' => [ 'any', 'trash' ],
-				'post_type'   => static::get_post_type(),
+				'meta_key'         => static::get_unique_id_key(),
+				'meta_value'       => $unique_id, // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
+				'post_status'      => [ 'any', 'trash' ],
+				'post_type'        => static::get_post_type(),
+				'suppress_filters' => false,
 			]
 		);
 
@@ -64,6 +65,8 @@ abstract class Guest_Author_Feed_Item extends Post_Feed_Item {
 	public function save_object() {
 
 		global $coauthors_plus;
+
+		$this->object['post_status'] = 'publish';
 
 		// Create the guest author.
 		if ( is_null( $this->get_object_id() ) ) {

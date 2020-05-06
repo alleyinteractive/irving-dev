@@ -41,6 +41,12 @@ function add_media_fields( $form_fields, $post ) : array {
 	}
 
 	foreach ( $fields as $field => $args ) {
+
+		// Match mime type if provided (image|audio|video).
+		if ( ! empty( $args['mime_type'] ) && ! wp_attachment_is( $args['mime_type'], $post->ID ) ) {
+			continue;
+		}
+
 		// Get the current value.
 		$current_value = \get_post_meta( $post->ID, $field, true );
 
@@ -119,7 +125,7 @@ function get_options_field_html( string $field, array $args, int $attachment_id 
  */
 function get_id_name_attributes( string $field, int $attachment_id, bool $array = false, string $value = '' ) : string {
 	if ( $array ) {
-		$id   = 'id="attachments-' . \absint( $attachment_id ) . '-' . \esc_attr( $field ) . '-' . \esc_attr( $value ) . '"';
+		$id = 'id="attachments-' . \absint( $attachment_id ) . '-' . \esc_attr( $field ) . '-' . \esc_attr( $value ) . '"';
 
 		/**
 		 * The media modal does not properly pass an array value via the AJAX request
@@ -174,7 +180,7 @@ function save_media_fields( $post, $attachment ) : array {
 				 * Check for the array index to order to determine of the option
 				 * was properly set.
 				 */
-				foreach ( $args['options'] as $key => $label ) {
+				foreach ( array_keys( $args['options'] ) as $key ) {
 					if ( ! empty( $attachment[ $field . '-' . $key ] ) ) {
 						$sanitized_field[] = \sanitize_text_field( $attachment[ $field . '-' . $key ] );
 					}

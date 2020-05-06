@@ -36,7 +36,7 @@ function load_module( string $slug, string $version = '1.0' ) {
 
 	// Load if it exists, or display an admin notice.
 	if ( file_exists( $module_entry ) ) {
-		require_once $module_entry;
+		require_once $module_entry; // phpcs:ignore WordPressVIPMinimum.Files.IncludingFile.UsingVariable
 	} else {
 		add_action(
 			'admin_notices',
