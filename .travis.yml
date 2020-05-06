@@ -67,9 +67,11 @@ before_script:
       bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
       echo "define( 'JETPACK_DEV_DEBUG', true );" >> $WP_CORE_DIR/wp-tests-config.php
 
-      # Install memcached.
-      printf "\n" | pecl install --force memcached 1> /dev/null
-      curl https://raw.githubusercontent.com/tollmanz/wordpress-pecl-memcached-object-cache/584392b56dc4adbe52bd2c7b86f875e23a3e5f75/object-cache.php > $WP_CORE_DIR/wp-content/object-cache.php
+      # Maybe install memcached.
+      if [[ "$WP_TRAVIS_OBJECT_CACHE" == "1" ]]; then
+        printf "\n" | pecl install --force memcached 1> /dev/null
+        curl https://raw.githubusercontent.com/tollmanz/wordpress-pecl-memcached-object-cache/584392b56dc4adbe52bd2c7b86f875e23a3e5f75/object-cache.php > $WP_CORE_DIR/wp-content/object-cache.php
+      fi
 
       # Copy the contents of this repo into the test instance of WordPress.
       rm -rf "${WP_CORE_DIR}wp-content"
