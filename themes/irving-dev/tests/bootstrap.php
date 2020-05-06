@@ -24,6 +24,13 @@ function _manually_load_environment() {
 	// Set our theme.
 	switch_theme( 'irving-dev' );
 
+	/**
+	 * For Gutenberg, we need to define `$GLOBALS['pagenow']`.
+	 *
+	 * @see wp_deregister_script()
+	 */
+	$GLOBALS['pagenow'] = 'index.php';
+
 	/*
 	 * Tests won't start until the uploads directory is scanned, so use the
 	 * lightweight directory from the test install.

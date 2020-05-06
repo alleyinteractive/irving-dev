@@ -91,6 +91,7 @@ before_script:
 script:
   - bash bin/script-php-lint.sh theme irving-dev
   - bash bin/script-phpcs.sh theme irving-dev
+  - bash bin/script-phpunit.sh theme irving-dev
   - bash bin/script-build.sh theme irving-dev
 
 # Receive notifications for build results.
