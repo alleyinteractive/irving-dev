@@ -76,10 +76,6 @@ before_script:
       # Copy the contents of this repo into the test instance of WordPress.
       rm -rf "${WP_CORE_DIR}wp-content"
       cp -R . "${WP_CORE_DIR}wp-content"
-      echo "Debugging"
-      ls "${WP_CORE_DIR}wp-content/themes/irving-dev"
-      ls "${WP_CORE_DIR}wp-content/themes/irving-dev/inc"
-      ls "${WP_CORE_DIR}wp-content/themes/irving-dev/tests"
 
       # Set up phpcs, if necessary.
       if [[ $WP_PHPCS == "1" ]]; then

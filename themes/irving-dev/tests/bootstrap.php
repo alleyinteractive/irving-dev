@@ -23,19 +23,6 @@ function _manually_load_environment() {
 
 	// Set our theme.
 	switch_theme( 'irving-dev' );
-	echo "switched theme\n";
-	$template = get_option( 'template' );
-	$stylesheet = get_option( 'stylesheet' );
-	echo $template . "\n";
-	echo $stylesheet . "\n";
-	foreach ( wp_get_active_and_valid_themes() as $theme ) {
-		echo 'theme is ' . $theme . "\n";
-		if ( file_exists( $theme . '/functions.php' ) ) {
-			echo "it exists\n";
-			// include $theme . '/functions.php';
-		}
-	}
-	echo "template path: " . TEMPLATEPATH . "\n";
 
 	/*
 	 * Tests won't start until the uploads directory is scanned, so use the

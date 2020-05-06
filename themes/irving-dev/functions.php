@@ -12,8 +12,6 @@ namespace Irving_Dev;
 define( 'IRVING_DEV_PATH', dirname( __FILE__ ) );
 define( 'IRVING_DEV_URL', get_template_directory_uri() );
 
-echo "IRVING_DEV_PATH is " . IRVING_DEV_PATH;
-
 // WordPress utilities.
 require_once IRVING_DEV_PATH . '/inc/class-wp-utils.php';
 
