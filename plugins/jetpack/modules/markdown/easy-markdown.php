@@ -2,18 +2,18 @@
 
 /*
 Plugin Name: Easy Markdown
-Plugin URI: http://automattic.com/
+Plugin URI: https://automattic.com/
 Description: Write in Markdown, publish in WordPress
 Version: 0.1
 Author: Matt Wiebe
-Author URI: http://automattic.com/
+Author URI: https://automattic.com/
 */
 
 /**
  * Copyright (c) Automattic. All rights reserved.
  *
  * Released under the GPL license
- * http://www.opensource.org/licenses/gpl-license.php
+ * https://www.opensource.org/licenses/gpl-license.php
  *
  * This is an add-on for WordPress
  * https://wordpress.org/
@@ -307,7 +307,7 @@ class WPCom_Markdown {
 		 *
 		 * @param string $url Markdown support URL.
 		 */
-		return apply_filters( 'easy_markdown_support_url', 'http://en.support.wordpress.com/markdown-quick-reference/' );
+		return apply_filters( 'easy_markdown_support_url', 'https://en.support.wordpress.com/markdown-quick-reference/' );
 	}
 
 	/**
@@ -451,7 +451,7 @@ class WPCom_Markdown {
 ?>
 <script type="text/javascript">
 jQuery( function() {
-	tinymce.on( 'AddEditor', function( event ) {
+	( 'undefined' !== typeof tinymce ) && tinymce.on( 'AddEditor', function( event ) {
 		event.editor.on( 'BeforeSetContent', function( event ) {
 			var editor = event.target;
 			Object.keys( editor.schema.elements ).forEach( function( key, index ) {
@@ -572,6 +572,11 @@ jQuery( function() {
 	 * @return string        Markdown-processed content
 	 */
 	public function transform( $text, $args = array() ) {
+		// If this contains Gutenberg content, let's keep it intact.
+		if ( has_blocks( $text ) ) {
+			return $text;
+		}
+
 		$args = wp_parse_args( $args, array(
 			'id' => false,
 			'unslash' => true,
@@ -701,15 +706,15 @@ jQuery( function() {
 	 * @return null
 	 */
 	protected function check_for_early_methods() {
-		global $HTTP_RAW_POST_DATA;
-		if ( false === strpos( $HTTP_RAW_POST_DATA, 'metaWeblog.getPost' )
-			&& false === strpos( $HTTP_RAW_POST_DATA, 'wp.getPage' ) ) {
+		$raw_post_data = file_get_contents( "php://input" );
+		if ( false === strpos( $raw_post_data, 'metaWeblog.getPost' )
+			&& false === strpos( $raw_post_data, 'wp.getPage' ) ) {
 			return;
 		}
 		include_once( ABSPATH . WPINC . '/class-IXR.php' );
-		$message = new IXR_Message( $HTTP_RAW_POST_DATA );
+		$message = new IXR_Message( $raw_post_data );
 		$message->parse();
-		$post_id_position = 'metaWeblog.getPost' === $message->methodName ?  0 : 1;
+		$post_id_position = 'metaWeblog.getPost' === $message->methodName ? 0 : 1;
 		$this->prime_post_cache( $message->params[ $post_id_position ] );
 	}
 

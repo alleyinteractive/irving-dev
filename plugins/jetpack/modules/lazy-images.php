@@ -2,15 +2,15 @@
 
 /**
  * Module Name: Lazy Images
- * Module Description: Lazy load images
+ * Module Description: Speed up your site and create a smoother viewing experience by loading images as visitors scroll down the screen, instead of all at once.
  * Sort Order: 24
  * Recommendation Order: 14
  * First Introduced: 5.6.0
  * Requires Connection: No
  * Auto Activate: No
  * Module Tags: Appearance, Recommended
- * Feature: Appearance, Jumpstart
- * Additional Search Queries: mobile, theme, performance, image
+ * Feature: Appearance
+ * Additional Search Queries: mobile, theme, fast images, fast image, image, lazy, lazy load, lazyload, images, lazy images, thumbnail, image lazy load, lazy loading, load, loading
  */
 
 /**
