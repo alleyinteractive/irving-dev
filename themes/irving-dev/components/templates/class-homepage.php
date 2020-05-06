@@ -31,7 +31,7 @@ class Homepage extends \WP_Components\Component {
 					[
 						( new \WP_Components\HTML() )->set_config( 'content', esc_html__( 'this is your homepage', 'irving-dev' ) ),
 					]
-				)
+				),
 		];
 	}
 }
