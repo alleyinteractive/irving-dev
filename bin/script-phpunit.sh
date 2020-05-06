@@ -14,4 +14,5 @@ fi
 
 echo "Running phpunit on $1s/$2 ..."
 cd $1s/$2
+pwd
 phpunit
