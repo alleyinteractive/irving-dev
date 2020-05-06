@@ -1,0 +1,24 @@
+{
+  "name": "irving-dev-app",
+  "version": "1.0.0",
+  "description": "Example Irving application.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "irving dev",
+    "build": "irving build",
+    "start": "irving start",
+    "styleguide:dev": "BABEL_ENV=app NODE_ENV=production npx styleguidist build --config ./config/styleguide.config.js",
+    "styleguide:build": "BABEL_ENV=app NODE_ENV=production npx styleguidist build --config ./config/styleguide.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alleyinteractive/irving-dev.git"
+  },
+  "author": "Alley",
+  "license": "ISC",
+  "dependencies": {
+    "@irvingjs/core": "^2.6.0",
+    "@irvingjs/styleguide": "^2.6.0",
+    "@irvingjs/styled": "^2.6.0"
+  }
+}

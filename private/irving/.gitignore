@@ -1,0 +1,19 @@
+# environment variables
+.env
+
+# dependencies
+/node_modules
+
+# production
+/build
+
+# styleguide
+/styleguide/index.html
+/styleguide/stats.json
+/styleguide/build
+/styleguide/static
+
+# misc
+.DS_Store
+
+npm-debug.log*
