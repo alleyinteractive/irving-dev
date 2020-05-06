@@ -9,6 +9,7 @@ $_tests_dir = getenv( 'WP_TESTS_DIR' );
 if ( !$_tests_dir ) {
 	$_tests_dir = '/tmp/wordpress-tests-lib';
 }
+echo "here";
 
 // phpcs:ignore This is only for unit testing.
 require_once $_tests_dir . '/includes/functions.php';
@@ -22,6 +23,7 @@ function _manually_load_environment() {
 
 	// Set our theme.
 	switch_theme( 'irving-dev' );
+	echo "switched theme";
 
 	/*
 	 * Tests won't start until the uploads directory is scanned, so use the
