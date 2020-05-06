@@ -15,5 +15,4 @@ fi
 echo "Running phpunit on $1s/$2 ..."
 cd "${WP_CORE_DIR}wp-content"
 cd $1s/$2
-pwd
 phpunit
