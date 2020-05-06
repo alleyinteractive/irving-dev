@@ -14,4 +14,4 @@ fi
 
 echo "Running phpunit on $1s/$2 ..."
 cd $1s/$2
-WP_MULTISITE=1 phpunit
+phpunit
