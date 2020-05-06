@@ -14,10 +14,15 @@ bower_components
 /debug.log
 /vendor
 /db.php
+/object-cache.php
 
+# IDEs
+.idea
+.vscode
+
+# All plugins aside from specific allowlist
 plugins/*
 !plugins/jetpack
 !plugins/meta-inspector
-!plugins/wp-alley-react
 !plugins/wp-redis
 !plugins/gutenberg
