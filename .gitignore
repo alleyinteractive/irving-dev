@@ -23,6 +23,7 @@ bower_components
 # All plugins aside from specific allowlist
 plugins/*
 !plugins/jetpack
+!plugins/jwt-auth
 !plugins/meta-inspector
 !plugins/wp-redis
 !plugins/gutenberg
