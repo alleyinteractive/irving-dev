@@ -11,7 +11,6 @@ $plugins = array(
 	'/wordpress-fieldmanager/fieldmanager.php',
 	'/wp-irving/wp-irving.php',
 	'/wp-components/wp-components.php',
-	'/alleypack/alleypack.php',
 );
 
 // Begin the process of loading the MU Plugins
