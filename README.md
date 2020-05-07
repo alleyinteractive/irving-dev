@@ -6,15 +6,24 @@ Irving Dev is a headless [Irving](https://github.com/alleyinteractive/irving) pr
 
 ### Local
 
-- [Frontend Irving](https://irving.alley.test:3001)
+- [Frontend Irving](https://irving.alley.test)
 - [WP Admin](https://irving-dev.alley.test/wp-admin/) (alley:interactive)
 
-### Pantheon/Heroku Development Environment
+### Pantheon/Heroku Staging Environment
+
+_Deploys from `staging` branch._ Merge code to this branch at-will.
+
+- [Irving](https://irving-staging.herokuapp.com/)
+  - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-staging) (WIP as of May 2020)
+- [WordPress admin](https://staging-irving.alleydev.com/wp-admin/) (Creds in 1Pass)
+  - [Pantheon dashboard](https://dashboard.pantheon.io/sites/a09a2cd1-6f16-4dc0-b0ec-5befb350af6f#staging/deploys)
+
+### Pantheon/Heroku "Production" Environment
 
 _Deploys from `production` branch._ All merges to this branch must have peer code review and pass continuous integration checks.
 
 - [Irving](https://irving-live.herokuapp.com/)
-  - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-live)
+  - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-live) (WIP as of May 2020)
 - [WordPress admin](https://live-irving.alleydev.com/wp-admin/) (Creds in 1Pass)
   - [Pantheon dashboard](https://dashboard.pantheon.io/sites/a09a2cd1-6f16-4dc0-b0ec-5befb350af6f#live/deploys)
 
@@ -23,7 +32,7 @@ _Deploys from `production` branch._ All merges to this branch must have peer cod
 ### Alley developers
 
 1. `apm install irving`
-1. Add `127.0.0.1	irving.alley.test` to `/etc/hosts`
+1. `vagrant provision` (only if you haven't since May 2020).
 1. `cd private/irving/ && npm ci`
 1. To run the app, `npm run dev`
 
@@ -33,7 +42,7 @@ The frontend codebase lives in `private/irving` and uses the Irving Core npm pac
 
 ### Starting Irving
 
-Use `npm run dev` to start your local server. The application will automatically open `https://irving.alley.test:3001`.
+Use `npm run dev` to start your local server. The application will automatically open `https://irving.alley.test`.
 
 ## Backend Codebase
 
