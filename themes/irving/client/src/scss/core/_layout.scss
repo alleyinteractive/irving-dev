@@ -1,9 +1,0 @@
-$container-padding: rem(20);
-
-@mixin container {
-	lost-center: $bp-xl $container-padding;
-}
-
-@mixin container-full {
-	lost-center: 100vw $container-padding;
-}

@@ -137,10 +137,11 @@ input[type="url"] {
 	box-shadow: none;
 }
 
-input[type="text"]:-ms-input-placeholder,
-input[type="tel"]:-ms-input-placeholder,
-input[type="email"]:-ms-input-placeholder,
-input[type="url"]:-ms-input-placeholder {
+input[type="text"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder {
+	color: #87a6bc;
+}
+
+input[type="text"]::-ms-input-placeholder, input[type="tel"]::-ms-input-placeholder, input[type="email"]::-ms-input-placeholder, input[type="url"]::-ms-input-placeholder {
 	color: #87a6bc;
 }
 
@@ -191,10 +192,11 @@ input[type="url"]:disabled:hover {
 	cursor: default;
 }
 
-input[type="text"]:disabled:-ms-input-placeholder,
-input[type="tel"]:disabled:-ms-input-placeholder,
-input[type="email"]:disabled:-ms-input-placeholder,
-input[type="url"]:disabled:-ms-input-placeholder {
+input[type="text"]:disabled:-ms-input-placeholder, input[type="tel"]:disabled:-ms-input-placeholder, input[type="email"]:disabled:-ms-input-placeholder, input[type="url"]:disabled:-ms-input-placeholder {
+	color: #a8bece;
+}
+
+input[type="text"]:disabled::-ms-input-placeholder, input[type="tel"]:disabled::-ms-input-placeholder, input[type="email"]:disabled::-ms-input-placeholder, input[type="url"]:disabled::-ms-input-placeholder {
 	color: #a8bece;
 }
 
@@ -233,6 +235,10 @@ textarea:-ms-input-placeholder {
 	color: #87a6bc;
 }
 
+textarea::-ms-input-placeholder {
+	color: #87a6bc;
+}
+
 textarea::placeholder {
 	color: #87a6bc;
 }
@@ -263,6 +269,10 @@ textarea:disabled:hover {
 }
 
 textarea:disabled:-ms-input-placeholder {
+	color: #a8bece;
+}
+
+textarea:disabled::-ms-input-placeholder {
 	color: #a8bece;
 }
 
@@ -435,8 +445,11 @@ input[type="radio"]:disabled:hover {
 	cursor: default;
 }
 
-.radio-button:disabled:-ms-input-placeholder,
-input[type="radio"]:disabled:-ms-input-placeholder {
+.radio-button:disabled:-ms-input-placeholder, input[type="radio"]:disabled:-ms-input-placeholder {
+	color: #a8bece;
+}
+
+.radio-button:disabled::-ms-input-placeholder, input[type="radio"]:disabled::-ms-input-placeholder {
 	color: #a8bece;
 }
 
@@ -510,11 +523,11 @@ select {
 	vertical-align: top;
 	white-space: nowrap;
 	box-sizing: border-box;
-	padding: 7px 14px 9px 32px; // Aligns the text to the 8px baseline grid and adds padding on right to allow for the arrow.
+	/* Aligns the text to the 8px baseline grid and adds padding on right to allow for the arrow. */
+	padding: 7px 14px 9px 32px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-	-webkit-appearance: none;
-	        appearance: none;
+	appearance: none;
 }
 
 select:hover {
@@ -700,17 +713,13 @@ input[type="submit"].button-primary {
 }
 
 .grunion-type-options {
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .grunion-type {
-	-ms-flex-positive: 0;
-	    flex-grow: 0;
-	-ms-flex-negative: 0;
-	    flex-shrink: 0;
+	flex-grow: 0;
+	flex-shrink: 0;
 }
 
 .grunion-type select {
@@ -720,10 +729,8 @@ input[type="submit"].button-primary {
 
 .grunion-required {
 	padding: 27px 16px 0 0;
-	-ms-flex-positive: 0;
-	    flex-grow: 0;
-	-ms-flex-negative: 0;
-	    flex-shrink: 0;
+	flex-grow: 0;
+	flex-shrink: 0;
 }
 
 .grunion-options {
@@ -737,7 +744,6 @@ input[type="submit"].button-primary {
 }
 
 .grunion-options li {
-	display: -ms-flexbox;
 	display: flex;
 	margin-bottom: 16px;
 }
@@ -764,21 +770,17 @@ input[type="submit"].button-primary {
 }
 
 .grunion-controls {
-	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .grunion-update-controls {
 	text-align: left;
-	-ms-flex-positive: 1;
-	    flex-grow: 1;
+	flex-grow: 1;
 }
 
 #add-field {
-	-ms-flex-positive: 0;
-	    flex-grow: 0;
+	flex-grow: 0;
 }
 
 .delete-option:before,
