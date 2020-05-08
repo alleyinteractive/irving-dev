@@ -50,7 +50,7 @@ before_script:
     # Fork for build vs. test.
     if [[ $BUILD == "1" ]]; then
       echo "Installing node 10 and npm 6 ..."
-      nvm install 10
+      nvm install 12
       npm i -g npm@6
     else
       echo "Setting up environment for running tests ..."
