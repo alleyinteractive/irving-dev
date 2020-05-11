@@ -14,18 +14,20 @@ Irving Dev is a headless [Irving](https://github.com/alleyinteractive/irving) pr
 _Deploys from `staging` branch._ Merge code to this branch at-will.
 
 - [Irving](https://irving-staging.herokuapp.com/)
-  - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-staging) (WIP as of May 2020)
+  - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-staging)
 - [WordPress admin](https://staging-irving.alleydev.com/wp-admin/) (Creds in 1Pass)
   - [Pantheon dashboard](https://dashboard.pantheon.io/sites/a09a2cd1-6f16-4dc0-b0ec-5befb350af6f#staging/deploys)
+- [Deploybot admin](https://alleyinteractive.deploybot.com/121799--IRV-Irving-Dev)
 
 ### Pantheon/Heroku "Production" Environment
 
 _Deploys from `production` branch._ All merges to this branch must have peer code review and pass continuous integration checks.
 
-- [Irving](https://irving-live.herokuapp.com/)
-  - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-live) (WIP as of May 2020)
+- [Irving](https://irving-production.herokuapp.com/)
+  - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-production)
 - [WordPress admin](https://live-irving.alleydev.com/wp-admin/) (Creds in 1Pass)
   - [Pantheon dashboard](https://dashboard.pantheon.io/sites/a09a2cd1-6f16-4dc0-b0ec-5befb350af6f#live/deploys)
+- [Deploybot admin](https://alleyinteractive.deploybot.com/121799--IRV-Irving-Dev)
 
 ## New environment setup
 
@@ -53,3 +55,6 @@ The backend is WordPress, and this repo lives in `/wp-content/`.
 1. Branch off of `production`, prefixing feature with the ticket number (let's call the new branch `feature/IRV-123/feature-name-description`).
 1. Make all commits for the new feature into `feature/IRV-123/feature-name-description`.
 1. Make a pull request for `feature/IRV-123/feature-name-description` into `production` and code review by Alley members. Merge the PR once approved.
+
+### Developing for Irving Core with `npm link`
+Visit the [wiki page](https://github.com/alleyinteractive/irving-dev/wiki/Developing-for-Irving-Core-with-npm-link) for instructions as well as a video tutorial.
