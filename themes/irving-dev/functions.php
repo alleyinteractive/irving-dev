@@ -12,6 +12,13 @@ namespace Irving_Dev;
 define( 'IRVING_DEV_PATH', dirname( __FILE__ ) );
 define( 'IRVING_DEV_URL', get_template_directory_uri() );
 
+add_filter(
+	'wp_irving_jwt_token_cookie_domain',
+	function () {
+		return 'alley.test';
+	}
+);
+
 // WordPress utilities.
 require_once IRVING_DEV_PATH . '/inc/class-wp-utils.php';
 
