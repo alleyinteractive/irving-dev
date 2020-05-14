@@ -15,7 +15,7 @@ define( 'IRVING_DEV_URL', get_template_directory_uri() );
 add_filter(
 	'wp_irving_jwt_token_cookie_domain',
 	function () {
-		return 'alley.test';
+		return strstr( home_url(), 'alley.test' ) ? 'alley.test' : 'alleydev.com';
 	}
 );
 
