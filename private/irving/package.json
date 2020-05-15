@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "@irvingjs/core": "^2.8.0-alpha.9",
-    "@irvingjs/styled": "^2.8.0-alpha.5",
-    "@irvingjs/styleguide": "^2.7.1"
+    "@irvingjs/styled": "^2.8.0-alpha.9",
+    "@irvingjs/styleguide": "^2.8.0-alpha.9"
   }
 }
