@@ -4,7 +4,7 @@ const config = {
   name: 'irving-dev-app',
   packages: [
     styledComponentsConfig,
-  ]
+  ],
 };
 
 module.exports = config;
