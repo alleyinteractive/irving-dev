@@ -4,6 +4,7 @@ import Fragment from 'component-candidates/fragment';
 
 const mapping = {
   '': Fragment,
+  'irving/fragment': Fragment,
   'irving/passthrough': Fragment,
   'irving/body-wrapper': Fragment,
   'irving/footer-wrapper': Fragment,
