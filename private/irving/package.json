@@ -17,7 +17,7 @@
   "author": "Alley",
   "license": "ISC",
   "dependencies": {
-    "@irvingjs/core": "^2.8.0-alpha.9",
+    "@irvingjs/core": "^2.8.0-alpha.11",
     "@irvingjs/styled": "^2.7.1",
     "@irvingjs/styleguide": "^2.7.1"
   }
