@@ -106,4 +106,7 @@ require_once IRVING_EXAMPLE_PATH . '/inc/class-wrapping.php';
 // them, leave the Begin and End comments in place.
 /* Begin Data Structures */
 
+// Fieldmanager Fields.
+require_once IRVING_EXAMPLE_PATH . '/inc/fields.php';
+
 /* End Data Structures */

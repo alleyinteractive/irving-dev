@@ -1,0 +1,58 @@
+{
+	"name": "irving/fragment",
+	"children": [
+		{
+			"name": "material/toolbar",
+			"config": {
+				"style": {
+					"background-color": "#EEE",
+					"borderBottom": "1px solid #AAA"
+				}
+			},
+			"children": [
+				{
+					"name": "material/button",
+					"config": {
+						"size": "small"
+					},
+					"children": [
+						"Subscribe"
+					]
+				},
+				{
+					"name": "material/box",
+					"config": {
+						"color": "inherit",
+						"align": "center",
+						"noWrap": true,
+						"style": {
+							"flex": 1
+						}
+					},
+					"children": [
+						{ "name": "site/logo" }
+					]
+				}
+			]
+		},
+		{
+			"name": "material/toolbar",
+			"config": {
+				"component": "nav",
+				"variant": "dense",
+				"style": {
+					"justifyContent": "space-between",
+					"overflowX": "auto"
+				}
+			},
+			"children": [
+				{
+					"name": "site/menu",
+					"config": {
+						"location": "primary"
+					}
+				}
+			]
+		}
+	]
+}

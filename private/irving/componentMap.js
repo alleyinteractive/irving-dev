@@ -1,14 +1,18 @@
 import * as materialComponents from '@material-ui/core';
 import * as materialLabComponents from '@material-ui/lab';
 import Fragment from 'component-candidates/fragment';
+import Logo from 'component-candidates/logo';
+// import HTML from 'component-candidates/html';
 
 const mapping = {
   '': Fragment,
+  'irving/logo': Logo,
   'irving/fragment': Fragment,
   'irving/passthrough': Fragment,
   'irving/body-wrapper': Fragment,
   'irving/footer-wrapper': Fragment,
   'irving/header-wrapper': Fragment,
+  // 'html': HTML,
 };
 
 Object.keys(materialComponents).forEach((index) => {
