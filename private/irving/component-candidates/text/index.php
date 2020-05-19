@@ -1,9 +1,11 @@
 <?php
 /**
- * Text.
+ * Text
  *
  * @package Irving_Components
  */
+
+use WP_Irving\Component;
 
 if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 	return;
@@ -12,4 +14,11 @@ if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 /**
  * Register the component and callback.
  */
-\WP_Irving\get_registry()->register_component_from_config( __DIR__ . '/component' );
+\WP_Irving\get_registry()->register_component_from_config(
+	__DIR__ . '/component',
+	[
+		'callback' => function( Component $component ) {
+			return $component->set_child( $component->get_config( 'content' ) );
+		},
+	]
+);
