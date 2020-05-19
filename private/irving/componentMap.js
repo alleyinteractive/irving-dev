@@ -5,7 +5,11 @@ import Fragment from 'component-candidates/fragment';
 import Logo from 'component-candidates/logo';
 // import HTML from 'component-candidates/html';
 
-const mapping = {
+const transformName = (original) => original
+  .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
+  .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
+
+export default {
   '': Fragment,
   'irving/logo': Logo,
   'irving/fragment': Fragment,
@@ -13,30 +17,22 @@ const mapping = {
   'irving/body-wrapper': Fragment,
   'irving/footer-wrapper': Fragment,
   'irving/header-wrapper': Fragment,
-  // 'html': HTML,
+  ...Object.keys(materialComponents)
+    .reduce((acc, key) => {
+      acc[`material/${transformName(key)}`] = materialComponents[key];
+      return { ...acc };
+    },
+    {}),
+  ...Object.keys(materialLabComponents)
+    .reduce((acc, key) => {
+      acc[`material-lab/${transformName(key)}`] = materialComponents[key];
+      return { ...acc };
+    },
+    {}),
+  ...Object.keys(materialIconsComponents)
+    .reduce((acc, key) => {
+      acc[`material-icon/${transformName(key)}`] = materialComponents[key];
+      return { ...acc };
+    },
+    {}),
 };
-
-Object.keys(materialComponents).forEach((index) => {
-  const name = index
-    .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
-    .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
-
-  mapping[`material/${name}`] = materialComponents[index];
-});
-
-Object.keys(materialLabComponents).forEach((index) => {
-  const name = index
-    .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
-    .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
-
-  mapping[`material-lab/${name}`] = materialLabComponents[index];
-});
-
-Object.keys(materialIconsComponents).forEach((index) => {
-  const name = index
-    .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
-    .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
-  mapping[`material-icon/${name}`] = materialIconsComponents[index];
-});
-
-export default mapping;
