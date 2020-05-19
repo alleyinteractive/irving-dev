@@ -1,0 +1,15 @@
+{
+	"page": [
+		{
+			"name": "irving/body-wrapper",
+			"children": [
+				{
+					"name": "irving/fragment",
+					"children": [
+						"single.json"
+					]
+				}
+			]
+		}
+	]
+}
