@@ -1,5 +1,5 @@
 {
 	"name": "irving/logo",
 	"category": "Irving",
-	"description": "Component for the logo."
+	"description": "Display the site name or logo."
 }

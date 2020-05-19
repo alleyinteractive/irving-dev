@@ -1,5 +1,6 @@
 import * as materialComponents from '@material-ui/core';
 import * as materialLabComponents from '@material-ui/lab';
+import * as materialIconsComponents from '@material-ui/icons';
 import Fragment from 'component-candidates/fragment';
 import Logo from 'component-candidates/logo';
 // import HTML from 'component-candidates/html';
@@ -29,6 +30,13 @@ Object.keys(materialLabComponents).forEach((index) => {
     .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
 
   mapping[`material-lab/${name}`] = materialLabComponents[index];
+});
+
+Object.keys(materialIconsComponents).forEach((index) => {
+  const name = index
+    .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
+    .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
+  mapping[`material-icon/${name}`] = materialIconsComponents[index];
 });
 
 export default mapping;

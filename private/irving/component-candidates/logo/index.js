@@ -6,24 +6,47 @@ import * as defaultStyles from './themes/default';
 
 const SiteLogo = (props) => {
   const {
+    siteName,
+    logo,
     logoUrl,
     theme,
   } = props;
 
-  const { Wrapper } = theme;
+  const { Wrapper, Link } = theme;
+
+  const component = logo ?
+    <Logo /> :
+    logoUrl ?
+      <img src={logoUrl} alt={siteName} /> :
+        <h2>{siteName}</h2>;
 
   return (
     <Wrapper>
-      <img src={logoUrl} />
+      <Link href="/">{component}</Link>
     </Wrapper>
   );
 };
 
+SiteLogo.defaults = {
+  logo: {},
+  logoUrl: '',
+  siteName: '',
+  theme: 'default',
+};
+
 SiteLogo.propTypes = {
   /**
-   * Link for the logo.
+   * Logo component to override the image.
    */
-  logoUrl: PropTypes.string.isRequired,
+  logo: PropTypes.object.node,
+  /**
+   * URL of the image.
+   */
+  logoUrl: PropTypes.string,
+  /**
+   * Site name.
+   */
+  siteName: PropTypes.string,
   /**
    * Theme (styles) to apply to the component.
    */

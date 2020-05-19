@@ -2,7 +2,7 @@
 	"name": "material/toolbar",
 	"config": {
 		"style": {
-			"background-color": "#EEE"
+			"backgroundColor": "#EEE"
 		}
 	},
 	"children": [

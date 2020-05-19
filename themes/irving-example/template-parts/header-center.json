@@ -5,8 +5,7 @@
 			"name": "material/toolbar",
 			"config": {
 				"style": {
-					"background-color": "#EEE",
-					"borderBottom": "1px solid #AAA"
+					"border-bottom": "1px solid #AAAAA"
 				}
 			},
 			"children": [
@@ -32,6 +31,20 @@
 					"children": [
 						{ "name": "site/logo" }
 					]
+				},
+				{
+					"name": "material/link",
+					"config": {
+						"href": "/search/"
+					},
+					"children": [
+						{
+							"name": "material/icon-button",
+							"children": [
+								{ "name": "material-icon/search" }
+							]
+						}
+					]
 				}
 			]
 		},
@@ -41,7 +54,7 @@
 				"component": "nav",
 				"variant": "dense",
 				"style": {
-					"justifyContent": "space-between",
+					"justifyContent": "space-around",
 					"overflowX": "auto"
 				}
 			},

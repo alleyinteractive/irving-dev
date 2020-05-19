@@ -6,9 +6,6 @@
  */
 
 use WP_Irving\Component;
-use function WP_Irving\Templates\locate_template_part;
-use function WP_Irving\Templates\prepare_data_from_template;
-use function WP_Irving\Templates\traverse_components;
 
 if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 	return;
@@ -21,11 +18,18 @@ if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 	[
 		'callback' => function ( Component $component ): Component {
 
+			// Get the template name frommm site settings.
 			$template = get_option( 'irving-example-settings' )['templates']['header']['layout'] ?? 'header-left';
 
-			$component->set_children( traverse_components( [ prepare_data_from_template( locate_template_part( $template ) ) ] ) );
+			// Ensure children are component objects.
+			$component->hydrate_children();
 
-			$component->set_name( '' );
+			// Remove children that aren't the right template.
+			foreach ( $component->get_children() as $child ) {
+				if ( "template-parts/$template" === $child->get_name() ) {
+					$component->set_child( $child );
+				}
+			}
 
 			return $component;
 		},
