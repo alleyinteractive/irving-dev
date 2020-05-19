@@ -3,7 +3,6 @@ import * as materialLabComponents from '@material-ui/lab';
 import * as materialIconsComponents from '@material-ui/icons';
 import Fragment from 'component-candidates/fragment';
 import Logo from 'component-candidates/logo';
-// import HTML from 'component-candidates/html';
 
 const transformName = (original) => original
   .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
