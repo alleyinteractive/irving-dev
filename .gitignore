@@ -22,6 +22,7 @@ bower_components
 
 # All plugins aside from specific allowlist
 plugins/*
+!plugins/pantheon-advanced-page-cache
 !plugins/jetpack
 !plugins/jwt-auth
 !plugins/meta-inspector
