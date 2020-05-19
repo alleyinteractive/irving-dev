@@ -5,10 +5,10 @@ const config = {
   packages: [
     styledComponentsConfig,
   ],
-  customizeRedirect: {
+  customizeRedirect: () => ({
     subDomain: 'www',
     protocol: 'http',
-  },
+  }),
 };
 
 module.exports = config;
