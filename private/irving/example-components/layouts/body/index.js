@@ -4,10 +4,14 @@ import PropTypes from 'prop-types';
 const Body = (props) => {
   const {
     title,
+    children,
   } = props;
 
   return (
-    <main>{title}</main>
+    <main>
+      <h2>{title}</h2>
+      <div>{children}</div>
+    </main>
   );
 };
 
@@ -20,6 +24,7 @@ Body.propTypes = {
 
 Body.defaultProps = {
   title: 'Default Title',
+  children: PropTypes.arrayOf(PropTypes.node).isRequired,
 };
 
 export default Body;
