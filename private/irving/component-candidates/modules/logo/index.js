@@ -27,8 +27,8 @@ const SiteLogo = (props) => {
   );
 };
 
-SiteLogo.defaults = {
-  logo: {},
+SiteLogo.defaultProps = {
+  logo: null,
   logoUrl: '',
   siteName: '',
   theme: 'default',
@@ -38,7 +38,7 @@ SiteLogo.propTypes = {
   /**
    * Logo component to override the image.
    */
-  logo: PropTypes.object.node,
+  logo: PropTypes.element,
   /**
    * URL of the image.
    */

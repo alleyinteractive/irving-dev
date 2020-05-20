@@ -1,9 +1,14 @@
+import { Helmet } from 'react-helmet';
 import * as materialComponents from '@material-ui/core';
 import * as materialLabComponents from '@material-ui/lab';
 import * as materialIconsComponents from '@material-ui/icons';
-import Fragment from 'component-candidates/fragment';
-import Logo from 'component-candidates/logo';
-import Text from 'component-candidates/text';
+import App from 'component-candidates/layouts/app';
+import Fragment from 'component-candidates/common/fragment';
+import Logo from 'component-candidates/modules/logo';
+import Script from 'component-candidates/common/script';
+import Menu from 'component-candidates/wordpress/site-menu';
+import MenuItem from 'component-candidates/wordpress/site-menu-item';
+// import Text from 'component-candidates/common/text';
 
 const transformName = (original) => original
   .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
@@ -11,13 +16,17 @@ const transformName = (original) => original
 
 export default {
   '': Fragment,
-  'irving/logo': Logo,
-  'irving/text': Text,
-  'irving/fragment': Fragment,
-  'irving/passthrough': Fragment,
   'irving/body-wrapper': Fragment,
   'irving/footer-wrapper': Fragment,
+  'irving/fragment': Fragment,
   'irving/header-wrapper': Fragment,
+  'irving/helmet': Helmet,
+  'irving/logo': Logo,
+  'site/menu': Menu,
+  'site/menu-item': MenuItem,
+  'irving/passthrough': Fragment,
+  'irving/script': Script,
+  'irving/text': Fragment,
   ...Object.keys(materialComponents)
     .reduce((acc, key) => {
       acc[`material/${transformName(key)}`] = materialComponents[key];
@@ -36,4 +45,5 @@ export default {
       return { ...acc };
     },
     {}),
+  app: App,
 };

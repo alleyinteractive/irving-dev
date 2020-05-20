@@ -1,0 +1,11 @@
+{
+	"name": "irving/script",
+	"description": "Easily use JS. May be unsafe.",
+	"config": {
+		"type": {
+			"default": "application/ld+json",
+			"required": true,
+			"type": "string"
+		}
+	}
+}

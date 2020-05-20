@@ -1,6 +1,6 @@
 <?php
 /**
- * Text
+ * Site name.
  *
  * @package Irving_Components
  */
@@ -17,8 +17,10 @@ if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 \WP_Irving\get_registry()->register_component_from_config(
 	__DIR__ . '/component',
 	[
-		'callback' => function( Component $component ) {
-			return $component->set_child( $component->get_config( 'content' ) );
+		'callback' => function( Component $component ): Component {
+			return $component
+				->set_config( 'content', get_bloginfo( 'name' ) )
+				->set_name( 'irving/text' );
 		},
 	]
 );

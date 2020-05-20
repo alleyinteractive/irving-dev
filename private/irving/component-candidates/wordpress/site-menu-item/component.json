@@ -1,0 +1,30 @@
+{
+	"name": "site/menu-item",
+	"description": "A single instance of a menu item.",
+	"config": {
+		"attribute": {
+			"type": "string"
+		},
+		"classes": {
+		 	"type": "array"
+		},
+		"description": {
+			"type": "string"
+		},
+		"id": {
+		 	"type": "int"
+		},
+		"parent_id": {
+		 	"type": "int"
+		},
+		"target": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string"
+		},
+		"url": {
+			"type": "string"
+		}
+	}
+}

@@ -1,6 +1,7 @@
 {
 	"name": "irving/text",
 	"category": "Common",
+	"renderAs": "irving/fragment",
 	"description": "Plain text.",
 	"config": {
 		"content": {
