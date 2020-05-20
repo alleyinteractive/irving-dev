@@ -18,7 +18,7 @@ if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 	[
 		'callback' => function ( Component $component ): Component {
 
-			// Get the template name frommm site settings.
+			// Get the template name from site settings.
 			$template = get_option( 'irving-example-settings' )['templates']['header']['layout'] ?? 'header-left';
 
 			// Ensure children are component objects.
