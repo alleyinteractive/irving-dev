@@ -13,3 +13,6 @@
 [submodule "mu-plugins/wordpress-fieldmanager"]
 	path = mu-plugins/wordpress-fieldmanager
 	url = https://github.com/alleyinteractive/wordpress-fieldmanager.git
+[submodule "mu-plugins/wpcom-legacy-redirector"]
+	path = mu-plugins/wpcom-legacy-redirector
+	url = https://github.com/Automattic/WPCOM-Legacy-Redirector
