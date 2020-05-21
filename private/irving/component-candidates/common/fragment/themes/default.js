@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
 /* eslint-disable import/prefer-default-export */
-export const Element = styled.span`
-  background-color: blue;
-`;
+export const Element = styled.span``;
 /* eslint-enable */
