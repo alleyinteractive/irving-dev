@@ -4,6 +4,7 @@ import * as materialLabComponents from '@material-ui/lab';
 import * as materialIconsComponents from '@material-ui/icons';
 import App from 'component-candidates/layouts/app';
 import Fragment from 'component-candidates/common/fragment';
+import Logo from 'component-candidates/modules/logo';
 
 const transformName = (original) => original
   .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
@@ -11,10 +12,11 @@ const transformName = (original) => original
 
 export default {
   '': Fragment,
+  'irving-common/fragment': Fragment,
   'irving-layouts/body-wrapper': Fragment,
   'irving-layouts/footer-wrapper': Fragment,
-  'irving-common/fragment': Fragment,
   'irving-layouts/header-wrapper': Fragment,
+  'irving-modules/logo': Logo,
   'irving/helmet': Helmet,
   App,
   ...Object.keys(materialComponents)
