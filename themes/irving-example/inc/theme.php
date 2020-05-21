@@ -46,7 +46,8 @@ function theme_setup() {
 	// Set up theme's use of wp_nav_menu().
 	register_nav_menus(
 		array(
-			'menu-1' => __( 'Primary', 'irving-example' ),
+			'primary' => __( 'Primary', 'irving-example' ),
+			'footer'  => __( 'Footer', 'irving-example' ),
 		)
 	);
 

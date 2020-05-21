@@ -1,5 +1,0 @@
-{
-	"name": "irving/fragment",
-	"category": "Utility",
-	"description": "Render children without extra dom elements."
-}
