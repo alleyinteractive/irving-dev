@@ -56,7 +56,8 @@ before_script:
       npm i -g npm@6
       export ROOT_URL=https://irving-production.herokuapp.com
       export API_ROOT_URL=https://live-irving.alleydev.com/wp-json/irving/v1
-      export APP_ROOT=/app
+      export APP_ROOT=$TRAVIS_BUILD_DIR/private/irving
+      echo "Exported APP_ROOT $APP_ROOT"
     else
       echo "Setting up environment for running tests ..."
 
