@@ -11,10 +11,10 @@ const transformName = (original) => original
 
 export default {
   '': Fragment,
-  'irving/body-wrapper': Fragment,
-  'irving/footer-wrapper': Fragment,
-  'irving/fragment': Fragment,
-  'irving/header-wrapper': Fragment,
+  'irving-layouts/body-wrapper': Fragment,
+  'irving-layouts/footer-wrapper': Fragment,
+  'irving-common/fragment': Fragment,
+  'irving-layouts/header-wrapper': Fragment,
   'irving/helmet': Helmet,
   App,
   ...Object.keys(materialComponents)
