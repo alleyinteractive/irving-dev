@@ -8,8 +8,9 @@ Version: 1.0
 
 $plugins = array(
 	'/safe-redirect-manager/safe-redirect-manager.php',
-	'/wp-irving/wp-irving.php',
 	'/wp-components/wp-components.php',
+	'/wordpress-fieldmanager/fieldmanager.php',
+	'/wp-irving/wp-irving.php',
 );
 
 // Begin the process of loading the MU Plugins

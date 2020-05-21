@@ -16,7 +16,7 @@
 				}
 			},
 			"children": [
-				{ "name": "site/logo" }
+				{ "name": "irving-modules/logo" }
 			]
 		},
 		{

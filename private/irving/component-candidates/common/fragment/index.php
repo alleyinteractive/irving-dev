@@ -7,6 +7,8 @@
  * @package Irving_Components
  */
 
+namespace WP_Irving;
+
 if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 	return;
 }
@@ -14,4 +16,4 @@ if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 /**
  * Register the component.
  */
-\WP_Irving\get_registry()->register_component_from_config( __DIR__ . '/component' );
+get_registry()->register_component_from_config( __DIR__ . '/component' );
