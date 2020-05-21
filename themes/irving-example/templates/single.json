@@ -4,7 +4,7 @@
 			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "irving/fragment",
+					"name": "irving-common/fragment",
 					"children": [
 						"single.json"
 					]

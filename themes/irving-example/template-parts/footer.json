@@ -1,5 +1,5 @@
 {
-	"name": "irving/fragment",
+	"name": "irving-common/fragment",
 	"children": [
 		"template-parts/footer.json"
 	]
