@@ -1,71 +1,68 @@
-{
-	"name": "irving-common/fragment",
-	"children": [
-		{
-			"name": "material/toolbar",
-			"config": {
-				"style": {
-					"border-bottom": "1px solid #AAAAA"
-				}
-			},
-			"children": [
-				{
-					"name": "material/button",
-					"config": {
-						"size": "small"
-					},
-					"children": [
-						"Subscribe"
-					]
-				},
-				{
-					"name": "material/box",
-					"config": {
-						"color": "inherit",
-						"align": "center",
-						"noWrap": true,
-						"style": {
-							"flex": 1
-						}
-					},
-					"children": [
-						{ "name": "irving-modules/logo" }
-					]
-				},
-				{
-					"name": "material/link",
-					"config": {
-						"href": "/search/"
-					},
-					"children": [
-						{
-							"name": "material/icon-button",
-							"children": [
-								{ "name": "material-icon/search" }
-							]
-						}
-					]
-				}
-			]
+[
+	{
+		"name": "material/toolbar",
+		"config": {
+			"style": {
+				"border-bottom": "1px solid #AAAAA"
+			}
 		},
-		{
-			"name": "material/toolbar",
-			"config": {
-				"component": "nav",
-				"variant": "dense",
-				"style": {
-					"justifyContent": "space-around",
-					"overflowX": "auto"
-				}
+		"children": [
+			{
+				"name": "material/button",
+				"config": {
+					"size": "small"
+				},
+				"children": [
+					"Subscribe"
+				]
 			},
-			"children": [
-				{
-					"name": "site/menu",
-					"config": {
-						"location": "primary"
+			{
+				"name": "material/box",
+				"config": {
+					"color": "inherit",
+					"align": "center",
+					"noWrap": true,
+					"style": {
+						"flex": 1
 					}
+				},
+				"children": [
+					{ "name": "irving-modules/logo" }
+				]
+			},
+			{
+				"name": "material/link",
+				"config": {
+					"href": "/search/"
+				},
+				"children": [
+					{
+						"name": "material/icon-button",
+						"children": [
+							{ "name": "material-icon/search" }
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		"name": "material/toolbar",
+		"config": {
+			"component": "nav",
+			"variant": "dense",
+			"style": {
+				"justifyContent": "space-around",
+				"overflowX": "auto"
+			}
+		},
+		"children": [
+			{
+				"name": "irving-modules/menu",
+				"config": {
+					"location": "primary"
 				}
-			]
-		}
-	]
-}
+			}
+		]
+	}
+]

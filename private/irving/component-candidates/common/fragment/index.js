@@ -33,7 +33,7 @@ Fragment.defaultProps = {
 
 Fragment.propTypes = {
   /**
-   * Children of the component
+   * Children of the component.
    */
   children: PropTypes.node,
   /**

@@ -20,7 +20,7 @@
 			]
 		},
 		{
-			"name": "site/menu",
+			"name": "irving-modules/menu",
 			"config": {
 				"location": "primary"
 			}
