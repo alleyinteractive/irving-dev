@@ -1,7 +1,8 @@
-import { Helmet } from 'react-helmet';
+// import { Helmet } from 'react-helmet';
 import * as materialComponents from '@material-ui/core';
 import * as materialLabComponents from '@material-ui/lab';
 import * as materialIconsComponents from '@material-ui/icons';
+import AdminBar from './components/adminBar';
 
 const transformName = (original) => original
   .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
@@ -26,4 +27,5 @@ export default {
       return { ...acc };
     },
     {}),
+  'admin-bar': AdminBar,
 };

@@ -7,6 +7,10 @@
 
 namespace Irving_Dev\Components\Templates;
 
+use Irving_Dev\Components\Admin_Bar\Admin_Bar;
+
+// add_filter( 'show_admin_bar', '__return_true' ); // temp bc not properly logged in
+
 /**
  * Class for the Article template.
  */
@@ -38,6 +42,7 @@ class Article extends \WP_Components\Component {
 	 */
 	public function get_components(): array {
 		return [
+			( new Admin_Bar )->set_post( $this->wp_post_get_id() ),
 			( new \WP_Components\HTML() )->set_config( 'content', $this->post->post_content ),
 		];
 	}

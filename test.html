@@ -1,0 +1,377 @@
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <body>
+<!--[if lte IE 8]>
+		<script type="text/javascript">
+			document.body.className = document.body.className.replace( /(^|\s)(no-)?customize-support(?=\s|$)/, '' ) + ' no-customize-support';
+		</script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+		<script type="text/javascript">
+			(function() {
+				var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+						request = (function(){ var xhr = new XMLHttpRequest(); return ('withCredentials' in xhr); })();
+		
+				b[c] = b[c].replace( rcs, ' ' );
+				// The customizer requires postMessage and CORS (if the site is cross domain).
+				b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+			}());
+		</script>
+	<!--<![endif]-->
+			<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul id='wp-admin-bar-root-default' class="ab-top-menu"><li id='wp-admin-bar-wp-logo' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://irving-dev.alley.test/wp-admin/about.php'><span class="ab-icon"></span><span class="screen-reader-text">About WordPress</span></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-wp-logo-default' class="ab-submenu"><li id='wp-admin-bar-about'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/about.php'>About WordPress</a></li></ul><ul id='wp-admin-bar-wp-logo-external' class="ab-sub-secondary ab-submenu"><li id='wp-admin-bar-wporg'><a class='ab-item' href='https://wordpress.org/'>WordPress.org</a></li><li id='wp-admin-bar-documentation'><a class='ab-item' href='https://codex.wordpress.org/'>Documentation</a></li><li id='wp-admin-bar-support-forums'><a class='ab-item' href='https://wordpress.org/support/'>Support</a></li><li id='wp-admin-bar-feedback'><a class='ab-item' href='https://wordpress.org/support/forum/requests-and-feedback'>Feedback</a></li></ul></div></li><li id='wp-admin-bar-site-name' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://irving-dev.alley.test/wp-admin/'>Irving (Local Development)</a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-site-name-default' class="ab-submenu"><li id='wp-admin-bar-dashboard'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/'>Dashboard</a></li></ul><ul id='wp-admin-bar-appearance' class="ab-submenu"><li id='wp-admin-bar-themes'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/themes.php'>Themes</a></li><li id='wp-admin-bar-widgets'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/widgets.php'>Widgets</a></li><li id='wp-admin-bar-menus'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/nav-menus.php'>Menus</a></li></ul></div></li><li id='wp-admin-bar-customize' class="hide-if-no-customize"><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/customize.php?url=https%3A%2F%2Firving-dev.alley.test%2F'>Customize</a></li><li id='wp-admin-bar-updates'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/update-core.php' title='3 Plugin Updates'><span class="ab-icon"></span><span class="ab-label">3</span><span class="screen-reader-text">3 Plugin Updates</span></a></li><li id='wp-admin-bar-comments'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/edit-comments.php'><span class="ab-icon"></span><span class="ab-label awaiting-mod pending-count count-0" aria-hidden="true">0</span><span class="screen-reader-text comments-in-moderation-text">0 Comments in moderation</span></a></li><li id='wp-admin-bar-new-content' class="menupop"><a class='ab-item' aria-haspopup="true" href='https://irving-dev.alley.test/wp-admin/post-new.php'><span class="ab-icon"></span><span class="ab-label">New</span></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-new-content-default' class="ab-submenu"><li id='wp-admin-bar-new-post'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/post-new.php'>Post</a></li><li id='wp-admin-bar-new-media'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/media-new.php'>Media</a></li><li id='wp-admin-bar-new-page'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/post-new.php?post_type=page'>Page</a></li><li id='wp-admin-bar-new-redirect_rule'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/post-new.php?post_type=redirect_rule'>Redirect</a></li><li id='wp-admin-bar-new-user'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/user-new.php'>User</a></li></ul></div></li></ul><ul id='wp-admin-bar-top-secondary' class="ab-top-secondary ab-top-menu"><li id='wp-admin-bar-search' class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="https://irving.alley.test/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150" /><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search"/></form></div></li><li id='wp-admin-bar-my-account' class="menupop with-avatar"><a class='ab-item' aria-haspopup="true" href='https://irving-dev.alley.test/wp-admin/profile.php'>Howdy, <span class="display-name">alley</span><img alt='' src='https://secure.gravatar.com/avatar/ad5dd285560221a7302608c74c690035?s=26&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ad5dd285560221a7302608c74c690035?s=52&#038;d=mm&#038;r=g 2x' class='avatar avatar-26 photo' height='26' width='26' /></a><div class="ab-sub-wrapper"><ul id='wp-admin-bar-user-actions' class="ab-submenu"><li id='wp-admin-bar-user-info'><a class='ab-item' tabindex="-1" href='https://irving-dev.alley.test/wp-admin/profile.php'><img alt='' src='https://secure.gravatar.com/avatar/ad5dd285560221a7302608c74c690035?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/ad5dd285560221a7302608c74c690035?s=128&#038;d=mm&#038;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' /><span class='display-name'>alley</span></a></li><li id='wp-admin-bar-edit-profile'><a class='ab-item' href='https://irving-dev.alley.test/wp-admin/profile.php'>Edit My Profile</a></li><li id='wp-admin-bar-logout'><a class='ab-item' href='https://irving-dev.alley.test/wp-login.php?action=logout&#038;_wpnonce=032123e375'>Log Out</a></li><li id='wp-admin-bar-switch-off'><a class='ab-item' href='https://irving-dev.alley.test/wp-login.php?action=switch_off&#038;nr=1&#038;_wpnonce=eccdaf919a&#038;redirect_to=https%3A%2F%2Firving-dev.alley.test%2F'>Switch Off</a></li></ul></div></li><li id='wp-admin-bar-debug-bar' class="menupop"><div class="ab-item ab-empty-item" aria-haspopup="true">Debug</div><div class="ab-sub-wrapper"><ul id='wp-admin-bar-debug-bar-default' class="ab-submenu"><li id='wp-admin-bar-debug-bar-Debug_Bar_Queries'><a class='ab-item' href='#debug-menu-target-Debug_Bar_Queries' rel='#debug-menu-link-Debug_Bar_Queries'>Queries</a></li><li id='wp-admin-bar-debug-bar-Debug_Bar_WP_Query'><a class='ab-item' href='#debug-menu-target-Debug_Bar_WP_Query' rel='#debug-menu-link-Debug_Bar_WP_Query'>WP Query</a></li><li id='wp-admin-bar-debug-bar-Debug_Bar_Request'><a class='ab-item' href='#debug-menu-target-Debug_Bar_Request' rel='#debug-menu-link-Debug_Bar_Request'>Request</a></li><li id='wp-admin-bar-debug-bar-Debug_Bar_Object_Cache'><a class='ab-item' href='#debug-menu-target-Debug_Bar_Object_Cache' rel='#debug-menu-link-Debug_Bar_Object_Cache'>Object Cache</a></li><li id='wp-admin-bar-debug-bar-Debug_Bar_JS'><a class='ab-item' href='#debug-menu-target-Debug_Bar_JS' rel='#debug-menu-link-Debug_Bar_JS'>JavaScript</a></li><li id='wp-admin-bar-debug-bar-Debug_Bar_Roles_And_Capabilities_Panel'><a class='ab-item' href='#debug-menu-target-Debug_Bar_Roles_And_Capabilities_Panel' rel='#debug-menu-link-Debug_Bar_Roles_And_Capabilities_Panel'>Roles and Capabilities</a></li></ul></div></li></ul>			</div>
+						<a class="screen-reader-shortcut" href="https://irving-dev.alley.test/wp-login.php?action=logout&#038;_wpnonce=032123e375">Log Out</a>
+					</div>
+
+				<div id='querylist'>
+
+			<div id="debug-bar-actions">
+				<span class="maximize">+</span>
+				<span class="restore">&ndash;</span>
+				<span class="close">&times;</span>
+			</div>
+
+			<div id='debug-bar-info'>
+				<div id="debug-status">
+											<div id='debug-status-site' class='debug-status'>
+						<div class='debug-status-title'>wp.dev</div>
+												<div class='debug-status-data'>#1</div>
+											</div>						<div id='debug-status-php' class='debug-status'>
+						<div class='debug-status-title'>PHP</div>
+												<div class='debug-status-data'>7.3.18-1+ubuntu16.04.1+deb.sury.org+1</div>
+											</div>						<div id='debug-status-db' class='debug-status'>
+						<div class='debug-status-title'>MySQL</div>
+												<div class='debug-status-data'>5.5.5</div>
+											</div>						<div id='debug-status-memory' class='debug-status'>
+						<div class='debug-status-title'>Memory Usage</div>
+												<div class='debug-status-data'>3,494,608 bytes</div>
+											</div>				</div>
+			</div>
+
+			<div id='debug-bar-menu'>
+				<ul id="debug-menu-links">
+
+											<li><a
+								id="debug-menu-link-Debug_Bar_Queries"
+								class="debug-menu-link current"
+								href="#debug-menu-target-Debug_Bar_Queries">
+								Queries							</a></li>
+												<li><a
+								id="debug-menu-link-Debug_Bar_WP_Query"
+								class="debug-menu-link"
+								href="#debug-menu-target-Debug_Bar_WP_Query">
+								WP Query							</a></li>
+												<li><a
+								id="debug-menu-link-Debug_Bar_Request"
+								class="debug-menu-link"
+								href="#debug-menu-target-Debug_Bar_Request">
+								Request							</a></li>
+												<li><a
+								id="debug-menu-link-Debug_Bar_Object_Cache"
+								class="debug-menu-link"
+								href="#debug-menu-target-Debug_Bar_Object_Cache">
+								Object Cache							</a></li>
+												<li><a
+								id="debug-menu-link-Debug_Bar_JS"
+								class="debug-menu-link"
+								href="#debug-menu-target-Debug_Bar_JS">
+								JavaScript							</a></li>
+												<li><a
+								id="debug-menu-link-Debug_Bar_Roles_And_Capabilities_Panel"
+								class="debug-menu-link"
+								href="#debug-menu-target-Debug_Bar_Roles_And_Capabilities_Panel">
+								Roles and Capabilities							</a></li>
+						
+				</ul>
+			</div>
+
+			<div id="debug-menu-targets">
+					<div id="debug-menu-target-Debug_Bar_Queries" class="debug-menu-target"  style="display: block">
+						<h2><span>Total Queries:</span>20</h2>
+<h2><span>Total query time:</span>7.2 ms</h2>
+<ol class="wpd-queries"><li>SELECT option_name, option_value FROM wp_options WHERE autoload = &#039;yes&#039;<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-load.php&#039;), require_once(&#039;wp-config.php&#039;), require_once(&#039;wp-settings.php&#039;), wp_not_installed, is_blog_installed, wp_load_alloptions <span>#1 (0.3 ms)</span></div></li>
+<li>SELECT option_value FROM wp_options WHERE option_name = &#039;WPLANG&#039; LIMIT 1<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-load.php&#039;), require_once(&#039;wp-config.php&#039;), require_once(&#039;wp-settings.php&#039;), include_once(&#039;/mu-plugins/load-mu-plugins.php&#039;), require_once(&#039;/mu-plugins/safe-redirect-manager/safe-redirect-manager.php&#039;), SRM_Post_Type::factory, SRM_Post_Type-&gt;setup, esc_html__, translate, get_translations_for_domain, _load_textdomain_just_in_time, _get_path_to_translation, _get_path_to_translation_from_lang_dir, determine_locale, get_locale, get_option <span>#2 (0.1 ms)</span></div></li>
+<li>SELECT * FROM wp_users WHERE user_login = &#039;alley&#039; LIMIT 1<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-load.php&#039;), require_once(&#039;wp-config.php&#039;), require_once(&#039;wp-settings.php&#039;), WP-&gt;init, wp_get_current_user, _wp_get_current_user, apply_filters(&#039;determine_current_user&#039;), WP_Hook-&gt;apply_filters, wp_validate_logged_in_cookie, wp_validate_auth_cookie, get_user_by, WP_User::get_data_by <span>#3 (0.3 ms)</span></div></li>
+<li>SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (1) ORDER BY umeta_id ASC<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-load.php&#039;), require_once(&#039;wp-config.php&#039;), require_once(&#039;wp-settings.php&#039;), WP-&gt;init, wp_get_current_user, _wp_get_current_user, apply_filters(&#039;determine_current_user&#039;), WP_Hook-&gt;apply_filters, wp_validate_logged_in_cookie, wp_validate_auth_cookie, get_user_by, WP_User-&gt;init, WP_User-&gt;for_site, WP_User-&gt;get_caps_data, get_user_meta, get_metadata, update_meta_cache <span>#4 (0.1 ms)</span></div></li>
+<li>SELECT option_value FROM wp_options WHERE option_name = &#039;can_compress_scripts&#039; LIMIT 1<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-load.php&#039;), require_once(&#039;wp-config.php&#039;), require_once(&#039;wp-settings.php&#039;), do_action(&#039;init&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_widgets_init, do_action(&#039;widgets_init&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, WP_Widget_Factory-&gt;_register_widgets, WP_Widget-&gt;_register, WP_Widget_Text-&gt;_register_one, wp_add_inline_script, wp_scripts, WP_Scripts-&gt;__construct, WP_Scripts-&gt;init, do_action_ref_array(&#039;wp_default_scripts&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_default_packages, wp_register_tinymce_scripts, script_concat_settings, get_site_option, get_network_option, get_option <span>#5 (0.3 ms)</span></div></li>
+<li>SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = &#039;post&#039; AND (wp_posts.post_status = &#039;publish&#039; OR wp_posts.post_status = &#039;private&#039;)  ORDER BY wp_posts.post_date DESC LIMIT 0, 10<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), wp, WP-&gt;main, WP-&gt;query_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts <span>#6 (0.2 ms)</span></div></li>
+<li>SELECT FOUND_ROWS()<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), wp, WP-&gt;main, WP-&gt;query_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts, WP_Query-&gt;set_found_posts <span>#7 (0.1 ms)</span></div></li>
+<li>SELECT wp_posts.* FROM wp_posts WHERE ID IN (1153,1178,1177,1176,1174,1173,1016,1011,996,993)<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), wp, WP-&gt;main, WP-&gt;query_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts, _prime_post_caches <span>#8 (0.1 ms)</span></div></li>
+<li>SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN (&#039;category&#039;, &#039;post_tag&#039;, &#039;post_format&#039;) AND tr.object_id IN (993, 996, 1011, 1016, 1153, 1173, 1174, 1176, 1177, 1178) ORDER BY t.name ASC <br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), wp, WP-&gt;main, WP-&gt;query_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts, _prime_post_caches, update_post_caches, update_object_term_cache, wp_get_object_terms, get_terms, WP_Term_Query-&gt;query, WP_Term_Query-&gt;get_terms <span>#9 (0.1 ms)</span></div></li>
+<li>SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (993,996,1011,1016,1153,1173,1174,1176,1177,1178) ORDER BY meta_id ASC<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), wp, WP-&gt;main, WP-&gt;query_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts, _prime_post_caches, update_post_caches, update_postmeta_cache, update_meta_cache <span>#10 (0.3 ms)</span></div></li>
+<li>SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND wp_posts.ID IN (1241) AND wp_posts.post_type = &#039;post&#039; AND ((wp_posts.post_status = &#039;publish&#039;))  ORDER BY wp_posts.post_date DESC <br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), wp, WP-&gt;main, WP-&gt;query_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts, get_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts <span>#11 (0.4 ms)</span></div></li>
+<li>SELECT  t.*, tt.*, tr.object_id FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tt.taxonomy IN (&#039;category&#039;, &#039;post_tag&#039;, &#039;post_format&#039;) AND tr.object_id IN (1241) ORDER BY t.name ASC <br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), wp, WP-&gt;main, WP-&gt;query_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts, get_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts, update_post_caches, update_object_term_cache, wp_get_object_terms, get_terms, WP_Term_Query-&gt;query, WP_Term_Query-&gt;get_terms <span>#12 (2.1 ms)</span></div></li>
+<li>SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (1241) ORDER BY meta_id ASC<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), wp, WP-&gt;main, WP-&gt;query_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts, get_posts, WP_Query-&gt;query, WP_Query-&gt;get_posts, update_post_caches, update_postmeta_cache, update_meta_cache <span>#13 (0.1 ms)</span></div></li>
+<li>SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND wp_posts.post_name = &#039;irving-dev&#039; AND wp_posts.post_type = &#039;custom_css&#039; AND ((wp_posts.post_status = &#039;publish&#039; OR wp_posts.post_status = &#039;future&#039; OR wp_posts.post_status = &#039;draft&#039; OR wp_posts.post_status = &#039;pending&#039; OR wp_posts.post_status = &#039;trash&#039; OR wp_posts.post_status = &#039;auto-draft&#039; OR wp_posts.post_status = &#039;inherit&#039; OR wp_posts.post_status = &#039;request-pending&#039; OR wp_posts.post_status = &#039;request-confirmed&#039; OR wp_posts.post_status = &#039;request-failed&#039; OR wp_posts.post_status = &#039;request-completed&#039; OR wp_posts.post_status = &#039;private&#039;))  ORDER BY wp_posts.post_date DESC <br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-includes/template-loader.php&#039;), include(&#039;/themes/irving-dev/index.php&#039;), wp_head, do_action(&#039;wp_head&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_custom_css_cb, wp_get_custom_css, wp_get_custom_css_post, WP_Query-&gt;__construct, WP_Query-&gt;query, WP_Query-&gt;get_posts <span>#14 (0.4 ms)</span></div></li>
+<li>SHOW FULL COLUMNS FROM `wp_options`<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-includes/template-loader.php&#039;), include(&#039;/themes/irving-dev/index.php&#039;), wp_head, do_action(&#039;wp_head&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_custom_css_cb, wp_get_custom_css, wp_get_custom_css_post, set_theme_mod, update_option <span>#15 (0.4 ms)</span></div></li>
+<li>UPDATE `wp_options` SET `option_value` = &#039;a:3:{s:18:\&quot;nav_menu_locations\&quot;;a:0:{}s:16:\&quot;sidebars_widgets\&quot;;a:2:{s:4:\&quot;time\&quot;;i:1590010604;s:4:\&quot;data\&quot;;a:2:{s:19:\&quot;wp_inactive_widgets\&quot;;a:0:{}s:9:\&quot;sidebar-1\&quot;;a:6:{i:0;s:8:\&quot;search-2\&quot;;i:1;s:14:\&quot;recent-posts-2\&quot;;i:2;s:17:\&quot;recent-comments-2\&quot;;i:3;s:10:\&quot;archives-2\&quot;;i:4;s:12:\&quot;categories-2\&quot;;i:5;s:6:\&quot;meta-2\&quot;;}}}s:18:\&quot;custom_css_post_id\&quot;;i:-1;}&#039; WHERE `option_name` = &#039;theme_mods_irving-dev&#039;<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-includes/template-loader.php&#039;), include(&#039;/themes/irving-dev/index.php&#039;), wp_head, do_action(&#039;wp_head&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_custom_css_cb, wp_get_custom_css, wp_get_custom_css_post, set_theme_mod, update_option <span>#16 (0.7 ms)</span></div></li>
+<li>SELECT option_value FROM wp_options WHERE option_name = &#039;_site_transient_update_plugins&#039; LIMIT 1<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-includes/template-loader.php&#039;), include(&#039;/themes/irving-dev/index.php&#039;), wp_footer, do_action(&#039;wp_footer&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_admin_bar_render, do_action_ref_array(&#039;admin_bar_menu&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_admin_bar_updates_menu, wp_get_update_data, get_site_transient, get_site_option, get_network_option, get_option <span>#17 (0.2 ms)</span></div></li>
+<li>SELECT option_value FROM wp_options WHERE option_name = &#039;_site_transient_update_themes&#039; LIMIT 1<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-includes/template-loader.php&#039;), include(&#039;/themes/irving-dev/index.php&#039;), wp_footer, do_action(&#039;wp_footer&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_admin_bar_render, do_action_ref_array(&#039;admin_bar_menu&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_admin_bar_updates_menu, wp_get_update_data, get_site_transient, get_site_option, get_network_option, get_option <span>#18 (0.2 ms)</span></div></li>
+<li>SELECT option_value FROM wp_options WHERE option_name = &#039;_site_transient_update_core&#039; LIMIT 1<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-includes/template-loader.php&#039;), include(&#039;/themes/irving-dev/index.php&#039;), wp_footer, do_action(&#039;wp_footer&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_admin_bar_render, do_action_ref_array(&#039;admin_bar_menu&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_admin_bar_updates_menu, wp_get_update_data, wp_get_translation_updates, get_site_transient, get_site_option, get_network_option, get_option <span>#19 (0.4 ms)</span></div></li>
+<li><br />
+		SELECT comment_approved, COUNT( * ) AS total<br />
+		FROM wp_comments<br />
+		<br />
+		GROUP BY comment_approved<br />
+	<br/><div class='qdebug'>require(&#039;wp-blog-header.php&#039;), require_once(&#039;wp-includes/template-loader.php&#039;), include(&#039;/themes/irving-dev/index.php&#039;), wp_footer, do_action(&#039;wp_footer&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_admin_bar_render, do_action_ref_array(&#039;admin_bar_menu&#039;), WP_Hook-&gt;do_action, WP_Hook-&gt;apply_filters, wp_admin_bar_comments_menu, wp_count_comments, get_comment_count <span>#20 (0.3 ms)</span></div></li>
+</ol>					</div>
+
+					
+					<div id="debug-menu-target-Debug_Bar_WP_Query" class="debug-menu-target" >
+						<div id='debug-bar-wp-query'><h2><span>Queried Object ID:</span>0</h2>
+<h2><span>Query Type:</span>Front Page</h2>
+<h2><span>Query Template:</span>index.php</h2>
+<h2><span>Show on Front:</span>posts</h2>
+<div class="clear"></div><h3>Query Arguments:</h3><p>None</p><h3>Query SQL:</h3><p>SELECT SQL_CALC_FOUND_ROWS  wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = &#039;post&#039; AND (wp_posts.post_status = &#039;publish&#039; OR wp_posts.post_status = &#039;private&#039;)  ORDER BY wp_posts.post_date DESC LIMIT 0, 10</p></div>					</div>
+
+					
+					<div id="debug-menu-target-Debug_Bar_Request" class="debug-menu-target" >
+						<div id='debug-bar-request'><h3>Request:</h3><p>None</p><h3>Query String:</h3><p>None</p><h3>Matched Rewrite Rule:</h3><p>None</p><h3>Matched Rewrite Query:</h3><p>None</p></div>					</div>
+
+					
+					<div id="debug-menu-target-Debug_Bar_Object_Cache" class="debug-menu-target" >
+						<div id='object-cache-stats'><p><strong>Cache Hits:</strong> 691<br /><strong>Cache Misses:</strong> 49<br /></p><ul><li><strong>Group:</strong> options - ( 30.18k )</li><li><strong>Group:</strong> default - ( 0.03k )</li><li><strong>Group:</strong> site-options - ( 0.03k )</li><li><strong>Group:</strong> users - ( 0.40k )</li><li><strong>Group:</strong> userlogins - ( 0.03k )</li><li><strong>Group:</strong> useremail - ( 0.04k )</li><li><strong>Group:</strong> userslugs - ( 0.03k )</li><li><strong>Group:</strong> user_meta - ( 7.44k )</li><li><strong>Group:</strong> posts - ( 26.72k )</li><li><strong>Group:</strong> terms - ( 21.47k )</li><li><strong>Group:</strong> post_tag_relationships - ( 0.52k )</li><li><strong>Group:</strong> category_relationships - ( 0.27k )</li><li><strong>Group:</strong> post_format_relationships - ( 0.14k )</li><li><strong>Group:</strong> post_meta - ( 2.85k )</li><li><strong>Group:</strong> counts - ( 0.18k )</li></ul></div>					</div>
+
+					
+					<div id="debug-menu-target-Debug_Bar_JS" class="debug-menu-target" >
+						<div id="debug-bar-js"><h2><span>Total Errors:</span><span id='debug-bar-js-error-count'>0</span></h2>
+<ol class="debug-bar-js-list" id="debug-bar-js-errors"></ol>
+</div>					</div>
+
+					
+					<div id="debug-menu-target-Debug_Bar_Roles_And_Capabilities_Panel" class="debug-menu-target" >
+								<style type="text/css">
+		#dbrac-output table {
+			border-top: 1px solid #aaa;
+			border-left: 1px solid #aaa;
+			border-collapse: collapse;
+			font-size: 1.1em;
+		}
+		#dbrac-output th,
+		#dbrac-output td {
+			padding: 5px 8px;
+			border-bottom: 1px solid #aaa;
+			border-right: 1px solid #aaa;
+		}
+		#dbrac-output td {
+			text-align: center;
+		}
+		#dbrac-output tbody tr:hover th,
+		#dbrac-output tbody tr:hover td {
+			background: white;
+		}
+		</style>
+		<div id="dbrac-output">
+			<table>
+				<thead>
+					<tr>
+						<th>Capability</th>
+												<th>Administrator</th>
+												<th>Editor</th>
+												<th>Author</th>
+												<th>Contributor</th>
+												<th>Subscriber</th>
+											</tr>
+				</thead>
+				<tbody>
+											<tr>
+							<th scope="row">switch_themes</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_themes</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">activate_plugins</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_plugins</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_users</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_files</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">manage_options</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">moderate_comments</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">manage_categories</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">manage_links</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">upload_files</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">import</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">unfiltered_html</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_posts</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_others_posts</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_published_posts</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">publish_posts</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_pages</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">read</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td>						</tr>
+											<tr>
+							<th scope="row">level_10</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">level_9</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">level_8</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">level_7</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">level_6</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">level_5</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">level_4</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">level_3</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">level_2</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">level_1</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">level_0</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td>						</tr>
+											<tr>
+							<th scope="row">edit_others_pages</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_published_pages</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">publish_pages</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_pages</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_others_pages</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_published_pages</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_posts</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_others_posts</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_published_posts</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_private_posts</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_private_posts</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">read_private_posts</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_private_pages</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_private_pages</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">read_private_pages</th>
+							<td class="on">&#10003;</td><td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_users</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">create_users</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">unfiltered_upload</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_dashboard</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">update_plugins</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_plugins</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">install_plugins</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">update_themes</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">install_themes</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">update_core</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">list_users</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">remove_users</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">promote_users</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">edit_theme_options</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">delete_themes</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">export</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+											<tr>
+							<th scope="row">srm_manage_redirects</th>
+							<td class="on">&#10003;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td><td class="off">&nbsp;</td>						</tr>
+									</tbody>
+			</table>
+		</div>
+							</div>
+
+								</div>
+
+                    </div>
+                </body>
+                </html>

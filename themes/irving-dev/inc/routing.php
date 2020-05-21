@@ -91,6 +91,9 @@ function build_components_endpoint(
 	// Set up context providers.
 	$data['providers'] = [];
 
+	// Add scripts.
+	$head->add_script( site_url( '/wp-includes/js/admin-bar.min.js' ) );
+
 	// Setup the page data based on routing.
 	$data['page'] = $template->to_array()['children'];
 
