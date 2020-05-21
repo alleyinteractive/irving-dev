@@ -93,7 +93,7 @@ script:
   - bash bin/script-phpcs.sh theme irving-dev
   - bash bin/script-phpunit.sh theme irving-dev
   - bash bin/script-build.sh themes/irving-dev
-  - bash bin/script-build.sh private/irving
+  - bash bin/script-irving-build.sh private/irving
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
