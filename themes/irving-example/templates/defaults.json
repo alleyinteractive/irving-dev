@@ -1,15 +1,15 @@
 {
 	"defaults": [
 		{
-			"name": "irving/header-wrapper",
+			"name": "irving-layouts/header-wrapper",
 			"children": [
 				{ "name": "template-parts/header-left" },
 				{ "name": "template-parts/header-center" }
 			]
 		},
-		{ "name": "irving/body-wrapper" },
+		{ "name": "irving-layouts/body-wrapper" },
 		{
-			"name": "irving/footer-wrapper",
+			"name": "irving-layouts/footer-wrapper",
 			"children": [
 				{ "name": "template-parts/footer" }
 			]
