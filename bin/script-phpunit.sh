@@ -3,7 +3,7 @@
 set -e
 
 # Bail early if we are building.
-if [[ $TEST_BUILD == "1" ]]; then
+if [[ $BUILD == "1" ]]; then
 	exit 0
 fi
 

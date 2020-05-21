@@ -41,7 +41,7 @@ matrix:
   include:
     - language: node_js
       node_js: 12
-      env: TEST_BUILD=1
+      env: BUILD=1
     - if: type = pull_request
       env: WP_VERSION=trunk WP_THEME=irving-dev WP_PHPCS=1 PHP_LINT=1
 
@@ -50,14 +50,10 @@ matrix:
 before_script:
   - |
     # Fork for build vs. test.
-    if [[ $TEST_BUILD == "1" ]]; then
+    if [[ $BUILD == "1" ]]; then
       echo "Installing node 12 and npm 6 ..."
       nvm install 12
       npm i -g npm@6
-      export ROOT_URL=https://irving-production.herokuapp.com
-      export API_ROOT_URL=https://live-irving.alleydev.com/wp-json/irving/v1
-      export APP_ROOT=$TRAVIS_BUILD_DIR/private/irving
-      echo "Exported APP_ROOT $APP_ROOT"
     else
       echo "Setting up environment for running tests ..."
 
@@ -98,7 +94,7 @@ script:
   - bash bin/script-php-lint.sh theme irving-dev
   - bash bin/script-phpcs.sh theme irving-dev
   - bash bin/script-phpunit.sh theme irving-dev
-  # - bash bin/script-build.sh themes/irving-dev
+  - bash bin/script-build.sh themes/irving-dev
   - bash bin/script-build.sh private/irving
 
 # Receive notifications for build results.
