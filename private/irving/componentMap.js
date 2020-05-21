@@ -16,8 +16,6 @@ export default {
   'irving/fragment': Fragment,
   'irving/header-wrapper': Fragment,
   'irving/helmet': Helmet,
-  'irving/passthrough': Fragment,
-  'irving/text': Fragment,
   App,
   ...Object.keys(materialComponents)
     .reduce((acc, key) => {
