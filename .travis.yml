@@ -49,7 +49,7 @@ before_script:
   - |
     # Fork for build vs. test.
     if [[ $BUILD == "1" ]]; then
-      echo "Installing node 10 and npm 6 ..."
+      echo "Installing node 12 and npm 6 ..."
       nvm install 12
       npm i -g npm@6
     else
@@ -92,7 +92,8 @@ script:
   - bash bin/script-php-lint.sh theme irving-dev
   - bash bin/script-phpcs.sh theme irving-dev
   - bash bin/script-phpunit.sh theme irving-dev
-  - bash bin/script-build.sh theme irving-dev
+  - bash bin/script-build.sh themes/irving-dev
+  - bash bin/script-build.sh private/irving
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
