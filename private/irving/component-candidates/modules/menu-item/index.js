@@ -12,6 +12,8 @@ import * as defaultStyles from './themes/default';
  */
 const MenuItem = (props) => {
   const {
+    attributeTitle,
+    classes,
     children,
     id,
     target,
@@ -23,9 +25,9 @@ const MenuItem = (props) => {
   const { Wrapper, Dropdown } = theme;
 
   return (
-    <Wrapper key={id}>
+    <Wrapper key={id} classNames={classes}>
       <li>
-        <a href={url} target={target}>
+        <a href={url} target={target} title={attributeTitle}>
           {title}
         </a>
         {children && (
@@ -39,16 +41,18 @@ const MenuItem = (props) => {
 };
 
 MenuItem.defaultProps = {
-  // attribute: '',
-  // classes: [],
-  // description: '',
+  attributeTitle: '',
+  classes: [],
   target: '',
   title: '',
   url: '',
 };
 
 MenuItem.propTypes = {
-  // attribute: PropTypes.string,
+  /**
+   * Value of the title attribute.
+   */
+  attributeTitle: PropTypes.string,
   /**
    * Children of the component.
    */
@@ -56,12 +60,11 @@ MenuItem.propTypes = {
   /**
    * Classnames.
    */
-  // classes: PropTypes.array,
+  classes: PropTypes.array,
   /**
    * Unique key.
    */
   id: PropTypes.number.isRequired,
-  // parent_id: PropTypes.int,
   /**
    * Target attribute value.
    */

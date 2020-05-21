@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
+  width: 100%;
 `;
 
 export const Inner = styled.ul`

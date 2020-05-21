@@ -3,7 +3,7 @@
 	"category": "Modules",
 	"description": "Render a single menu item.",
 	"config": {
-		"attribute": {
+		"attribute_title": {
 			"type": "string"
 		},
 		"classes": {

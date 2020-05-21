@@ -54,13 +54,13 @@ function convert_menu_to_components( array $menu_items, $parent_id = 0 ) {
 			'irving-modules/menu-item',
 			[
 				'config' => [
-					'attribute' => (string) $menu_item->attr_title,
-					'classes'   => array_filter( (array) $menu_item->classes ),
-					'id'        => absint( $menu_item->ID ),
-					'parent_id' => absint( $menu_item->menu_item_parent ),
-					'target'    => (string) $menu_item->target,
-					'title'     => (string) $menu_item->title,
-					'url'       => (string) $menu_item->url ?? get_the_permalink( $menu_item ),
+					'attribute_title' => (string) $menu_item->attr_title,
+					'classes'         => array_filter( (array) $menu_item->classes ),
+					'id'              => absint( $menu_item->ID ),
+					'parent_id'       => absint( $menu_item->menu_item_parent ),
+					'target'          => (string) $menu_item->target,
+					'title'           => (string) $menu_item->title,
+					'url'             => (string) $menu_item->url ?? get_the_permalink( $menu_item ),
 				]
 			]
 		);
