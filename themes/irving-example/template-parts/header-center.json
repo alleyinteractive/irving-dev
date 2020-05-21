@@ -5,7 +5,9 @@
 			"name": "material/toolbar",
 			"config": {
 				"style": {
-					"border-bottom": "1px solid #AAAAA"
+					"border-bottom": "1px solid #AAAAA",
+					"display": "flex",
+					"flex-direction": "column"
 				}
 			},
 			"children": [
@@ -60,7 +62,7 @@
 			},
 			"children": [
 				{
-					"name": "site/menu",
+					"name": "irving-modules/menu",
 					"config": {
 						"location": "primary"
 					}
