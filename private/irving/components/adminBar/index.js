@@ -1,12 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import withThemes from '@irvingjs/styled/components/withThemes';
+import * as defaultStyles from './themes/default';
 
 const AdminBar = (props) => {
   const {
     content,
+    iframeSrc,
+    theme,
   } = props;
+  const { Iframe } = theme;
 
   console.log('content', content);
+  console.log('iframeSrc', iframeSrc);
+
+  if (iframeSrc) {
+    return (
+      <Iframe
+        title="Admin Bar Iframe"
+        src={iframeSrc}
+      />
+    );
+  }
 
   /* eslint-disable */
   return (
@@ -20,8 +35,21 @@ const AdminBar = (props) => {
   );
 };
 
-AdminBar.propTypes = {
-  content: PropTypes.string.isRequired,
+AdminBar.defaultProps = {
+  theme: 'default',
 };
 
-export default AdminBar;
+AdminBar.propTypes = {
+  content: PropTypes.string.isRequired,
+  iframeSrc: PropTypes.string.isRequired,
+  /**
+   * Theme (styles) to apply to the component.
+   */
+  theme: PropTypes.object.isRequired,
+};
+
+const themeMap = {
+  default: defaultStyles,
+};
+
+export default withThemes(themeMap)(AdminBar);

@@ -42,7 +42,8 @@ class Article extends \WP_Components\Component {
 	 */
 	public function get_components(): array {
 		return [
-			( new Admin_Bar )->set_post( $this->wp_post_get_id() ),
+			// ( new Admin_Bar )->set_post( $this->wp_post_get_id() ),
+			( new Admin_Bar )->set_iframe(),
 			( new \WP_Components\HTML() )->set_config( 'content', $this->post->post_content ),
 		];
 	}

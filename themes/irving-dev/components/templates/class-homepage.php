@@ -29,6 +29,7 @@ class Homepage extends \WP_Components\Component {
 			( new \WP_Components\Body() )
 				->append_children(
 					[
+						( new \Irving_Dev\Components\Admin_Bar\Admin_Bar )->set_iframe(),
 						( new \WP_Components\HTML() )->set_config( 'content', esc_html__( 'this is your homepage', 'irving-dev' ) ),
 					]
 				),

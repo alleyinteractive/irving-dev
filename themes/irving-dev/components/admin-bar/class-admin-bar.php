@@ -111,6 +111,9 @@ class Admin_Bar extends \WP_Components\Component {
 			</div>
 			<a class=\"screen-reader-shortcut\" href=\"https://irving-dev.alley.test/wp-login.php?action=logout&#038;_wpnonce=1536482ee4\">Log Out</a>\n\t\t\t\t\t
 		  </div>",
+		  // Kill the manual test.
+		  'content'    => '',
+		  'iframe_src' => '',
 		];
 	}
 
@@ -157,5 +160,23 @@ class Admin_Bar extends \WP_Components\Component {
 		return $this->set_config( 'content', $admin_bar );
 
 		// return $this;
+	}
+
+	/**
+	 * Iframe the admin bar.
+	 *
+	 * @todo make this more robust, maybe just use the $path to get the iframe src.
+	 * @todo add target="_parent" to the links.
+	 * @return self
+	 */
+	public function set_iframe(): self {
+
+		if ( get_the_ID() ) {
+			$link = str_replace( home_url(), site_url(), get_permalink( get_the_ID() ) );
+			return $this->set_config( 'iframe_src', $link );
+		}
+
+		// Fallback.
+		return $this->set_config( 'iframe_src', 'https://irving-dev.alley.test' );
 	}
 }
