@@ -22,10 +22,10 @@ const MenuItem = (props) => {
     url,
   } = props;
 
-  const { Wrapper, Dropdown } = theme;
+  const { Dropdown } = theme;
 
   return (
-    <Wrapper key={id} classNames={classes}>
+    <span key={id} classnames={classes}>
       <li>
         <a href={url} target={target} title={attributeTitle}>
           {title}
@@ -36,7 +36,7 @@ const MenuItem = (props) => {
           </Dropdown>
         )}
       </li>
-    </Wrapper>
+    </span>
   );
 };
 

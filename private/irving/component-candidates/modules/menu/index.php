@@ -21,17 +21,34 @@ if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 get_registry()->register_component_from_config(
 	__DIR__ . '/component',
 	[
-		'callback' => function( Component $component ) {
+		'callback' => function( Component $menu ) {
 
-			// Get the menu items for a given location.
-			$menu_items = (array) wp_get_nav_menu_items(
-				get_nav_menu_locations()[ $component->get_config( 'location' ) ] ?? 0
-			);
+			// Menu location.
+			$location    = $menu->get_config( 'location' );
+			$menu_id     = get_nav_menu_locations()[ $menu->get_config( 'location' ) ] ?? 0;
+			$menu_object = wp_get_nav_menu_object( $menu_id );
+
+			// Invalid.
+			if ( ! $menu_object instanceof \WP_Term ) {
+				return $menu->append_child(
+					( new Component( 'irving/text' ) )
+						->set_config(
+							'content',
+							sprintf(
+								esc_html__( 'No menu configured for `%1$s`.', 'irving' ),
+								esc_html( $location )
+							)
+						)
+					);
+			}
+
+			// Include the menu name.
+			$menu->set_config( 'menu_name', $menu_object->name ?? 'Default' );
 
 			// Recursively build the children components.
-			$component->set_children( convert_menu_to_components( $menu_items ) );
+			$menu->set_children( convert_menu_to_components( (array) wp_get_nav_menu_items( $menu_id ) ) );
 
-			return $component;
+			return $menu;
 		},
 	]
 );
@@ -48,6 +65,11 @@ function convert_menu_to_components( array $menu_items, $parent_id = 0 ) {
 	$menu = [];
 
 	foreach ( $menu_items as $menu_item ) {
+
+		// Validate the menu item object.
+		if ( ! $menu_item instanceof \WP_Post ) {
+			continue;
+		}
 
 		// Convert the menu class instance into a simpler array format.
 		$menu_item = new Component(

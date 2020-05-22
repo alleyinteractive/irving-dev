@@ -2,8 +2,21 @@
 	"name": "irving-modules/menu",
 	"category": "Modules",
 	"description": "Output links as menu items.",
+	"theme_options": [
+		"default",
+		"default_vertical"
+	],
 	"config": {
+		"display_name": {
+			"type": "bool",
+			"required": true,
+			"default_value": false
+		},
 		"location": {
+			"type": "string",
+			"required": true
+		},
+		"menu_name": {
 			"type": "string",
 			"required": true
 		}

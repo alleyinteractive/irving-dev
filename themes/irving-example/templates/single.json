@@ -6,7 +6,13 @@
 				{
 					"name": "irving-common/fragment",
 					"children": [
-						"single.json"
+						"single.json",
+						{
+							"name": "meta",
+							"config": {
+								"key": "original_post_id"
+							}
+						}
 					]
 				}
 			]
