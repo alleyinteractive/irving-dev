@@ -17,3 +17,6 @@
 .DS_Store
 
 npm-debug.log*
+
+# Local, in-progress components.
+/component-betas
