@@ -1,0 +1,11 @@
+{
+	"name": "irving-modules/menu",
+	"category": "Modules",
+	"description": "Output links as menu items.",
+	"config": {
+		"location": {
+			"type": "string",
+			"required": true
+		}
+	}
+}

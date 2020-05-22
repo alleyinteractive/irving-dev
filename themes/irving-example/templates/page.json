@@ -1,10 +1,10 @@
 {
 	"page": [
 		{
-			"name": "irving/body-wrapper",
+			"name": "irving-layouts/body-wrapper",
 			"children": [
 				{
-					"name": "irving/fragment",
+					"name": "irving-common/fragment",
 					"children": [
 						"page.json"
 					]
