@@ -28,8 +28,7 @@ class Admin_Bar extends \WP_Components\Component {
 	 */
 	public function default_config(): array {
 		return [
-			'content'      => '',
-			'test_content' => '<a href="https://www.google.com/">whats up</a>',
+			// Manual test - this content has been cleaned up slightly and works.
 			'content' => "<div id=\"wpadminbar\" class=\"nojq nojs\">
 			<a class=\"screen-reader-shortcut\" href=\"#wp-toolbar\" tabindex=\"1\">Skip to toolbar</a>
 			<div class=\"quicklinks\" id=\"wp-toolbar\" role=\"navigation\" aria-label=\"Toolbar\">
@@ -122,6 +121,7 @@ class Admin_Bar extends \WP_Components\Component {
 	 */
 	public function post_has_set(): self {
 		// Temp to deal with not being properly "logged in".
+		// @todo figure out why JWT auth doesn't work for me locally.
 		$user = get_user_by( 'login', 'alley' );
 		wp_clear_auth_cookie();
 		wp_set_current_user( $user->ID );
@@ -134,13 +134,28 @@ class Admin_Bar extends \WP_Components\Component {
 		ob_start();
 		wp_admin_bar_render();
 		$admin_bar = ob_get_clean();
-		
+
+		// Alternate, since the above doesn't work due to wp_is_json_request() issue.
+		ob_start();
+		global $wp_admin_bar;
+		require_once ABSPATH . WPINC . '/class-wp-admin-bar.php';
+		$wp_admin_bar = new \WP_Admin_Bar;
+		$wp_admin_bar->initialize();
+		$wp_admin_bar->add_menus();
+		do_action_ref_array( 'admin_bar_menu', array( &$wp_admin_bar ) );
+		$wp_admin_bar->render();
+		$admin_bar = ob_get_clean();
+
+		// JS.
 		$wp_scripts = wp_scripts();
 		$admin_bar_dep = $wp_scripts->registered['admin-bar'] ?? '';
 		$admin_bar_script = $admin_bar_dep->src ?? '';
 		// error_log( $admin_bar_script );
 		
-		// call $head->add_script (if the user is logged in) for the $admin_bar_script->src as well as any dependencies
+		// @todo call $head->add_script for the $admin_bar_script->src as well as any dependencies
+
 		return $this->set_config( 'content', $admin_bar );
+
+		// return $this;
 	}
 }
