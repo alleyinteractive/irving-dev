@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withThemes from '@irvingjs/styled/components/withThemes';
+import MenuItem from './menuItem';
 import * as defaultStyles from './themes/default';
 import * as defaultVerticalStyles from './themes/defaultVertical';
 
@@ -13,14 +14,13 @@ const Menu = (props) => {
     displayName,
     menuName,
     location,
-    theme,
+    theme = defaultStyles,
   } = props;
 
   const {
     Wrapper,
     NameWrapper,
     Inner,
-    ItemWrapper,
   } = theme;
 
   return (
@@ -30,13 +30,15 @@ const Menu = (props) => {
           {menuName}
         </NameWrapper>
       )}
-      <Inner>
-        {children.map((child) => (
-          <ItemWrapper>
-            {child}
-          </ItemWrapper>
-        ))}
-      </Inner>
+      {(0 !== children.length) ? (
+        <Inner>
+          {children.map((child) => (
+            <MenuItem {...child.props} theme={theme} />
+          ))}
+        </Inner>
+      ) : (
+        <div>{`No menu configured for \`${location}\`.`}</div>
+      )}
     </Wrapper>
   );
 };
@@ -45,6 +47,7 @@ Menu.defaultProps = {
   displayName: false,
   location: '',
   menuName: '',
+  theme: defaultStyles,
 };
 
 Menu.propTypes = {
@@ -67,12 +70,12 @@ Menu.propTypes = {
   /**
    * Theme (styles) to apply to the component.
    */
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object,
 };
 
-const themeMap = {
+const menuThemeMap = {
   default: defaultStyles,
   defaultVertical: defaultVerticalStyles,
 };
 
-export default withThemes(themeMap)(Menu);
+export default withThemes(menuThemeMap)(Menu);

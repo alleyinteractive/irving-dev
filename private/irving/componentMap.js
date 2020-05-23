@@ -1,11 +1,10 @@
 import { Helmet } from 'react-helmet';
 import * as materialComponents from '@material-ui/core';
-// import * as materialLabComponents from '@material-ui/lab';
 import App from 'component-candidates/layouts/app';
 import Fragment from 'component-candidates/common/fragment';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
-import MenuItem from 'component-candidates/modules/menu-item';
+// import MenuItem from 'component-candidates/modules/menu-item';
 
 // Icons
 import { Search as SearchIcon } from '@material-ui/icons';
@@ -22,7 +21,7 @@ export default {
   'irving-layouts/header-wrapper': Fragment,
   'irving-modules/logo': Logo,
   'irving-modules/menu': Menu,
-  'irving-modules/menu-item': MenuItem,
+  // 'irving-modules/menu-item': MenuItem,
   'irving/helmet': Helmet,
   'irving/html': Fragment,
   'material-icon/search': SearchIcon,
@@ -33,16 +32,4 @@ export default {
       return { ...acc };
     },
     {}),
-  // ...Object.keys(materialLabComponents)
-  //   .reduce((acc, key) => {
-  //     acc[`material-lab/${transformName(key)}`] = materialLabComponents[key];
-  //     return { ...acc };
-  //   },
-  //   {}),
-  // ...Object.keys(materialIconsComponents)
-  //   .reduce((acc, key) => {
-  //     acc[`material-icon/${transformName(key)}`] = materialIconsComponents[key];
-  //     return { ...acc };
-  //   },
-  //   {}),
 };

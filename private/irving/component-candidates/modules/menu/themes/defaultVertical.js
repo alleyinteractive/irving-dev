@@ -41,4 +41,8 @@ export const ItemWrapper = styled.span`
     }
   }
 `;
+
+export const Dropdown = styled.ul`
+  display: none;
+`;
 /* eslint-enable */

@@ -28,18 +28,9 @@ get_registry()->register_component_from_config(
 			$menu_id     = get_nav_menu_locations()[ $menu->get_config( 'location' ) ] ?? 0;
 			$menu_object = wp_get_nav_menu_object( $menu_id );
 
-			// Invalid.
+			// Invalid menu.
 			if ( ! $menu_object instanceof \WP_Term ) {
-				return $menu->append_child(
-					( new Component( 'irving/text' ) )
-						->set_config(
-							'content',
-							sprintf(
-								esc_html__( 'No menu configured for `%1$s`.', 'irving' ),
-								esc_html( $location )
-							)
-						)
-					);
+				return $menu->set_children( [] );
 			}
 
 			// Include the menu name.
