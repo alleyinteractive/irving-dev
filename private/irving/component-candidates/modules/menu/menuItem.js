@@ -8,8 +8,6 @@ import * as defaultStyles from './themes/default';
  * Render a single menu item.
  *
  * @todo Replace <a> with a proper <Link> component.
- * @todo Can we manage _all_ of the css for this component using the parent
- * <Menu> component? This would make it easier to style the whole thing.
  */
 const MenuItem = (props) => {
   const {

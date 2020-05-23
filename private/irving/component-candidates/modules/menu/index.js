@@ -30,14 +30,14 @@ const Menu = (props) => {
           {menuName}
         </NameWrapper>
       )}
-      {(0 !== children.length) ? (
+      {(0 === children.length) ? (
+        <div>{`No menu configured for \`${location}\`.`}</div>
+      ) : (
         <Inner>
           {children.map((child) => (
             <MenuItem {...child.props} theme={theme} />
           ))}
         </Inner>
-      ) : (
-        <div>{`No menu configured for \`${location}\`.`}</div>
       )}
     </Wrapper>
   );
