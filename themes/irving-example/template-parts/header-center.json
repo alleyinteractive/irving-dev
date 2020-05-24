@@ -27,7 +27,7 @@
 					}
 				},
 				"children": [
-					{ "name": "irving-modules/logo" }
+					{ "name": "irving/logo" }
 				]
 			},
 			{
@@ -58,7 +58,7 @@
 		},
 		"children": [
 			{
-				"name": "irving-modules/menu",
+				"name": "irving/menu",
 				"config": {
 					"location": "primary"
 				}
