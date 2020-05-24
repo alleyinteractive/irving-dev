@@ -1,0 +1,9 @@
+{
+	"name": "irving/post-excerpt",
+	"description": "Get the post excerpt",
+	"config": {
+		"content": {
+			"type": "string"
+		}
+	}
+}

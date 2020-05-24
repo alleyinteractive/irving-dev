@@ -1,0 +1,9 @@
+{
+	"name": "irving/post-content",
+	"description": "Get the post content.",
+	"config": {
+		"content": {
+			"type": "string"
+		}
+	}
+}
