@@ -1,0 +1,15 @@
+{
+	"name": "irving/post-title",
+	"description": "Get the post title",
+	"config": {
+		"content": {
+			"type": "string"
+		},
+		"post": {
+			"type": "array"
+		}
+	},
+	"use_context": {
+		"irving/post": "post"
+	}
+}

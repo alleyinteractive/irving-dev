@@ -4,6 +4,7 @@ import App from 'component-candidates/layouts/app';
 import Fragment from 'component-candidates/common/fragment';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
+import Byline from 'component-candidates/wordpress/post/byline';
 // import MenuItem from 'component-candidates/modules/menu-item';
 
 // Icons
@@ -21,6 +22,10 @@ export default {
   'irving-layouts/header-wrapper': Fragment,
   'irving-modules/logo': Logo,
   'irving-modules/menu': Menu,
+  'irving/post-byline': Byline,
+  'irving/post-featured-media': Fragment,
+  'irving/post-list': Fragment,
+  'irving/post': Fragment,
   // 'irving-modules/menu-item': MenuItem,
   'irving/helmet': Helmet,
   'irving/html': Fragment,

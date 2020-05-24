@@ -10,7 +10,7 @@
 		"display_name": {
 			"type": "bool",
 			"required": true,
-			"default_value": false
+			"default": false
 		},
 		"location": {
 			"type": "string",
