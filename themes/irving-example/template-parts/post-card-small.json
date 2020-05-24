@@ -13,8 +13,7 @@
 		{
 			"name": "material/link",
 			"config": {
-				"underline": "none",
-				"href": "{{post/permalink}}"
+				"underline": "none"
 			},
 			"children": [
 				{
