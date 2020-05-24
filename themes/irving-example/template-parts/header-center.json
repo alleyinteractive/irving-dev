@@ -21,7 +21,7 @@
 				"config": {
 					"color": "inherit",
 					"align": "center",
-					"noWrap": true,
+					"no_wrap": true,
 					"style": {
 						"flex": 1
 					}
@@ -52,8 +52,8 @@
 			"component": "nav",
 			"variant": "dense",
 			"style": {
-				"justifyContent": "space-around",
-				"overflowX": "auto"
+				"justify_content": "space-around",
+				"overflow_x": "auto"
 			}
 		},
 		"children": [
