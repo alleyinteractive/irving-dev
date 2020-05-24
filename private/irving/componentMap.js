@@ -4,7 +4,7 @@ import App from 'component-candidates/layouts/app';
 import Fragment from 'component-candidates/common/fragment';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
-import Byline from 'component-candidates/wordpress/post/byline';
+import Byline from 'component-betas/wordpress/post/byline';
 
 // Icons
 import { Search as SearchIcon } from '@material-ui/icons';
