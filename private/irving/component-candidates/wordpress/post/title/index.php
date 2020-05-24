@@ -4,6 +4,8 @@
  *
  * Get the post title.
  *
+ * @todo Add support for template context.
+ *
  * @package Irving_Components
  */
 
@@ -28,6 +30,8 @@ get_registry()->register_component_from_config(
 
 			return $component
 				->set_config( 'content', html_entity_decode( get_the_title( $post_id ) ) )
+				// Temporarily map this to irving/text so it gets converted to
+				// a text dom node upon render.
 				->set_name( 'irving/text' );
 		},
 	]

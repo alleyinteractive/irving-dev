@@ -4,6 +4,9 @@
  *
  * Get the post concept.
  *
+ * @todo Add support for template context.
+ * @todo Update the output to handle classic HTML and Gutenberg blocks.
+ *
  * @package Irving_Components
  */
 
@@ -30,6 +33,8 @@ get_registry()->register_component_from_config(
 
 			return $component
 				->set_config( 'content', html_entity_decode( $post_content ) )
+				// Temporarily map this to irving/text so it gets converted to
+				// a text dom node upon render.
 				->set_name( 'irving/text' );
 		},
 	]
