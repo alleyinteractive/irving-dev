@@ -5,7 +5,6 @@ import Fragment from 'component-candidates/common/fragment';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
 import Byline from 'component-candidates/wordpress/post/byline';
-// import MenuItem from 'component-candidates/modules/menu-item';
 
 // Icons
 import { Search as SearchIcon } from '@material-ui/icons';
@@ -26,7 +25,6 @@ export default {
   'irving/post-featured-media': Fragment,
   'irving/post-list': Fragment,
   'irving/post': Fragment,
-  // 'irving-modules/menu-item': MenuItem,
   'irving/helmet': Helmet,
   'irving/html': Fragment,
   'material-icon/search': SearchIcon,
