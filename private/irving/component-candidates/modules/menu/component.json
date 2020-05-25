@@ -1,5 +1,5 @@
 {
-	"name": "irving-modules/menu",
+	"name": "irving/menu",
 	"category": "Modules",
 	"description": "Output links as menu items.",
 	"config": {
