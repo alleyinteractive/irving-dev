@@ -73,9 +73,9 @@ Menu.propTypes = {
   theme: PropTypes.object,
 };
 
-const menuThemeMap = {
+const themeMap = {
   default: defaultStyles,
   defaultVertical: defaultVerticalStyles,
 };
 
-export default withThemes(menuThemeMap)(Menu);
+export default withThemes(themeMap)(Menu);
