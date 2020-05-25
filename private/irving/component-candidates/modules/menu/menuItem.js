@@ -8,11 +8,6 @@ import * as defaultStyles from './themes/default';
  * Render a single menu item.
  *
  * @todo Replace <a> with a proper <Link> component.
-<<<<<<< HEAD
-=======
- * @todo Can we manage _all_ of the css for this component using the parent
- * <Menu> component? This would make it easier to style the whole thing.
->>>>>>> production
  */
 const MenuItem = (props) => {
   const {
@@ -27,10 +22,6 @@ const MenuItem = (props) => {
     url,
   } = props;
 
-<<<<<<< HEAD
-=======
-<<<<<<<< HEAD:private/irving/component-candidates/modules/menu/menuItem.js
->>>>>>> production
   const {
     ItemWrapper,
     Dropdown,
@@ -38,15 +29,6 @@ const MenuItem = (props) => {
 
   return (
     <ItemWrapper key={id} classnames={classes}>
-<<<<<<< HEAD
-=======
-========
-  const { Dropdown } = theme;
-
-  return (
-    <span key={id} classnames={classes}>
->>>>>>>> production:private/irving/component-candidates/modules/menu-item/index.js
->>>>>>> production
       <li>
         <a href={url} target={target} title={attributeTitle}>{title}</a>
         {children && (
@@ -61,15 +43,7 @@ const MenuItem = (props) => {
           </Dropdown>
         )}
       </li>
-<<<<<<< HEAD
     </ItemWrapper>
-=======
-<<<<<<<< HEAD:private/irving/component-candidates/modules/menu/menuItem.js
-    </ItemWrapper>
-========
-    </span>
->>>>>>>> production:private/irving/component-candidates/modules/menu-item/index.js
->>>>>>> production
   );
 };
 
@@ -119,11 +93,7 @@ MenuItem.propTypes = {
   title: PropTypes.string,
   /**
    * URL.
-<<<<<<< HEAD
-   1*/
-=======
    */
->>>>>>> production
   url: PropTypes.string,
 };
 
