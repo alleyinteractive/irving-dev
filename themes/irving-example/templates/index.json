@@ -1,12 +1,76 @@
 {
 	"page": [
 		{
-			"name": "irving-layouts/body-wrapper",
+			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "irving-common/fragment",
+					"name": "irving/fragment",
 					"children": [
-						"index.json"
+						{
+							"name": "material/container",
+							"config": {
+								"max_width": "lg"
+							},
+							"children": [
+								{
+									"name": "irving/post-list",
+									"config":{
+										"query_args": {
+											"posts_per_page": 12
+										},
+										"templates": {
+											"before": [
+												{
+													"name": "material/box",
+													"children": [
+														{
+															"name": "material/typography",
+															"config": {
+																"color": "#5d3a09",
+																"component": "h3",
+																"gutter_bottom": true,
+																"style": {
+																	"margin-bottom": "1rem"
+																},
+																"variant": "h5"
+															},
+															"children": [
+																{
+																	"name": "irving/text",
+																	"config": {
+																		"content": "Latest Posts"
+																	}
+																}
+															]
+														}
+													]
+												}
+											],
+											"wrapper": [
+												{
+													"name": "material/grid",
+													"config": {
+														"container": true,
+														"spacing": 2
+													}
+												}
+											],
+											"item": [
+												{ "name": "template-parts/post-card" }
+											],
+											"after": [
+												{
+													"name": "irving/text",
+													"config": {
+														"content": "Pagination"
+													}
+												}
+											]
+										}
+									}
+								}
+							]
+						}
 					]
 				}
 			]

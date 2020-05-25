@@ -4,7 +4,10 @@
 			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "irving/fragment",
+					"name": "material/container",
+					"config": {
+						"max_width": "lg"
+					},
 					"children": [
 						{
 							"name": "irving/post-list",
@@ -38,9 +41,10 @@
 										}
 									],
 									"item": [
-										{ "name": "template-parts/post-card" }
+										{ "name": "template-parts/post-card-small" }
 									],
 									"after": [
+										{ "name": "irving/pagination"}
 									]
 								}
 							}
