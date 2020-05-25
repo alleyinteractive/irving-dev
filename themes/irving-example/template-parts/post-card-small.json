@@ -41,7 +41,7 @@
 										{
 											"name": "material/typography",
 											"config": {
-												"gutterBottom": true,
+												"gutter_bottom": true,
 												"variant": "h6",
 												"component": "h2"
 											},
