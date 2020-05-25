@@ -21,13 +21,13 @@
 				"config": {
 					"color": "inherit",
 					"align": "center",
-					"noWrap": true,
+					"no_wrap": true,
 					"style": {
 						"flex": 1
 					}
 				},
 				"children": [
-					{ "name": "irving-modules/logo" }
+					{ "name": "irving/logo" }
 				]
 			},
 			{
@@ -52,13 +52,13 @@
 			"component": "nav",
 			"variant": "dense",
 			"style": {
-				"justifyContent": "space-around",
-				"overflowX": "auto"
+				"justify_content": "space-around",
+				"overflow_x": "auto"
 			}
 		},
 		"children": [
 			{
-				"name": "irving-modules/menu",
+				"name": "irving/menu",
 				"config": {
 					"location": "primary"
 				}
