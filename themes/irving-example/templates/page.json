@@ -1,7 +1,7 @@
 {
 	"page": [
 		{
-			"name": "irving-layouts/body-wrapper",
+			"name": "irving/body-wrapper",
 			"children": [
 				{
 					"name": "material/container",

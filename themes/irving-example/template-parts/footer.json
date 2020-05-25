@@ -45,7 +45,7 @@
 												"md": 10
 											},
 											"children": [
-												{ "name": "irving-modules/logo" },
+												{ "name": "irving/logo" },
 												{
 													"name": "irving/html",
 													"children": [
@@ -89,7 +89,7 @@
 											},
 											"children": [
 												{
-													"name": "irving-modules/menu",
+													"name": "irving/menu",
 													"theme": "default_vertical",
 													"config": {
 														"display_name": true,
@@ -108,7 +108,7 @@
 											},
 											"children": [
 												{
-													"name": "irving-modules/menu",
+													"name": "irving/menu",
 													"theme": "default_vertical",
 													"config": {
 														"display_name": true,
@@ -127,7 +127,7 @@
 											},
 											"children": [
 												{
-													"name": "irving-modules/menu",
+													"name": "irving/menu",
 													"theme": "default_vertical",
 													"config": {
 														"display_name": true,
