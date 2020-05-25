@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import withThemes from '@irvingjs/styled/components/withThemes';
 import * as defaultStyles from './themes/default';
 
 /**
@@ -16,34 +15,45 @@ const MenuItem = (props) => {
     classes,
     children,
     id,
+    level,
     target,
-    theme,
+    theme = defaultStyles,
     title,
     url,
   } = props;
 
-  const { Wrapper, Dropdown } = theme;
+  const {
+    ItemWrapper,
+    Dropdown,
+  } = theme;
 
   return (
-    <Wrapper key={id} classNames={classes}>
+    <ItemWrapper key={id} classnames={classes}>
       <li>
-        <a href={url} target={target} title={attributeTitle}>
-          {title}
-        </a>
+        <a href={url} target={target} title={attributeTitle}>{title}</a>
         {children && (
           <Dropdown>
-            {children}
+            {children.map((child) => (
+              <MenuItem
+                key={child.props.id}
+                level={level + 1}
+                {...child.props}
+              />
+            ))}
           </Dropdown>
         )}
       </li>
-    </Wrapper>
+    </ItemWrapper>
   );
 };
 
 MenuItem.defaultProps = {
   attributeTitle: '',
   classes: [],
+  id: 0,
+  level: 1,
   target: '',
+  theme: defaultStyles,
   title: '',
   url: '',
 };
@@ -64,7 +74,11 @@ MenuItem.propTypes = {
   /**
    * Unique key.
    */
-  id: PropTypes.number.isRequired,
+  id: PropTypes.number,
+  /**
+   * Menu level.
+   */
+  level: PropTypes.number,
   /**
    * Target attribute value.
    */
@@ -72,7 +86,7 @@ MenuItem.propTypes = {
   /**
    * Theme (styles) to apply to the component.
    */
-  theme: PropTypes.string.isRequired,
+  theme: PropTypes.object,
   /**
    * Title.
    */
@@ -83,8 +97,4 @@ MenuItem.propTypes = {
   url: PropTypes.string,
 };
 
-const themeMap = {
-  default: defaultStyles,
-};
-
-export default withThemes(themeMap)(MenuItem);
+export default MenuItem;
