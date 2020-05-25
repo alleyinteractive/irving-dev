@@ -49,9 +49,14 @@ function convert_menu_to_components( array $menu_items, $parent_id = 0 ) {
 
 	foreach ( $menu_items as $menu_item ) {
 
+		// Validate menu item.
+		if ( ! $menu_item instanceof \WP_Post ) {
+			continue;
+		}
+
 		// Convert the menu class instance into a simpler array format.
 		$menu_item = new Component(
-			'irving-modules/menu-item',
+			'irving/menu-item',
 			[
 				'config' => [
 					'attribute_title' => (string) $menu_item->attr_title,
