@@ -93,7 +93,7 @@ MenuItem.propTypes = {
   title: PropTypes.string,
   /**
    * URL.
-   1*/
+   */
   url: PropTypes.string,
 };
 
