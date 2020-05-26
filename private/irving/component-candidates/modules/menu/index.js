@@ -30,7 +30,7 @@ const Menu = (props) => {
           {menuName}
         </NameWrapper>
       )}
-      {(0 === children.length) ? (
+      {(!! children.length) ? (
         <div>{`No menu configured for \`${location}\`.`}</div>
       ) : (
         <Inner>
