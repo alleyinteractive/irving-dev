@@ -1,0 +1,14 @@
+{
+	"name": "material/card-media",
+	"description": "Hook into the card media.",
+	"config": {
+		"image": {
+			"default": "",
+			"required": true,
+			"type": "string"
+		},
+		"style": {
+			"type": "array"
+		}
+	}
+}
