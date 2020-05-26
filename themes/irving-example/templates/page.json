@@ -1,12 +1,72 @@
 {
 	"page": [
 		{
-			"name": "irving-layouts/body-wrapper",
+			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "irving-common/fragment",
+					"name": "material/container",
+					"config": {
+						"gutter_bottom": true,
+						"max_width": "md"
+					},
 					"children": [
-						"page.json"
+						{
+							"name": "material/typography",
+							"config": {
+								"color": "#1f1303",
+								"component": "h1",
+								"gutter_bottom": true,
+								"variant": "h4"
+							},
+							"children": [
+								{ "name": "irving/post-title" }
+							]
+						},
+						{
+							"name": "material/typography",
+							"config": {
+								"color": "#5d3a09",
+								"component": "h2",
+								"gutter_bottom": true,
+								"variant": "subtitle1"
+							}
+						}
+					]
+				},
+				{
+					"name": "material/container",
+					"config": {
+						"align": "center",
+						"gutter_bottom": true,
+						"max_width": "lg"
+					},
+					"children": [
+						{
+							"name": "img",
+							"config": {
+								"src": "https://source.unsplash.com/random/1200x600"
+							}
+						}
+					]
+				},
+				{
+					"name": "material/container",
+					"config": {
+						"max_width": "md",
+						"gutter_bottom": true
+					},
+					"children": [
+						{ "name": "irving/post-content" },
+						{
+							"name": "irving/term-list",
+							"config": {
+								"templates": {
+									"item": [
+										"Tag Name"
+									]
+								}
+							}
+						}
 					]
 				}
 			]

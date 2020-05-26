@@ -19,7 +19,7 @@ get_registry()->register_component_from_config(
 		'callback' => function ( Component $component ): Component {
 
 			// Get the template name from site settings.
-			$template = get_option( 'irving-example-settings' )['templates']['header']['layout'] ?? 'header-left';
+			$template = get_option( 'irving-example-settings' )['templates']['header']['layout'] ?? 'header-center';
 
 			// Ensure children are component objects.
 			$component->hydrate_children();
