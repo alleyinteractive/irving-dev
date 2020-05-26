@@ -126,3 +126,5 @@ function add_toolbar_items( $admin_bar ) {
 	return $admin_bar;
 }
 add_action( 'admin_bar_menu', __NAMESPACE__ . '\add_toolbar_items', 100, 1 );
+
+add_action( 'wp_head', [ '\\Irving_Dev\\Components\\Admin_Bar\\Admin_Bar', 'add_base_tag' ] );

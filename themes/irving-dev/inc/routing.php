@@ -49,6 +49,7 @@ function build_components_endpoint(
 	if ( 'site' === $context ) {
 		$data['defaults'] = [
 			new \WP_Components\Head(),
+			new Components\Admin_Bar\Admin_Bar(),
 			new Components\Header\Header(),
 			new \WP_Components\Body(),
 			new Components\Footer\Footer(),
@@ -91,16 +92,14 @@ function build_components_endpoint(
 	// Set up context providers.
 	$data['providers'] = [];
 
-	// Add scripts.
-	$head->add_script( site_url( '/wp-includes/js/admin-bar.min.js' ) );
-
 	// Setup the page data based on routing.
 	$data['page'] = $template->to_array()['children'];
 
-	// Unshift the head to the top.
+	// Unshift the head and the admin bar to the top.
 	array_unshift(
 		$data['page'],
-		apply_filters( 'irving_dev_head', $head )
+		apply_filters( 'irving_dev_head', $head ),
+		( new Components\Admin_Bar\Admin_Bar() )->set_iframe( $path ),
 	);
 
 	return $data;
