@@ -1,0 +1,14 @@
+{
+	"name": "material/link",
+	"description": "Hook into the card media.",
+	"config": {
+		"href": {
+			"default": "",
+			"required": true,
+			"type": "string"
+		},
+		"underline": {
+			"type": "string"
+		}
+	}
+}
