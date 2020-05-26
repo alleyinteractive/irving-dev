@@ -6,7 +6,7 @@ import App from 'component-candidates/layouts/app';
 import Fragment from 'component-candidates/common/fragment';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
-import MenuItem from 'component-candidates/modules/menu-item';
+import MenuItem from 'component-candidates/modules/menu/menuItem';
 
 const transformName = (original) => original
   .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
