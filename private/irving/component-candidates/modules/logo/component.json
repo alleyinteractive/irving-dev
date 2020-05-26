@@ -1,5 +1,5 @@
 {
-	"name": "irving-modules/logo",
+	"name": "irving/logo",
 	"category": "Modules",
 	"description": "Display the site name or logo.",
 	"config": {
