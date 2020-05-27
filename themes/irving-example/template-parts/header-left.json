@@ -1,0 +1,29 @@
+{
+	"name": "material/toolbar",
+	"config": {
+		"style": {
+			"backgroundColor": "#EEE"
+		}
+	},
+	"children": [
+		{
+			"name": "material/box",
+			"config": {
+				"style": {
+					"flexGrow": 1,
+					"display": "flex",
+					"alignItems": "center"
+				}
+			},
+			"children": [
+				{ "name": "irving/logo" }
+			]
+		},
+		{
+			"name": "irving/menu",
+			"config": {
+				"location": "primary"
+			}
+		}
+	]
+}

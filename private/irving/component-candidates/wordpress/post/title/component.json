@@ -1,0 +1,12 @@
+{
+	"name": "irving/post-title",
+	"category": "Post",
+	"description": "Get the post title",
+	"config": {
+		"content": {
+			"default": "",
+			"required": true,
+			"type": "string"
+		}
+	}
+}
