@@ -21,23 +21,23 @@ if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 get_registry()->register_component_from_config(
 	__DIR__ . '/component',
 	[
-		'callback' => function( Component $menu ) {
+		'callback' => function( Component $component ): Component {
 
 			// Menu location.
-			$location    = $menu->get_config( 'location' );
-			$menu_id     = get_nav_menu_locations()[ $menu->get_config( 'location' ) ] ?? 0;
+			$location    = $component->get_config( 'location' );
+			$menu_id     = get_nav_menu_locations()[ $component->get_config( 'location' ) ] ?? 0;
 			$menu_object = wp_get_nav_menu_object( $menu_id );
 
 			// Invalid menu.
 			if ( ! $menu_object instanceof \WP_Term ) {
-				return $menu->set_children( [] );
+				return $component->set_children( [] );
 			}
 
 			// Include the menu name.
-			$menu->set_config( 'menu_name', $menu_object->name ?? 'Default' );
+			$component->set_config( 'menu_name', $menu_object->name ?? 'Default' );
 
 			// Recursively build the children components.
-			$menu->set_children( convert_menu_to_components( (array) wp_get_nav_menu_items( $menu_id ) ) );
+			$component->set_children( convert_menu_to_components( (array) wp_get_nav_menu_items( $menu_id ) ) );
 
 			return $menu;
 		},
