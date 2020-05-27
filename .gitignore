@@ -29,3 +29,4 @@ plugins/*
 !plugins/pantheon-advanced-page-cache
 !plugins/wordpress-fieldmanager
 !plugins/wp-redis
+!plugins/wordpress-seo
