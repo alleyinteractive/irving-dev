@@ -27,6 +27,7 @@ plugins/*
 !plugins/jwt-auth
 !plugins/meta-inspector
 !plugins/pantheon-advanced-page-cache
+!plugins/query-monitor
 !plugins/wordpress-fieldmanager
 !plugins/wp-redis
 !plugins/wordpress-seo

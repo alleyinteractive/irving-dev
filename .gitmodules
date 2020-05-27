@@ -16,3 +16,6 @@
 [submodule "mu-plugins/wpcom-legacy-redirector"]
 	path = mu-plugins/wpcom-legacy-redirector
 	url = https://github.com/Automattic/WPCOM-Legacy-Redirector
+[submodule "plugins/query-monitor"]
+	path = plugins/query-monitor
+	url = https://github.com/johnbillion/query-monitor
