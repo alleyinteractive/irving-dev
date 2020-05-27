@@ -26,6 +26,7 @@ cache:
   directories:
     - $HOME/.composer/cache
     - themes/irving-dev/node_modules
+    - themes/irving-example/node_modules
     - private/irving/node_modules
 
 # Git clone depth.
@@ -81,8 +82,10 @@ before_script:
 
       # Set up phpcs, if necessary.
       if [[ $WP_PHPCS == "1" ]]; then
-        composer global require automattic/vipwpcs
-        phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs,$HOME/.composer/vendor/automattic/vipwpcs
+        export VENDOR_PATH=${WP_CORE_DIR}wp-content/vendor/
+        cd ${WP_CORE_DIR}wp-content
+        composer install
+        vendor/bin/phpcs --config-set installed_paths ${VENDOR_PATH}alley/alley-coding-standards,${VENDOR_PATH}/wp-coding-standards/wpcs,${VENDOR_PATH}automattic/vipwpcs
       fi
 
       pwd
@@ -91,10 +94,13 @@ before_script:
 # Default is specific to project language.
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
+  - bash bin/script-phpcs.sh
   - bash bin/script-php-lint.sh theme irving-dev
-  - bash bin/script-phpcs.sh theme irving-dev
   - bash bin/script-phpunit.sh theme irving-dev
   - bash bin/script-build.sh themes/irving-dev
+  - bash bin/script-php-lint.sh theme irving-example
+  - bash bin/script-phpunit.sh theme irving-example
+  - bash bin/script-build.sh themes/irving-example
   - bash bin/script-build.sh private/irving
 
 # Receive notifications for build results.
