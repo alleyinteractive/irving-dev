@@ -2,33 +2,37 @@ import styled from 'styled-components';
 
 /* eslint-disable import/prefer-default-export */
 export const Wrapper = styled.div`
-  align-items: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   width: 100%;
 `;
 
 // Wrapper around the menu name.
 export const NameWrapper = styled.h3`
-  display: none;
+  font-weight: 600;
+  font-size: 1.25rem;
+  padding-bottom: 1rem;
 `;
 
 export const Inner = styled.ul`
-  align-items: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
   list-style: none;
 `;
 
 export const ItemWrapper = styled.span`
   flex: 1 0 auto;
-  padding: 0 1.625rem;
+  margin-bottom: .2rem;
+  padding: 0;
 
   li {
     a {
       color: #12121c;
-      font-size: 1.2rem;
-      font-weight: 600;
+      display: block;
+      font-size: 1rem;
+      padding: 0 0 .5rem 0;
       text-decoration: none;
     }
 
