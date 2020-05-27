@@ -80,11 +80,11 @@ function entry_footer() {
 				wp_kses(
 					/* translators: %s: post title */
 					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'irving-dev' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
+					[
+						'span' => [
+							'class' => [],
+						],
+					]
 				),
 				get_the_title()
 			)
@@ -97,11 +97,11 @@ function entry_footer() {
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
 				__( 'Edit <span class="screen-reader-text">%s</span>', 'irving-dev' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
+				[
+					'span' => [
+						'class' => [],
+					],
+				]
 			),
 			get_the_title()
 		),

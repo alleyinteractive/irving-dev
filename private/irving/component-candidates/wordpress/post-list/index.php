@@ -30,7 +30,7 @@ get_registry()->register_component_from_config(
 			$wrapper    = (array) ( $component->get_config( 'templates' )['wrapper'] ?? [] );
 			$item       = (array) ( $component->get_config( 'templates' )['item'] ?? [] );
 			$before     = (array) ( $component->get_config( 'templates' )['before'] ?? [] );
-			$no_results = (array) ( $component->get_config( 'templates' )['no_results'] ?? [ "no results found" ] );
+			$no_results = (array) ( $component->get_config( 'templates' )['no_results'] ?? [ 'no results found' ] );
 
 			$query_args = (array) $component->get_config( 'query_args' );
 			if ( ! empty( $query_args ) ) {
