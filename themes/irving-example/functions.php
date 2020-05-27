@@ -16,7 +16,7 @@ add_filter(
 	'wp_irving_component_registry_directories',
 	function( $directories ) {
 		$directories['irving-betas'] = WP_CONTENT_DIR . '/private/irving/component-betas/';
-		$directories['irving'] = WP_CONTENT_DIR . '/private/irving/component-candidates/';
+		$directories['irving']       = WP_CONTENT_DIR . '/private/irving/component-candidates/';
 		return $directories;
 	}
 );
@@ -60,9 +60,6 @@ require_once IRVING_EXAMPLE_PATH . '/inc/theme.php';
 
 // Users.
 require_once IRVING_EXAMPLE_PATH . '/inc/users.php';
-
-// Loader for partials.
-require_once IRVING_EXAMPLE_PATH . '/inc/partials/partials.php';
 
 
 // Content types and taxonomies should be included below. In order to scaffold
