@@ -12,7 +12,7 @@ namespace Irving_Dev;
  */
 function widgets_init() {
 	register_sidebar(
-		array(
+		[
 			'name'          => __( 'Sidebar', 'irving-dev' ),
 			'id'            => 'sidebar-1',
 			'description'   => __( 'Add widgets here.', 'irving-dev' ),
@@ -20,7 +20,7 @@ function widgets_init() {
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		) 
+		]
 	);
 }
 add_action( 'widgets_init', __NAMESPACE__ . '\widgets_init' );
