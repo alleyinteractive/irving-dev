@@ -74,7 +74,7 @@ function convert_menu_to_components( array $menu_items, $parent_id = 0 ) {
 					'target'          => (string) $menu_item->target,
 					'title'           => (string) $menu_item->title,
 					'url'             => (string) $menu_item->url ?? get_the_permalink( $menu_item ),
-				]
+				],
 			]
 		);
 

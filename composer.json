@@ -1,0 +1,21 @@
+{
+  "name": "alleyinteractive/irving-dev",
+  "authors": [
+    {
+      "name": "Alley",
+      "email": "info@alley.co"
+    }
+  ],
+  "repositories": [
+    {
+        "type": "git",
+        "url": "https://github.com/alleyinteractive/Alley-Coding-Standards"
+    }
+  ],
+  "require-dev": {
+    "alley/alley-coding-standards": "dev-master"
+  },
+  "scripts": {
+    "phpcs": "phpcs --standard=./phpcs.xml ./themes ./private/irving"
+  }
+}
