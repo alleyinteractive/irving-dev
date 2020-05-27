@@ -5,6 +5,10 @@ import Fragment from 'component-candidates/common/fragment';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
 
+// Beta components
+// import Container from 'component-betas/container';
+// import Link from 'component-betas/link';
+
 // Icons
 import { Search as SearchIcon } from '@material-ui/icons';
 
@@ -15,12 +19,15 @@ const transformName = (original) => original
 export default {
   '': Fragment,
   'irving/body-wrapper': Fragment,
+  // 'irving/container': Container,
   'irving/footer-wrapper': Fragment,
   'irving/fragment': Fragment,
   'irving/header-wrapper': Fragment,
   'irving/helmet': Helmet,
+  // 'irving/link': Link,
   'irving/logo': Logo,
   'irving/menu': Menu,
+  'irving/post': Fragment,
   'irving/post-list': Fragment,
   'material-icon/search': SearchIcon,
   app: App,

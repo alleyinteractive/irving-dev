@@ -10,9 +10,9 @@
 				{
 					"name": "material/typography",
 					"config": {
+						"component": "h3",
 						"gutter_bottom": true,
-						"variant": "h5",
-						"component": "h3"
+						"variant": "h5"
 					},
 					"children": [
 						{
@@ -29,7 +29,10 @@
 					"name": "material/grid",
 					"config": {
 						"container": true,
-						"spacing": 2
+						"spacing": 2,
+						"style": {
+							"margin_bottom": "2rem"
+						}
 					}
 				}
 			],
@@ -37,6 +40,14 @@
 				{ "name": "template-parts/post-card-small" }
 			],
 			"after": [
+				{
+					"name": "irving/container",
+					"config": {
+						"style": {
+							"margin_bottom": "2rem"
+						}
+					}
+				}
 			]
 		}
 	}
