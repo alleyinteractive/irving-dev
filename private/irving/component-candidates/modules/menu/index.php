@@ -39,7 +39,7 @@ get_registry()->register_component_from_config(
 			// Recursively build the children components.
 			$component->set_children( convert_menu_to_components( (array) wp_get_nav_menu_items( $menu_id ) ) );
 
-			return $menu;
+			return $component;
 		},
 	]
 );
