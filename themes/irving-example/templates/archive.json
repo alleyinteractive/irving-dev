@@ -1,0 +1,53 @@
+{
+	"page": [
+		{
+			"name": "irving/body-wrapper",
+			"children": [
+				{
+					"name": "irving/fragment",
+					"children": [
+						{
+							"name": "irving/post-list",
+							"config": {
+								"templates": {
+									"before": [
+										{
+											"name": "material/typography",
+											"config": {
+												"gutter_bottom": true,
+												"variant": "h4",
+												"component": "h3"
+											},
+											"children": [
+												{
+													"name": "irving/text",
+													"config": {
+														"content": "Archive Title"
+													}
+												}
+											]
+										}
+									],
+									"wrapper": [
+										{
+											"name": "material/grid",
+											"config": {
+												"container": true,
+												"spacing": 2
+											}
+										}
+									],
+									"item": [
+										{ "name": "template-parts/post-card" }
+									],
+									"after": [
+									]
+								}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
