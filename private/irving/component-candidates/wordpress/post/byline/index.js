@@ -21,6 +21,7 @@ const Byline = (props) => {
   const {
     BylineWrapper,
     AuthorsWrapper,
+    AuthorWrapper,
     TimestampWrapper,
   } = theme;
 
@@ -42,7 +43,7 @@ const Byline = (props) => {
         <BylineWrapper>
           <AuthorsWrapper>
             {preText && <span>{decode(preText)}</span>}
-            {children}
+            <AuthorWrapper>{children}</AuthorWrapper>
           </AuthorsWrapper>
           <TimestampWrapper>{timestamp}</TimestampWrapper>
         </BylineWrapper>
@@ -53,7 +54,11 @@ const Byline = (props) => {
         <BylineWrapper>
           <AuthorsWrapper>
             {preText && <span>{decode(preText)}</span>}
-            <span>{children[0]}{singleDelimiter}{children[0]}</span>
+            <span>
+              <AuthorWrapper>{children[0]}</AuthorWrapper>
+              {singleDelimiter}
+              <AuthorWrapper>{children[1]}</AuthorWrapper>
+            </span>
           </AuthorsWrapper>
           <TimestampWrapper>{timestamp}</TimestampWrapper>
         </BylineWrapper>
@@ -69,7 +74,7 @@ const Byline = (props) => {
           if (index < (children.length - 2)) {
             return (
               <>
-                {child}
+                <AuthorWrapper>{child}</AuthorWrapper>
                 {decode(multiDelimiter)}
               </>
             );
@@ -79,14 +84,18 @@ const Byline = (props) => {
           if (index < (children.length - 1)) {
             return (
               <>
-                {child}
+                <AuthorWrapper>{child}</AuthorWrapper>
                 {decode(lastDelimiter)}
               </>
             );
           }
 
           // Last author.
-          return child;
+          return (
+            <AuthorWrapper>
+              {child}
+            </AuthorWrapper>
+          );
         })}
       </AuthorsWrapper>
       <TimestampWrapper>{timestamp}</TimestampWrapper>

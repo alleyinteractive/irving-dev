@@ -21,6 +21,8 @@ export const AuthorsWrapper = styled.span`
   margin-bottom: 1rem;
 `;
 
+export const AuthorWrapper = styled.span``;
+
 export const TimestampWrapper = styled.span`
 `;
 /* eslint-enable */

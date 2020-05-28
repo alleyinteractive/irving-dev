@@ -17,6 +17,11 @@
 			"type": "string",
 			"required": true
 		},
+		"post_id": {
+			"default": 0,
+			"required": true,
+			"type": "integer"
+		},
 		"pre_text": {
 			"default": "By&nbsp;",
 			"type": "string",
@@ -27,5 +32,8 @@
 			"default": "F j, Y at g:ia",
 			"required": true
 		}
+	},
+	"use_context": {
+		"irving/post_id": "post_id"
 	}
 }
