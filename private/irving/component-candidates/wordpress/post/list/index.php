@@ -60,8 +60,8 @@ get_registry()->register_component_from_config(
 			foreach ( $post_query->posts as $post_id ) {
 
 				$items[] = [
-					'name'   => 'irving/post',
-					'config' => [
+					'name'     => 'irving/post',
+					'config'   => [
 						'post_id' => $post_id,
 					],
 					'children' => $item,
