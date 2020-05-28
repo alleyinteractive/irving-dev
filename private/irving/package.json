@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Example Irving application.",
   "main": "index.js",
-  "jest": {
-    "testEnvironment": "node"
-  },
   "scripts": {
     "dev": "irving dev",
     "build": "irving build",
