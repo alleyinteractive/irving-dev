@@ -13,11 +13,15 @@ const widths = {
 
 /**
  * Render children in a React fragment or any other HTML tag.
+ *
+ * @todo Is there a better way to handle the maxWidth and background image
+ *       functionality? We want this functionality to be independent from
+ *       themes.
  */
 const Container = (props) => {
   const {
     children,
-    // imageUrl,
+    imageUrl,
     maxWidth,
     style,
     tag,
@@ -26,10 +30,18 @@ const Container = (props) => {
 
   const { ContainerWrapper } = theme;
 
+  // Setup a max-width style.
   if ('string' === typeof maxWidth) {
     style.maxWidth = `${widths[maxWidth]}px`;
   } else if ('number' === typeof maxWidth) {
     style.maxWidth = `${maxWidth}px`;
+  }
+
+  // Setup a background image.
+  if ('' !== imageUrl) {
+    style.backgroundImage = `url(${imageUrl})`;
+    style.backgroundRepeat = 'no-repeat';
+    style.backgroundSize = 'cover';
   }
 
   return (
@@ -41,10 +53,11 @@ const Container = (props) => {
 
 Container.defaultProps = {
   children: {},
-  // imageUrl: '',
+  imageUrl: '',
   maxWidth: 'lg',
   style: {},
   tag: 'div',
+  theme: defaultStyles,
 };
 
 Container.propTypes = {
@@ -55,7 +68,7 @@ Container.propTypes = {
   /**
    * Image URL to use as a background.
    */
-  // imageUrl: PropTypes.string,
+  imageUrl: PropTypes.string,
   /**
    * Max width of the container.
    */
@@ -74,7 +87,7 @@ Container.propTypes = {
   /**
    * Theme (styles) to apply to the component.
    */
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object,
 };
 
 const themeMap = {
