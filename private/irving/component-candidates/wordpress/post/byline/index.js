@@ -27,7 +27,6 @@ const Byline = (props) => {
     TimestampWrapper,
   } = theme;
 
-
   // Modify the output depending on the number of authors. This allows us to
   // change the delimiter(s) accordingly.
   switch (children.length) {
