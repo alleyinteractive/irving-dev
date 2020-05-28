@@ -26,16 +26,19 @@ get_registry()->register_component_from_config(
 	[
 		'callback' => function( Component $component ): Component {
 
-			// @todo setup the context.
-			$post_id = get_the_ID();
+			// Get the post ID from a context provider, or fallback to the global.
+			$post_id = $component->get_config( 'post_id' );
+			if ( 0 === $post_id ) {
+				$post_id = get_the_ID();
+			}
 
-			$post_content = get_post( $post_id )->post_content ?? '';
+			$post_content = apply_filters( 'the_content', str_replace( ']]>', ']]&gt;', get_the_content( null, false, $post_id ) ) ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 			return $component
-				->set_config( 'content', html_entity_decode( $post_content ) )
+				->set_config( 'content', $post_content )
 				// Temporarily map this to irving/text so it gets converted to
 				// a text dom node upon render.
-				->set_name( 'irving/text' );
+				->set_name( 'irving/html' );
 		},
 	]
 );

@@ -6,8 +6,10 @@
 				{
 					"name": "material/container",
 					"config": {
-						"gutter_bottom": true,
-						"max_width": "md"
+						"max_width": "md",
+						"style": {
+							"margin-bottom": "1rem"
+						}
 					},
 					"children": [
 						{
@@ -16,7 +18,7 @@
 								"color": "#1f1303",
 								"component": "h1",
 								"gutter_bottom": true,
-								"variant": "h4"
+								"variant": "h3"
 							},
 							"children": [
 								{ "name": "irving/post-title" }
@@ -28,7 +30,7 @@
 								"color": "#5d3a09",
 								"component": "h2",
 								"gutter_bottom": true,
-								"variant": "subtitle1"
+								"variant": "h5"
 							},
 							"children": [
 								{ "name": "irving/post-excerpt" }
@@ -36,38 +38,47 @@
 						}
 					]
 				},
-				{
-					"name": "material/container",
-					"config": {
-						"align": "center",
-						"gutter_bottom": true,
-						"max_width": "lg"
-					},
-					"children": [
-						{
-							"name": "irving/post-featured-media"
-						}
-					]
-				},
+				{ "name": "irving/post-featured-media" },
 				{
 					"name": "material/container",
 					"config": {
 						"max_width": "md",
-						"gutter_bottom": true
+						"style": {
+							"margin-bottom": "1rem"
+						}
 					},
 					"children": [
-						{ "name": "irving/post-byline" },
-						{ "name": "irving/post-content" },
 						{
-							"name": "irving/term-list",
+							"name": "irving/container",
 							"config": {
-								"templates": {
-									"item": [
-										"Tag Name"
-									]
+								"style": {
+									"display": "flex"
 								}
-							}
-						}
+							},
+							"children": [
+								{
+									"name": "irving/link",
+									"href": "/",
+									"children": [
+										{
+											"name": "irving/html",
+											"config": {
+												"content": "<img src='https://api.adorable.io/avatars/50/abott@adorable.png' height='50px' width='50px' alt='' style='border-radius: 50%;' />",
+												"style": {
+													"margin-bottom": "0",
+													"margin-right": "1rem"
+												}
+											}
+										}
+									]
+								},
+								{ "name": "irving/post-byline" }
+							]
+						},
+						{
+							"name": "hr"
+						},
+						{ "name": "irving/post-content" }
 					]
 				},
 				{

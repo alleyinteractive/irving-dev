@@ -4,72 +4,77 @@
 			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "irving/fragment",
+					"name": "material/container",
+					"config": {
+						"max_width": "lg"
+					},
 					"children": [
 						{
-							"name": "material/container",
-							"config": {
-								"max_width": "lg"
-							},
-							"children": [
-								{
-									"name": "irving/post-list",
-									"config":{
-										"query_args": {
-											"posts_per_page": 12
-										},
-										"templates": {
-											"before": [
+							"name": "irving/post-list",
+							"config":{
+								"query_args": {
+									"posts_per_page": 1,
+									"exclude": true
+								},
+								"templates": {
+									"item": [
+										{ "name": "template-parts/post-hero" }
+									]
+								}
+							}
+						},
+						{
+							"name": "irving/post-list",
+							"config":{
+								"query_args": {
+									"posts_per_page": 12,
+									"exclude": true
+								},
+								"templates": {
+									"before": [
+										{
+											"name": "material/box",
+											"children": [
 												{
-													"name": "material/box",
+													"name": "material/typography",
+													"config": {
+														"color": "#5d3a09",
+														"component": "h3",
+														"gutter_bottom": true,
+														"style": {
+															"margin-bottom": "1rem"
+														},
+														"variant": "h5"
+													},
 													"children": [
 														{
-															"name": "material/typography",
+															"name": "irving/text",
 															"config": {
-																"color": "#5d3a09",
-																"component": "h3",
-																"gutter_bottom": true,
-																"style": {
-																	"margin-bottom": "1rem"
-																},
-																"variant": "h5"
-															},
-															"children": [
-																{
-																	"name": "irving/text",
-																	"config": {
-																		"content": "Latest Posts"
-																	}
-																}
-															]
+																"content": "Latest Posts"
+															}
 														}
 													]
 												}
-											],
-											"wrapper": [
-												{
-													"name": "material/grid",
-													"config": {
-														"container": true,
-														"spacing": 2
-													}
-												}
-											],
-											"item": [
-												{ "name": "template-parts/post-card" }
-											],
-											"after": [
-												{
-													"name": "irving/text",
-													"config": {
-														"content": "Pagination"
-													}
-												}
 											]
 										}
-									}
+									],
+									"wrapper": [
+										{
+											"name": "material/grid",
+											"config": {
+												"container": true,
+												"spacing": 2,
+												"style": {
+													"margin-bottom": "2rem"
+												}
+											}
+										}
+									],
+									"item": [
+										{ "name": "template-parts/post-card" }
+									]
 								}
-							]
+							}
 						}
 					]
 				}
