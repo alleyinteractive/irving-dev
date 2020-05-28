@@ -44,8 +44,6 @@ get_registry()->register_component_from_config(
 					$query_args['post__not_in'] = $wp_irving_post_list_exclude_ids;
 				}
 
-				$query_args['fields'] = 'ids';
-
 				$post_query = new \WP_Query( $query_args );
 			}
 
@@ -54,10 +52,12 @@ get_registry()->register_component_from_config(
 				return $component->set_children( $no_results );
 			}
 
-			$wp_irving_post_list_exclude_ids = array_merge( $wp_irving_post_list_exclude_ids, $post_query->posts );
+			$post_ids = wp_list_pluck( $post_query->posts, 'ID' );
+
+			$wp_irving_post_list_exclude_ids = array_merge( $wp_irving_post_list_exclude_ids, $post_ids );
 
 			$items = [];
-			foreach ( $post_query->posts as $post_id ) {
+			foreach ( $post_ids as $post_id ) {
 
 				$items[] = [
 					'name'     => 'irving/post',
