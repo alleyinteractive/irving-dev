@@ -68,15 +68,15 @@ get_registry()->register_component_from_config(
 				];
 			}
 
-			$component->set_children( hydrate_components( $items ) );
+			$component->set_children( $items );
 
 			// Wrap the children.
 			if ( ! empty( $wrapper ) ) {
 				$component->set_child( ( setup_component( $wrapper[0] ) )->set_children( $component->get_children() ) );
 			}
 
-			$component->prepend_children( hydrate_components( $before ) );
-			$component->append_children( hydrate_components( $after ) );
+			$component->prepend_children( $before );
+			$component->append_children( $after );
 
 			return $component;
 		},
