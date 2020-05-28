@@ -41,6 +41,7 @@ get_registry()->register_component_from_config(
 
 			return $component
 				->set_config( 'content', $post_content )
+				->set_config( 'oembed', true )
 				// Temporarily map this to irving/text so it gets converted to
 				// a text dom node upon render.
 				->set_name( 'irving/html' );
