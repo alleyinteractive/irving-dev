@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { Helmet } from 'react-helmet';
 import * as materialComponents from '@material-ui/core';
 import App from 'component-candidates/layouts/app';
