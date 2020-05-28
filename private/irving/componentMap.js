@@ -15,7 +15,7 @@ const transformName = (original) => original
 
 export default {
   '': Fragment,
-  'admin-bar': AdminBar,
+  'irving/admin-bar': AdminBar,
   'irving/body-wrapper': Fragment,
   'irving/footer-wrapper': Fragment,
   'irving/fragment': Fragment,
