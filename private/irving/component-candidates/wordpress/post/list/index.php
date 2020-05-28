@@ -10,6 +10,8 @@
 namespace WP_Irving;
 
 use WP_Irving\Component;
+use function WP_Irving\Templates\setup_component;
+use function WP_Irving\Templates\hydrate_components;
 
 if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 	return;
@@ -42,6 +44,8 @@ get_registry()->register_component_from_config(
 					$query_args['post__not_in'] = $wp_irving_post_list_exclude_ids;
 				}
 
+				$query_args['fields'] = 'ids';
+
 				$post_query = new \WP_Query( $query_args );
 			}
 
@@ -50,25 +54,29 @@ get_registry()->register_component_from_config(
 				return $component->set_children( $no_results );
 			}
 
-			// Build the post components.
-			while ( $post_query->have_posts() ) {
-				$post_query->the_post();
-				$wp_irving_post_list_exclude_ids[] = get_the_ID();
-				$component->append_child(
-					( new Component( 'irving/post' ) )
-						->set_config( 'post_id', get_the_ID() )
-						->append_children( Templates\hydrate_components( $item ) )
-				);
+			$wp_irving_post_list_exclude_ids = array_merge( $wp_irving_post_list_exclude_ids, $post_query->posts );
+
+			$items = [];
+			foreach ( $post_query->posts as $post_id ) {
+
+				$items[] = [
+					'name' => 'irving/post',
+					'config' => [
+						'post_id' => $post_id,
+					],
+					'children' => $item,
+				];
 			}
-			wp_reset_postdata();
+
+			$component->set_children( hydrate_components( $items ) );
 
 			// Wrap the children.
 			if ( ! empty( $wrapper ) ) {
-				$component->set_child( ( Templates\setup_component( $wrapper[0] ) )->set_children( $component->get_children() ) );
+				$component->set_child( ( setup_component( $wrapper[0] ) )->set_children( $component->get_children() ) );
 			}
 
-			$component->prepend_children( Templates\hydrate_components( $before ) );
-			$component->append_children( Templates\hydrate_components( $after ) );
+			$component->prepend_children( hydrate_components( $before ) );
+			$component->append_children( hydrate_components( $after ) );
 
 			return $component;
 		},
