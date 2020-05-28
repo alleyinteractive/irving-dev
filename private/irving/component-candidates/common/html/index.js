@@ -1,15 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import sanitizeHtml from 'sanitize-html';
+import EmbedContainer from 'react-oembed-container';
+import { richText } from 'config/html';
 import withThemes from '@irvingjs/styled/components/withThemes';
 import * as defaultStyles from './themes/default';
 import * as unstyled from './themes/unstyled';
 
 /**
- * Output links as menu items.
+ * HTML component.
+ *
+ * Use `dangerouslySetInnerHTML` to render HTML.
  */
 const HTML = (props) => {
   const {
     content,
+    oembed,
     style,
     tag,
     theme = defaultStyles,
@@ -19,17 +25,33 @@ const HTML = (props) => {
     HTMLWrapper,
   } = theme;
 
+  // Sanitize our markup.
+  const html = sanitizeHtml(content, richText);
+
   return (
-    <HTMLWrapper
-      as={tag}
-      dangerouslySetInnerHTML={{ __html: content }} // eslint-disable-line react/no-danger
-      style={style}
-    />
+    <>
+      {(oembed) ? (
+        <EmbedContainer markup={content}>
+          <HTMLWrapper
+            as={tag}
+            dangerouslySetInnerHTML={{ __html: html }} // eslint-disable-line react/no-danger
+            style={style}
+          />
+        </EmbedContainer>
+      ) : (
+        <HTMLWrapper
+          as={tag}
+          dangerouslySetInnerHTML={{ __html: html }} // eslint-disable-line react/no-danger
+          style={style}
+        />
+      )}
+    </>
   );
 };
 
 HTML.defaultProps = {
   content: '',
+  oembed: false,
   style: {},
   tag: 'div',
   theme: defaultStyles,
@@ -40,6 +62,10 @@ HTML.propTypes = {
    * Markup to render.
    */
   content: PropTypes.string,
+  /**
+   * Render oembeds.
+   */
+  oembed: PropTypes.bool,
   /**
    * CSS styles.
    */

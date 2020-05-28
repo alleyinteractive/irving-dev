@@ -13,6 +13,11 @@
 			"required": true,
 			"type": "string"
 		},
+		"style": {
+			"default": [],
+			"required": true,
+			"type": "array"
+		},
 		"target": {
 			"default": "",
 			"required": true,
