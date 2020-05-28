@@ -29,7 +29,7 @@
 		},
 		"timestamp_format": {
 			"type": "string",
-			"default": "F j, Y at g:ia",
+			"default": "F j, Y \\a\\t g:ia",
 			"required": true
 		}
 	},

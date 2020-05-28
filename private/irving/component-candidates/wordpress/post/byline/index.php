@@ -31,18 +31,24 @@ get_registry()->register_component_from_config(
 				$post_id = get_the_ID();
 			}
 
+			$post = get_post( $post_id );
+			if ( ! $post instanceof \WP_Post ) {
+				return $componet;
+			}
+
+			// Set the published timestamp.
 			$component->set_config(
 				'timestamp',
 				get_the_date( $component->get_config( 'timestamp_format' ), $post_id )
 			);
 
-			$post = get_post( $post_id );
-
+			// Get the post author, and add a link to their author archive.
+			$author_id = get_post_field( 'post_author', $post_id );
 			$component
 				->append_child(
 					( new Component( 'irving/link' ) )
-						->set_config( 'href', get_author_posts_url( $post->post_author ) )
-						->set_child( get_the_author_meta( 'display_name', $post->post_author ) )
+						->set_config( 'href', get_author_posts_url( $author_id ) )
+						->set_child( get_the_author_meta( 'display_name', $author_id ) )
 				);
 
 			return $component;
