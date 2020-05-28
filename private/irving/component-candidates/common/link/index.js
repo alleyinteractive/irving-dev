@@ -5,12 +5,18 @@ import history from '@irvingjs/core/utils/history';
 import withThemes from '@irvingjs/styled/components/withThemes';
 import * as defaultStyles from './themes/default';
 
+/**
+ * Link.
+ *
+ * Custom anchor.
+ */
 const Link = (props) => {
   const {
     children,
     href,
     onClick,
     rel,
+    style,
     target,
     theme,
   } = props;
@@ -32,8 +38,9 @@ const Link = (props) => {
     <LinkWrapper
       href={relativeUrl || href}
       onClick={onClick || defaultOnClick}
-      target={target}
       rel={rel}
+      style={style}
+      target={target}
     >
       {children}
     </LinkWrapper>
@@ -43,6 +50,7 @@ const Link = (props) => {
 Link.defaultProps = {
   onClick: false,
   rel: '',
+  style: {},
   target: '',
   theme: defaultStyles,
 };
@@ -68,6 +76,10 @@ Link.propTypes = {
    * Rel attribute.
    */
   rel: PropTypes.string,
+  /**
+   * CSS styles.
+   */
+  style: PropTypes.object,
   /**
    * Anchor target.
    */

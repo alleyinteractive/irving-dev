@@ -1,8 +1,8 @@
-/* eslint-disable */
+/* eslint max-len: 0 */
 import styled from 'styled-components';
 
 const htmlVars = {
-  '--nc-font-sans': '\'Inter\', -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, \'Open Sans\', \'Helvetica Neue\', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  '--nc-font-sans': '\'Inter\',-apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, Cantarell, \'Open Sans\', \'Helvetica Neue\', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   '--nc-font-mono': 'Consolas, monaco, \'Ubuntu Mono\', \'Liberation Mono\', \'Courier New\', Courier, monospace',
   '--nc-tx-1': '#000000',
   '--nc-tx-2': '#1A1A1A',
@@ -16,7 +16,7 @@ const htmlVars = {
   '--nc-ac-tx': '#0C4047',
 };
 
-/* eslint-disable import/prefer-default-export */
+// eslint-disable import/prefer-default-export.
 export const HTMLWrapper = styled.div`
   address,
   area,
@@ -48,17 +48,17 @@ export const HTMLWrapper = styled.div`
   textarea,
   ul,
   video {
-    /* Margins for most elements */
+    // Margins for most elements.
     margin-bottom: 1rem;
   }
 
   input,select,button {
-    /* Set body font family and some finicky elements */
+    // Set body font family and some finicky elements.
     font-family: ${htmlVars['--nc-font-sans']};
   }
 
   ::selection {
-    /* Set background color for selected text */
+    // Set background color for selected text.
     background: ${htmlVars['--nc-ac-1']};
     color: ${htmlVars['--nc-ac-tx']};
   }
@@ -134,7 +134,7 @@ export const HTMLWrapper = styled.div`
   }
 
   abbr:hover {
-    /* Set the '?' cursor while hovering an abbreviation */
+    // Set the '?' cursor while hovering an abbreviation.
     cursor: help;
   }
 
@@ -181,7 +181,7 @@ export const HTMLWrapper = styled.div`
     cursor: default;
     opacity: .5;
 
-    /* Set the [X] cursor while hovering a disabled link */
+    // Set the [X] cursor while hovering a disabled link.
     cursor: not-allowed;
   }
 
@@ -202,7 +202,7 @@ export const HTMLWrapper = styled.div`
   pre,
   kbd,
   samp {
-    /* Set the font family for monospaced elements */
+    // Set the font family for monospaced elements.
     font-family: ${htmlVars['--nc-font-mono']};
   }
 
@@ -210,7 +210,7 @@ export const HTMLWrapper = styled.div`
   samp,
   kbd,
   pre {
-    /* The main preformatted style. This is changed slightly across different cases. */
+    // The main preformatted style. This is changed slightly across different cases..
     background: ${htmlVars['--nc-bg-2']};
     border: 1px solid ${htmlVars['--nc-bg-3']};
     border-radius: 4px;
@@ -219,7 +219,7 @@ export const HTMLWrapper = styled.div`
   }
 
   kbd {
-    /* Makes the kbd element look like a keyboard key */
+    // Makes the kbd element look like a keyboard key.
     border-bottom: 3px solid ${htmlVars['--nc-bg-3']};
   }
 
@@ -230,7 +230,7 @@ export const HTMLWrapper = styled.div`
   }
 
   pre code {
-    /* When <code> is in a <pre>, reset it's formatting to blend in */
+    // When <code> is in a <pre>, reset it's formatting to blend in.
     background: inherit;
     font-size: inherit;
     color: inherit;
@@ -240,7 +240,7 @@ export const HTMLWrapper = styled.div`
   }
 
   code pre {
-    /* When <pre> is in a <code>, reset it's formatting to blend in */
+    // When <pre> is in a <code>, reset it's formatting to blend in.
     display: inline;
     background: inherit;
     font-size: inherit;
@@ -251,7 +251,7 @@ export const HTMLWrapper = styled.div`
   }
 
   details {
-    /* Make the <details> look more "clickable" */
+    // Make the <details> look more "clickable".
     padding: .6rem 1rem;
     background: ${htmlVars['--nc-bg-2']};
     border: 1px solid ${htmlVars['--nc-bg-3']};
@@ -259,23 +259,23 @@ export const HTMLWrapper = styled.div`
   }
 
   summary {
-    /* Makes the <summary> look more like a "clickable" link with the pointer cursor */
+    // Makes the <summary> look more like a "clickable" link with the pointer cursor.
     cursor: pointer;
     font-weight: bold;
   }
 
   details[open] {
-    /* Adjust the <details> padding while open */
+    // Adjust the <details> padding while open.
     padding-bottom: .75rem;
   }
 
   details[open] summary {
-    /* Adjust the <details> padding while open */
+    // Adjust the <details> padding while open.
     margin-bottom: 6px;
   }
 
   details[open]>*:last-child {
-    /* Resets the bottom margin of the last element in the <details> while <details> is opened. This prevents double margins/paddings. */
+    // Resets the bottom margin of the last element in the <details> while <details> is opened. This prevents double margins/paddings..
     margin-bottom: 0;
   }
 
@@ -284,12 +284,12 @@ export const HTMLWrapper = styled.div`
   }
 
   dd::before {
-    /* Add an arrow to data table definitions */
+    // Add an arrow to data table definitions.
     content: '→ ';
   }
 
   hr {
-    /* Reset the border of the <hr> separator, then set a better line */
+    // Reset the border of the <hr> separator, then set a better line.
     border: 0;
     border-bottom: 1px solid ${htmlVars['--nc-bg-3']};
     margin: 1rem auto;
@@ -307,7 +307,7 @@ export const HTMLWrapper = styled.div`
   }
 
   table {
-    /* border-collapse sets the table's elements to share borders, rather than floating as separate "boxes". */
+    // border-collapse sets the table's elements to share borders, rather than floating as separate "boxes"..
     border-collapse: collapse;
     width: 100%
   }
@@ -324,7 +324,7 @@ export const HTMLWrapper = styled.div`
   }
 
   tr:nth-child(even) {
-    /* Set every other cell slightly darker. Improves readability. */
+    // Set every other cell slightly darker. Improves readability..
     background: ${htmlVars['--nc-bg-2']};
   }
 
@@ -334,13 +334,13 @@ export const HTMLWrapper = styled.div`
   }
 
   textarea {
-    /* Don't let the <textarea> extend off the screen naturally or when dragged by the user */
+    // Don't let the <textarea> extend off the screen naturally or when dragged by the user.
     max-width: 100%;
   }
 
   ol,
   ul {
-    /* Replace the browser default padding */
+    // Replace the browser default padding.
     padding-left: 2rem;
   }
 
@@ -387,4 +387,4 @@ export const HTMLWrapper = styled.div`
     max-width: 100%;
   }
 `;
-/* eslint-enable */
+// eslint-enable.
