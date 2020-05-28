@@ -1,0 +1,22 @@
+{
+	"name": "irving/link",
+	"category": "Common",
+	"description": "Custom anchor.",
+	"config": {
+		"href": {
+			"default": "",
+			"required": true,
+			"type": "string"
+		},
+		"rel": {
+			"default": "",
+			"required": true,
+			"type": "string"
+		},
+		"target": {
+			"default": "",
+			"required": true,
+			"type": "string"
+		}
+	}
+}

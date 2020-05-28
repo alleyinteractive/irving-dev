@@ -1,0 +1,16 @@
+{
+	"name": "html",
+	"category": "Common",
+	"description": "Use `dangerouslySetInnerHTML` to render HTML.",
+	"theme_options": [
+		"default",
+		"unstyled"
+	],
+	"config": {
+		"content": {
+			"default": "",
+			"required": true,
+			"type": "string"
+		}
+	}
+}
