@@ -32,7 +32,7 @@ get_registry()->register_component_from_config(
 				$post_id = get_the_ID();
 			}
 
-			$post_content = apply_filters( 'the_content', str_replace( ']]>', ']]&gt;', get_the_content( null, false, $post_id ) ) );
+			$post_content = apply_filters( 'the_content', str_replace( ']]>', ']]&gt;', get_the_content( null, false, $post_id ) ) ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 			return $component
 				->set_config( 'content', $post_content )
