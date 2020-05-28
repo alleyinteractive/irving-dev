@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
 import * as materialComponents from '@material-ui/core';
 import App from 'component-candidates/layouts/app';
-import Fragment from 'component-candidates/common/fragment';
+import Fragment from 'component-candidates/layouts/fragment';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
 
