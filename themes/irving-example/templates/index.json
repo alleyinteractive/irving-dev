@@ -4,7 +4,7 @@
 			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "material/container",
+					"name": "irving/container",
 					"config": {
 						"max_width": "lg"
 					},

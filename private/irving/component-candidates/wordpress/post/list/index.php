@@ -11,7 +11,6 @@ namespace WP_Irving;
 
 use WP_Irving\Component;
 use function WP_Irving\Templates\setup_component;
-use function WP_Irving\Templates\hydrate_components;
 
 if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 	return;
