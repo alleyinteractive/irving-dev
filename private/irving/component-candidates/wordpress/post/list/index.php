@@ -10,13 +10,10 @@
 namespace WP_Irving;
 
 use WP_Irving\Component;
-use function WP_Irving\Templates\setup_component;
 
 if ( ! function_exists( '\WP_Irving\get_registry' ) ) {
 	return;
 }
-
-$wp_irving_post_list_exclude_ids = [];
 
 /**
  * Register the component and callback.
@@ -24,7 +21,7 @@ $wp_irving_post_list_exclude_ids = [];
 get_registry()->register_component_from_config(
 	__DIR__ . '/component',
 	[
-		'callback' => function( Component $component ) use ( &$wp_irving_post_list_exclude_ids ): Component {
+		'callback' => function( Component $component ): Component {
 
 			global $wp_query;
 			$post_query = $wp_query;
@@ -40,7 +37,7 @@ get_registry()->register_component_from_config(
 			if ( ! empty( $query_args ) ) {
 
 				if ( wp_validate_boolean( $query_args['exclude'] ?? false ) ) {
-					$query_args['post__not_in'] = $wp_irving_post_list_exclude_ids;
+					$query_args['post__not_in'] = get_and_add_used_post_ids();
 				}
 
 				$post_query = new \WP_Query( $query_args );
@@ -53,7 +50,7 @@ get_registry()->register_component_from_config(
 
 			$post_ids = wp_list_pluck( $post_query->posts, 'ID' );
 
-			$wp_irving_post_list_exclude_ids = array_merge( $wp_irving_post_list_exclude_ids, $post_ids );
+			get_and_add_used_post_ids( $post_ids );
 
 			$items = [];
 			foreach ( $post_ids as $post_id ) {
@@ -71,7 +68,7 @@ get_registry()->register_component_from_config(
 
 			// Wrap the children.
 			if ( ! empty( $wrapper ) ) {
-				$component->set_child( ( setup_component( $wrapper[0] ) )->set_children( $component->get_children() ) );
+				$component->set_child( ( Templates\setup_component( $wrapper[0] ) )->set_children( $component->get_children() ) );
 			}
 
 			$component->prepend_children( $before );
@@ -81,3 +78,25 @@ get_registry()->register_component_from_config(
 		},
 	]
 );
+
+/**
+ * Keep track of used post IDs to de-duplicate with `post__not_in`.
+ *
+ * @param array $post_ids_to_add Array of post ids to flag as used.
+ * @return array
+ */
+function get_and_add_used_post_ids( array $post_ids_to_add = [] ): array {
+	static $used_post_ids;
+
+	// Initialize values.
+	if ( is_null( $used_post_ids ) ) {
+		$used_post_ids = [];
+	}
+
+	// Merge additional values.
+	if ( ! empty( $post_ids_to_add ) ) {
+		$used_post_ids = array_unique( array_merge( $used_post_ids, $post_ids_to_add ) );
+	}
+
+	return $used_post_ids;
+}
