@@ -4,7 +4,10 @@
 			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "irving/fragment",
+					"name": "irving/container",
+					"config": {
+						"max_width": "lg"
+					},
 					"children": [
 						{
 							"name": "irving/post-list",
@@ -33,7 +36,10 @@
 											"name": "material/grid",
 											"config": {
 												"container": true,
-												"spacing": 2
+												"spacing": 2,
+												"style": {
+													"margin-bottom": "2rem"
+												}
 											}
 										}
 									],
