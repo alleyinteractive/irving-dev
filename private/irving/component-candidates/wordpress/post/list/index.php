@@ -33,7 +33,13 @@ get_registry()->register_component_from_config(
 			$no_results = (array) ( $component->get_config( 'templates' )['no_results'] ?? [ 'no results found' ] );
 
 			$query_args = (array) $component->get_config( 'query_args' );
+
 			if ( ! empty( $query_args ) ) {
+
+				if ( wp_validate_boolean( $query_args['exclude'] ?? false ) ) {
+					$query_args['post__not_in'] = post_list_get_and_add_used_post_ids();
+				}
+
 				$post_query = new \WP_Query( $query_args );
 			}
 
@@ -42,22 +48,55 @@ get_registry()->register_component_from_config(
 				return $component->set_children( $no_results );
 			}
 
-			// Build the post components.
-			while ( $post_query->have_posts() ) {
-				$post_query->the_post();
-				$component->append_children( Templates\hydrate_components( $item ) );
+			$post_ids = wp_list_pluck( $post_query->posts, 'ID' );
+
+			post_list_get_and_add_used_post_ids( $post_ids );
+
+			$items = [];
+			foreach ( $post_ids as $post_id ) {
+
+				$items[] = [
+					'name'     => 'irving/post',
+					'config'   => [
+						'post_id' => $post_id,
+					],
+					'children' => $item,
+				];
 			}
-			wp_reset_postdata();
+
+			$component->set_children( $items );
 
 			// Wrap the children.
 			if ( ! empty( $wrapper ) ) {
 				$component->set_child( ( Templates\setup_component( $wrapper[0] ) )->set_children( $component->get_children() ) );
 			}
 
-			$component->prepend_children( Templates\hydrate_components( $before ) );
-			$component->append_children( Templates\hydrate_components( $after ) );
+			$component->prepend_children( $before );
+			$component->append_children( $after );
 
 			return $component;
 		},
 	]
 );
+
+/**
+ * Keep track of used post IDs to de-duplicate with `post__not_in`.
+ *
+ * @param array $post_ids_to_add Array of post ids to flag as used.
+ * @return array
+ */
+function post_list_get_and_add_used_post_ids( array $post_ids_to_add = [] ): array {
+	static $used_post_ids;
+
+	// Initialize values.
+	if ( is_null( $used_post_ids ) ) {
+		$used_post_ids = [];
+	}
+
+	// Merge additional values.
+	if ( ! empty( $post_ids_to_add ) ) {
+		$used_post_ids = array_unique( array_merge( $used_post_ids, $post_ids_to_add ) );
+	}
+
+	return $used_post_ids;
+}

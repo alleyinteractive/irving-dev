@@ -8,7 +8,7 @@
 	},
 	"children": [
 		{
-			"name": "material/link",
+			"name": "irving/post-permalink",
 			"config": {
 				"underline": "none"
 			},

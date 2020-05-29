@@ -6,12 +6,9 @@
 		"sm": 4,
 		"md": 3
 	},
-	"provides_context": [
-		"post/featured_image_url"
-	],
 	"children": [
 		{
-			"name": "material/link",
+			"name": "irving/post-permalink",
 			"config": {
 				"underline": "none"
 			},
