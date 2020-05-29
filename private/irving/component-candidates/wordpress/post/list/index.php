@@ -37,7 +37,7 @@ get_registry()->register_component_from_config(
 			if ( ! empty( $query_args ) ) {
 
 				if ( wp_validate_boolean( $query_args['exclude'] ?? false ) ) {
-					$query_args['post__not_in'] = get_and_add_used_post_ids();
+					$query_args['post__not_in'] = post_list_get_and_add_used_post_ids();
 				}
 
 				$post_query = new \WP_Query( $query_args );
@@ -53,7 +53,7 @@ get_registry()->register_component_from_config(
 
 			$post_ids = wp_list_pluck( $post_query->posts, 'ID' );
 
-			get_and_add_used_post_ids( $post_ids );
+			post_list_get_and_add_used_post_ids( $post_ids );
 
 			$items = [];
 			foreach ( $post_ids as $post_id ) {
@@ -88,7 +88,7 @@ get_registry()->register_component_from_config(
  * @param array $post_ids_to_add Array of post ids to flag as used.
  * @return array
  */
-function get_and_add_used_post_ids( array $post_ids_to_add = [] ): array {
+function post_list_get_and_add_used_post_ids( array $post_ids_to_add = [] ): array {
 	static $used_post_ids;
 
 	// Initialize values.
