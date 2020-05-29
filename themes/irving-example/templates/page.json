@@ -6,8 +6,10 @@
 				{
 					"name": "material/container",
 					"config": {
-						"gutter_bottom": true,
-						"max_width": "md"
+						"max_width": "md",
+						"style": {
+							"margin-bottom": "1rem"
+						}
 					},
 					"children": [
 						{
@@ -16,57 +18,25 @@
 								"color": "#1f1303",
 								"component": "h1",
 								"gutter_bottom": true,
-								"variant": "h4"
+								"variant": "h3"
 							},
 							"children": [
 								{ "name": "irving/post-title" }
 							]
-						},
-						{
-							"name": "material/typography",
-							"config": {
-								"color": "#5d3a09",
-								"component": "h2",
-								"gutter_bottom": true,
-								"variant": "subtitle1"
-							}
 						}
 					]
 				},
-				{
-					"name": "material/container",
-					"config": {
-						"align": "center",
-						"gutter_bottom": true,
-						"max_width": "lg"
-					},
-					"children": [
-						{
-							"name": "img",
-							"config": {
-								"src": "https://source.unsplash.com/random/1200x600"
-							}
-						}
-					]
-				},
+				{ "name": "irving/post-featured-media" },
 				{
 					"name": "material/container",
 					"config": {
 						"max_width": "md",
-						"gutter_bottom": true
+						"style": {
+							"margin-bottom": "1rem"
+						}
 					},
 					"children": [
-						{ "name": "irving/post-content" },
-						{
-							"name": "irving/term-list",
-							"config": {
-								"templates": {
-									"item": [
-										"Tag Name"
-									]
-								}
-							}
-						}
+						{ "name": "irving/post-content" }
 					]
 				}
 			]

@@ -26,7 +26,11 @@ get_registry()->register_component_from_config(
 				return $component;
 			}
 
-			$post_id = get_the_ID();
+			// Get the post ID from a context provider, or fallback to the global.
+			$post_id = $component->get_config( 'post_id' );
+			if ( 0 === $post_id ) {
+				$post_id = get_the_ID();
+			}
 
 			// Get and validate image url.
 			$image_url = get_the_post_thumbnail_url( $post_id );

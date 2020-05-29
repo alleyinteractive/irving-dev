@@ -7,8 +7,18 @@
 			"required": true,
 			"type": "string"
 		},
+		"post_id": {
+			"default": 0,
+			"required": true,
+			"type": "integer"
+		},
 		"style": {
+			"default": [],
+			"required": false,
 			"type": "array"
 		}
+	},
+	"use_context": {
+		"irving/post_id": "post_id"
 	}
 }
