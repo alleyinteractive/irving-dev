@@ -1,0 +1,24 @@
+{
+	"name": "irving/pagination",
+	"description": "Pagination ui for an archive.",
+	"config": {
+		"query_vars_to_remove": {
+			"default": [ "path", "context" ],
+			"type": "array",
+			"required": true
+		},
+		"style": {
+			"default": [],
+			"required": true,
+			"type": "array"
+		},
+		"wp_query": {
+			"hidden": true,
+			"type": "object",
+			"required": true
+		}
+	},
+	"use_context": {
+		"irving/wp_query": "wp_query"
+	}
+}
