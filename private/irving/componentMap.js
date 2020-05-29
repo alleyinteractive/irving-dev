@@ -1,7 +1,11 @@
 import { Helmet } from 'react-helmet';
 import * as materialComponents from '@material-ui/core';
 import App from 'component-candidates/layouts/app';
+import Byline from 'component-candidates/wordpress/post/byline';
+import Container from 'component-candidates/layouts/container';
 import Fragment from 'component-candidates/layouts/fragment';
+import HTML from 'component-candidates/common/html';
+import Link from 'component-candidates/common/link';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
 
@@ -15,13 +19,18 @@ const transformName = (original) => original
 export default {
   '': Fragment,
   'irving/body-wrapper': Fragment,
+  'irving/container': Container,
   'irving/footer-wrapper': Fragment,
   'irving/fragment': Fragment,
   'irving/header-wrapper': Fragment,
   'irving/helmet': Helmet,
+  'irving/html': HTML,
+  'irving/link': Link,
   'irving/logo': Logo,
   'irving/menu': Menu,
   'irving/post': Fragment,
+  'irving/post-byline': Byline,
+  'irving/post-featured-media': Fragment,
   'irving/post-list': Fragment,
   'material-icon/search': SearchIcon,
   app: App,
