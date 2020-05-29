@@ -1,13 +1,8 @@
 {
-	"name": "irving/post-title",
+	"name": "irving/post-featured-media",
 	"category": "Post",
-	"description": "Get the post title",
+	"description": "Display the post featured media.",
 	"config": {
-		"content": {
-			"default": "",
-			"required": true,
-			"type": "string"
-		},
 		"post_id": {
 			"default": 0,
 			"required": true,
