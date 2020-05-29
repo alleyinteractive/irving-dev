@@ -8,7 +8,7 @@ import HTML from 'component-candidates/common/html';
 import Link from 'component-candidates/common/link';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
-import Pagination from 'component-betas/pagination';
+import Pagination from 'component-candidates/modules/pagination';
 
 // Icons.
 import { Search as SearchIcon } from '@material-ui/icons';
@@ -18,7 +18,6 @@ const transformName = (original) => original
   .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
 
 export default {
-  'irving/pagination': Pagination,
   '': Fragment,
   'irving/body-wrapper': Fragment,
   'irving/container': Container,
@@ -30,6 +29,7 @@ export default {
   'irving/link': Link,
   'irving/logo': Logo,
   'irving/menu': Menu,
+  'irving/pagination': Pagination,
   'irving/post': Fragment,
   'irving/post-byline': Byline,
   'irving/post-featured-media': Fragment,
