@@ -7,22 +7,19 @@ export const BylineWrapper = styled.div`
   width: 100%;
 `;
 
-export const AvatarWrapper = styled.span`
-  img {
-    display: block;
-    height: 50px;
-    width: 50px;
-  }
-`;
-
 export const AuthorsWrapper = styled.span`
   align-items: center;
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 `;
 
-export const AuthorWrapper = styled.span``;
+export const AuthorWrapper = styled.span`
+  a {
+    font-weight: bold;
+  }
+`;
 
 export const TimestampWrapper = styled.span`
+  font-size: .9rem;
 `;
 /* eslint-enable */

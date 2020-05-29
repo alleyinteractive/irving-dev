@@ -6,6 +6,8 @@ import * as defaultStyles from './themes/default';
 
 /**
  * Post byline.
+ *
+ * Get the post byline.
  */
 const Byline = (props) => {
   const {
@@ -25,18 +27,16 @@ const Byline = (props) => {
     TimestampWrapper,
   } = theme;
 
-  console.log(
-    preText,
-    timestamp,
-    lastDelimiter,
-    multiDelimiter,
-    singleDelimiter
-  );
-
+  // Modify the output depending on the number of authors. This allows us to
+  // change the delimiter(s) accordingly.
   switch (children.length) {
     default:
     case 0:
-      break;
+      return (
+        <BylineWrapper>
+          <TimestampWrapper>{timestamp}</TimestampWrapper>
+        </BylineWrapper>
+      );
 
     case 1:
       return (
@@ -63,44 +63,45 @@ const Byline = (props) => {
           <TimestampWrapper>{timestamp}</TimestampWrapper>
         </BylineWrapper>
       );
+
+    case (2 < children.length):
+      return (
+        <BylineWrapper>
+          <AuthorsWrapper>
+            {preText && <span>{decode(preText)}</span>}
+            {children.map((child, index) => {
+              // First through second to last author.
+              if (index < (children.length - 2)) {
+                return (
+                  <>
+                    <AuthorWrapper>{child}</AuthorWrapper>
+                    {decode(multiDelimiter)}
+                  </>
+                );
+              }
+
+              // Second to last author.
+              if (index < (children.length - 1)) {
+                return (
+                  <>
+                    <AuthorWrapper>{child}</AuthorWrapper>
+                    {decode(lastDelimiter)}
+                  </>
+                );
+              }
+
+              // Last author.
+              return (
+                <AuthorWrapper>
+                  {child}
+                </AuthorWrapper>
+              );
+            })}
+          </AuthorsWrapper>
+          <TimestampWrapper>{timestamp}</TimestampWrapper>
+        </BylineWrapper>
+      );
   }
-
-  return (
-    <BylineWrapper>
-      <AuthorsWrapper>
-        {preText && <span>{decode(preText)}</span>}
-        {children.map((child, index) => {
-          // First through second to last author.
-          if (index < (children.length - 2)) {
-            return (
-              <>
-                <AuthorWrapper>{child}</AuthorWrapper>
-                {decode(multiDelimiter)}
-              </>
-            );
-          }
-
-          // Second to last author.
-          if (index < (children.length - 1)) {
-            return (
-              <>
-                <AuthorWrapper>{child}</AuthorWrapper>
-                {decode(lastDelimiter)}
-              </>
-            );
-          }
-
-          // Last author.
-          return (
-            <AuthorWrapper>
-              {child}
-            </AuthorWrapper>
-          );
-        })}
-      </AuthorsWrapper>
-      <TimestampWrapper>{timestamp}</TimestampWrapper>
-    </BylineWrapper>
-  );
 };
 
 Byline.defaultProps = {
@@ -134,7 +135,7 @@ Byline.propTypes = {
    */
   singleDelimiter: PropTypes.string,
   /**
-   * Flag to display the menu name.
+   * Timestamp.
    */
   timestamp: PropTypes.string,
   /**
