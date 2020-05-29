@@ -8,6 +8,14 @@
 		"query_args": {
 			"type": "array",
 			"required": false
+		},
+		"wp_query": {
+			"hidden": true,
+			"type": "object",
+			"required": true
 		}
+	},
+	"provides_context": {
+		"irving/wp_query": "wp_query"
 	}
 }
