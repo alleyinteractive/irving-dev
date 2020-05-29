@@ -1,0 +1,12 @@
+{
+	"name": "irving/text",
+	"category": "Common",
+	"description": "Component that serializes as a string for use as a text node.",
+	"config": {
+		"content": {
+			"default": "",
+			"required": true,
+			"type": "string"
+		}
+	}
+}

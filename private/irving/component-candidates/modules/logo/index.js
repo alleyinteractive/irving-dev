@@ -1,61 +1,73 @@
-/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import withThemes from '@irvingjs/styled/components/withThemes';
+import Link from 'component-candidates/common/link';
 import * as defaultStyles from './themes/default';
 
 /**
+ * Logo.
+ *
  * Display the site name or logo.
+ *
+ * @todo Update with a proper <Heading> component.
+ * @todo Update with a proper image component.
  */
 const Logo = (props) => {
   const {
+    href,
+    logoImageUrl,
     siteName,
-    logo,
-    logoUrl,
+    style,
     theme,
   } = props;
 
-  const { Wrapper, Link } = theme;
+  const { LogoWrapper, LinkWrapper } = theme;
 
-  // @todo can we do this better?
-  const component = logo ?
-    <Logo /> :
-    logoUrl ?
-      <img src={logoUrl} alt={siteName} /> :
-        <h2>{siteName}</h2>;
-
-  // @todo use a real <Link> component rather than an styled anchor.
   return (
-    <Wrapper>
-      <Link href="/">{component}</Link>
-    </Wrapper>
+    <LogoWrapper style={style}>
+      <LinkWrapper
+        as={Link}
+        href={href}
+      >
+        {logoImageUrl ? (
+          <img src={logoImageUrl} alt={siteName} />
+        ) : (
+          <h2>{siteName}</h2>
+        )}
+      </LinkWrapper>
+    </LogoWrapper>
   );
 };
 
 Logo.defaultProps = {
-  logo: null,
-  logoUrl: '',
+  href: '/',
+  logoImageUrl: '',
   siteName: '',
-  theme: 'default',
+  style: {},
+  theme: defaultStyles,
 };
 
 Logo.propTypes = {
   /**
-   * Logo component to override the image.
+   * URL the logo should link to.
    */
-  logo: PropTypes.element,
+  href: PropTypes.string,
   /**
    * URL of the image.
    */
-  logoUrl: PropTypes.string,
+  logoImageUrl: PropTypes.string,
   /**
    * Site name.
    */
   siteName: PropTypes.string,
   /**
+   * CSS styles.
+   */
+  style: PropTypes.object,
+  /**
    * Theme (styles) to apply to the component.
    */
-  theme: PropTypes.object.isRequired,
+  theme: PropTypes.object,
 };
 
 const themeMap = {

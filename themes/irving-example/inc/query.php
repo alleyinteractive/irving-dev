@@ -9,10 +9,14 @@
 
 namespace Irving_Example;
 
-
+/**
+ * Modify all archives to have 12 posts per page.
+ *
+ * @param \WP_Query $wp_query \WP_Query object.
+ */
 function modify_archives( \WP_Query $wp_query ) {
 
-	if ( is_admin() ) {
+	if ( is_admin() || ! $wp_query->is_main() ) {
 		return;
 	}
 

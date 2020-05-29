@@ -40,10 +40,15 @@ get_registry()->register_component_from_config(
 /**
  * Build an array of link and span components from `paginate_links()` markup.
  *
- * @param string $markup HTML markup.
+ * @param string $markup               HTML markup.
+ * @param array  $query_args_to_remove Query args to strip from the pagination
+ *                                     url.
  * @return array Components.
  */
 function get_pagination_components_from_markup( string $markup, array $query_args_to_remove = [] ): array {
+
+	// phpcs:disable WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+	// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 
 	$pagination_components = [];
 
@@ -94,6 +99,9 @@ function get_pagination_components_from_markup( string $markup, array $query_arg
 				}
 			);
 	}
+
+	// phpcs:enable WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
+	// phpcs:enable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 
 	return $pagination_components;
 }
