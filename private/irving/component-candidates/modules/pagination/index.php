@@ -134,5 +134,5 @@ function get_pagination_markup_by_query( ?\WP_Query $pagination_query = null, ar
 	// phpcs:ignore WordPress.WP.GlobalVariablesOverride
 	$wp_query = $global_wp_query;
 
-	return $markup;
+	return (string) $markup;
 }
