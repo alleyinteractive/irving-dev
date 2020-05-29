@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import * as materialComponents from '@material-ui/core';
-import AdminBar from 'components/adminBar';
+import AdminBar from '@irvingjs/wp-admin-bar';
 import App from 'component-candidates/layouts/app';
 import Fragment from 'component-candidates/common/fragment';
 import Logo from 'component-candidates/modules/logo';
