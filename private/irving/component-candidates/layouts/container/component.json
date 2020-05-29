@@ -3,7 +3,7 @@
 	"category": "Layouts",
 	"description": "Base wrapper component for creating layouts.",
 	"config": {
-		"image_url": {
+		"background_image_url": {
 			"default": "",
 			"required": true,
 			"type": "string"

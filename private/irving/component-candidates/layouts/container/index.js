@@ -21,7 +21,7 @@ const widths = {
 const Container = (props) => {
   const {
     children,
-    imageUrl,
+    backgroundImageUrl,
     maxWidth,
     style,
     tag,
@@ -38,8 +38,8 @@ const Container = (props) => {
   }
 
   // Setup a background image.
-  if ('' !== imageUrl) {
-    style.backgroundImage = `url(${imageUrl})`;
+  if ('' !== backgroundImageUrl) {
+    style.backgroundImage = `url(${backgroundImageUrl})`;
     style.backgroundRepeat = 'no-repeat';
     style.backgroundSize = 'cover';
   }
@@ -53,7 +53,7 @@ const Container = (props) => {
 
 Container.defaultProps = {
   children: {},
-  imageUrl: '',
+  backgroundImageUrl: '',
   maxWidth: 'lg',
   style: {},
   tag: 'div',
@@ -68,7 +68,7 @@ Container.propTypes = {
   /**
    * Image URL to use as a background.
    */
-  imageUrl: PropTypes.string,
+  backgroundImageUrl: PropTypes.string,
   /**
    * Max width of the container.
    */
