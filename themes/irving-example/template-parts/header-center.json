@@ -53,7 +53,8 @@
 			"variant": "dense",
 			"style": {
 				"justify_content": "space-around",
-				"overflow_x": "auto"
+				"overflow_x": "auto",
+				"margin_bottom": "2rem"
 			}
 		},
 		"children": [
