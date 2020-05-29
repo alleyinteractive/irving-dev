@@ -33,7 +33,7 @@ get_registry()->register_component_from_config(
 
 			$post = get_post( $post_id );
 			if ( ! $post instanceof \WP_Post ) {
-				return $componet;
+				return $component;
 			}
 
 			// Set the published timestamp.
