@@ -16,7 +16,7 @@ namespace Irving_Example;
  */
 function modify_archives( \WP_Query $wp_query ) {
 
-	if ( is_admin() || ! $wp_query->is_main() ) {
+	if ( is_admin() ) {
 		return;
 	}
 
