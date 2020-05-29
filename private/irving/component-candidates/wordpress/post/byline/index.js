@@ -135,7 +135,7 @@ Byline.propTypes = {
    */
   singleDelimiter: PropTypes.string,
   /**
-   * Flag to display the menu name.
+   * Timestamp.
    */
   timestamp: PropTypes.string,
   /**
