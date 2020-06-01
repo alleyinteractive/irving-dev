@@ -21,6 +21,19 @@ add_filter(
 	}
 );
 
+// Set the domain for cross-domain cookies.
+add_filter(
+	'wp_irving_jwt_token_cookie_domain',
+	function( $domain ) {
+
+		if ( WP_Utils::is_pantheon_env() ) {
+			return '.herokuapp.com';
+		}
+
+		return '.alley.test';
+	}
+);
+
 // WordPress utilities.
 require_once IRVING_EXAMPLE_PATH . '/inc/class-wp-utils.php';
 
