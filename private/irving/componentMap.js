@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet';
 import * as materialComponents from '@material-ui/core';
+import AdminBar from '@irvingjs/wp-admin-bar';
 import App from 'component-candidates/layouts/app';
 import Byline from 'component-candidates/wordpress/post/byline';
 import Container from 'component-candidates/layouts/container';
@@ -18,6 +19,8 @@ const transformName = (original) => original
 
 export default {
   '': Fragment,
+  'irving/admin-bar': AdminBar,
+  'irving/archive-title': Fragment,
   'irving/body-wrapper': Fragment,
   'irving/container': Container,
   'irving/footer-wrapper': Fragment,
