@@ -4,9 +4,70 @@
 			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "irving/fragment",
+					"name": "irving/container",
+					"config": {
+						"max_width": "md",
+						"style": {
+							"align_items": "center",
+							"display": "flex",
+							"flex_direction": "column",
+							"justify_content": "center",
+							"margin-bottom": "4rem",
+							"padding-top": "2rem"
+						}
+					},
 					"children": [
-						"404.json"
+						{
+							"name": "material/typography",
+							"config": {
+								"color": "inherit",
+								"component": "h1",
+								"gutter_bottom": true,
+								"variant": "h3"
+							},
+							"children": {
+								"name": "Page not found."
+							}
+						},
+						{
+							"name": "material/typography",
+							"config": {
+								"align": "center",
+								"color": "inherit",
+								"component": "p"
+							},
+							"children": {
+								"name": "We could not find anything for that URL."
+							}
+						},
+						{
+							"name": "material/link",
+							"config": {
+								"href": "/",
+								"underline": "always"
+							},
+							"children": {
+								"name": "Return to the homepage."
+							}
+						}
+					]
+				},
+				{
+					"name": "material/container",
+					"config": {
+						"max_width": "lg"
+					},
+					"children": [
+						{
+							"name": "material/grid",
+							"config": {
+								"container": true,
+								"spacing": 0
+							},
+							"children": [
+								{ "name": "template-parts/recirculation-module" }
+							]
+						}
 					]
 				}
 			]
