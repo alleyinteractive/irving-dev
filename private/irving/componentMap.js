@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet';
-import * as materialComponents from '@material-ui/core';
+// import * as materialComponents from '@material-ui/core';
 import App from 'component-candidates/layouts/app';
 import Byline from 'component-candidates/wordpress/post/byline';
 import Container from 'component-candidates/layouts/container';
@@ -8,16 +8,20 @@ import HTML from 'component-candidates/common/html';
 import Link from 'component-candidates/common/link';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
+import GutenbergBlock from 'components/gutenbergBlock';
+import GutenbergContent from 'components/gutenbergContent';
 
 // Icons.
-import { Search as SearchIcon } from '@material-ui/icons';
+// import { Search as SearchIcon } from '@material-ui/icons';
 
-const transformName = (original) => original
-  .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
-  .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
+// const transformName = (original) => original
+//   .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
+//   .replace(/([A-Z])/g, ([letter]) => `-${letter.toLowerCase()}`);
 
 export default {
   '': Fragment,
+  'gutenberg-content': GutenbergContent,
+  'gutenberg-block': GutenbergBlock,
   'irving/archive-title': Fragment,
   'irving/body-wrapper': Fragment,
   'irving/container': Container,
@@ -33,12 +37,12 @@ export default {
   'irving/post-byline': Byline,
   'irving/post-featured-media': Fragment,
   'irving/post-list': Fragment,
-  'material-icon/search': SearchIcon,
+  // 'material-icon/search': SearchIcon,
   app: App,
-  ...Object.keys(materialComponents)
-    .reduce((acc, key) => {
-      acc[`material/${transformName(key)}`] = materialComponents[key];
-      return { ...acc };
-    },
-    {}),
+  // ...Object.keys(materialComponents)
+  //   .reduce((acc, key) => {
+  //     acc[`material/${transformName(key)}`] = materialComponents[key];
+  //     return { ...acc };
+  //   },
+  //   {}),
 };

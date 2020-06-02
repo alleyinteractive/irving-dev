@@ -38,7 +38,7 @@ class Article extends \WP_Components\Component {
 	 */
 	public function get_components(): array {
 		return [
-			( new \WP_Components\HTML() )->set_config( 'content', $this->post->post_content ),
+			( new \WP_Components\Gutenberg_Content() )->set_post( $this->post ),
 		];
 	}
 }

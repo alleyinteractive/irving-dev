@@ -50,6 +50,9 @@ require_once IRVING_DEV_PATH . '/inc/assets.php';
 // Authors.
 require_once IRVING_DEV_PATH . '/inc/authors.php';
 
+// Gutenberg Blocks
+require_once IRVING_DEV_PATH . '/inc/blocks.php';
+
 // Cache.
 require_once IRVING_DEV_PATH . '/inc/cache.php';
 
