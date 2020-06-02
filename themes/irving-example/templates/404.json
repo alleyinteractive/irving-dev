@@ -6,28 +6,32 @@
 				{
 					"name": "irving/container",
 					"config": {
-						"max_width": "md",
+						"max_width": "lg",
 						"style": {
 							"align_items": "center",
 							"display": "flex",
 							"flex_direction": "column",
 							"justify_content": "center",
-							"margin-bottom": "4rem",
-							"padding-top": "2rem"
+							"margin_bottom": "4rem",
+							"padding_top": "2rem"
 						}
 					},
 					"children": [
 						{
 							"name": "material/typography",
 							"config": {
-								"color": "inherit",
 								"component": "h1",
 								"gutter_bottom": true,
 								"variant": "h3"
 							},
-							"children": {
-								"name": "Page not found."
-							}
+							"children": [
+								{
+									"name": "irving/text",
+									"config": {
+										"content": "Page not found."
+									}
+								}
+							]
 						},
 						{
 							"name": "material/typography",
@@ -36,38 +40,92 @@
 								"color": "inherit",
 								"component": "p"
 							},
-							"children": {
-								"name": "We could not find anything for that URL."
-							}
+							"children": [
+								{
+									"name": "irving/text",
+									"config": {
+										"content": "We could not find anything for that URL."
+									}
+								}
+							]
 						},
 						{
-							"name": "material/link",
+							"name": "irving/link",
 							"config": {
 								"href": "/",
-								"underline": "always"
+								"style": {
+									"display": "inline-block",
+									"margin_top": "1rem",
+									"text_decoration": "underline"
+								}
 							},
-							"children": {
-								"name": "Return to the homepage."
-							}
+							"children": [
+								{
+									"name": "irving/text",
+									"config": {
+										"content": "Return to the homepage."
+									}
+								}
+							]
 						}
 					]
 				},
 				{
-					"name": "material/container",
+					"name": "irving/container",
 					"config": {
-						"max_width": "lg"
+						"max_width": "lg",
+						"style": {
+							"margin-bottom": "4rem"
+						}
 					},
 					"children": [
-						{
-							"name": "material/grid",
-							"config": {
-								"container": true,
-								"spacing": 0
-							},
-							"children": [
-								{ "name": "template-parts/recirculation-module" }
-							]
-						}
+							{
+								"name": "irving/post-list",
+								"config":{
+									"query_args": {
+										"posts_per_page": 3,
+										"exclude": true
+									},
+									"templates": {
+										"before": [
+											{
+												"name": "material/box",
+												"component": "div",
+												"children": [
+													{
+														"name": "material/typography",
+														"config": {
+															"component": "h3",
+															"gutter_bottom": true,
+															"variant": "h5"
+														},
+														"children": [
+															{
+																"name": "irving/text",
+																"config": {
+																	"content": "Latest Posts"
+																}
+															}
+														]
+													}
+												]
+											}
+										],
+										"wrapper": [
+											{
+												"name": "material/grid",
+												"config": {
+													"container": true,
+													"spacing": 3
+												}
+											}
+										],
+										"item": [
+											{ "name": "template-parts/post-card" }
+										]
+									}
+								}
+							}
 					]
 				}
 			]
