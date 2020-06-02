@@ -18,6 +18,7 @@ const transformName = (original) => original
 
 export default {
   '': Fragment,
+  'irving/archive-title': Fragment,
   'irving/body-wrapper': Fragment,
   'irving/container': Container,
   'irving/footer-wrapper': Fragment,

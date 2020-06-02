@@ -4,9 +4,50 @@
 			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "irving/fragment",
+					"name": "irving/container",
+					"config": {
+						"max_width": "lg"
+					},
 					"children": [
-						"author.json"
+						{
+							"name": "irving/post-list",
+							"config": {
+								"templates": {
+									"before": [
+										{
+											"name": "material/typography",
+											"config": {
+												"gutter_bottom": true,
+												"variant": "h4",
+												"component": "h3"
+											},
+											"children": [
+												{
+													"name": "irving/archive-title"
+												}
+											]
+										}
+									],
+									"wrapper": [
+										{
+											"name": "material/grid",
+											"config": {
+												"container": true,
+												"spacing": 2,
+												"style": {
+													"margin-bottom": "2rem"
+												}
+											}
+										}
+									],
+									"item": [
+										{ "name": "template-parts/post-card" }
+									],
+									"after": [
+									]
+								}
+							}
+						}
 					]
 				}
 			]
