@@ -24,13 +24,8 @@ add_filter(
 // Set the domain for cross-domain cookies.
 add_filter(
 	'wp_irving_jwt_token_cookie_domain',
-	function( $domain ) {
-
-		if ( WP_Utils::is_pantheon_env() ) {
-			return 'alleydev.com';
-		}
-
-		return '.alley.test';
+	function () {
+		return strstr( home_url(), 'alley.test' ) ? '.alley.test' : '.alleydev.com';
 	}
 );
 
