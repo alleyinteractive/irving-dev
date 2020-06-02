@@ -75,7 +75,7 @@
 					"config": {
 						"max_width": "lg",
 						"style": {
-							"margin-bottom": "4rem"
+							"margin_bottom": "4rem"
 						}
 					},
 					"children": [
