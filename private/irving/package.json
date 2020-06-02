@@ -28,6 +28,7 @@
     "@material-ui/lab": "^4.0.0-alpha.52",
     "he": "^1.2.0",
     "react-oembed-container": "^1.0.0",
-    "sanitize-html": "^1.24.0"
+    "sanitize-html": "^1.24.0",
+    "styled-components": "^5.1.1"
   }
 }

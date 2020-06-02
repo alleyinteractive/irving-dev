@@ -15,8 +15,7 @@ define( 'IRVING_EXAMPLE_URL', get_template_directory_uri() );
 add_filter(
 	'wp_irving_component_registry_directories',
 	function( $directories ) {
-		$directories['irving-betas'] = WP_CONTENT_DIR . '/private/irving/component-betas/';
-		$directories['irving']       = WP_CONTENT_DIR . '/private/irving/component-candidates/';
+		$directories['private-components'] = WP_CONTENT_DIR . '/private/irving/components/';
 		return $directories;
 	}
 );
