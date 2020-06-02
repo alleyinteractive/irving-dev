@@ -27,7 +27,7 @@ add_filter(
 	function( $domain ) {
 
 		if ( WP_Utils::is_pantheon_env() ) {
-			return '.herokuapp.com';
+			return 'alleydev.com';
 		}
 
 		return '.alley.test';
