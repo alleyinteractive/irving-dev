@@ -21,6 +21,14 @@ add_filter(
 	}
 );
 
+// Set the domain for cross-domain cookies.
+add_filter(
+	'wp_irving_jwt_token_cookie_domain',
+	function () {
+		return strstr( home_url(), 'alley.test' ) ? '.alley.test' : '.alleydev.com';
+	}
+);
+
 // WordPress utilities.
 require_once IRVING_EXAMPLE_PATH . '/inc/class-wp-utils.php';
 
