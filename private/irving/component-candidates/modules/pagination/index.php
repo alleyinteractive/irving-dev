@@ -2,7 +2,7 @@
 /**
  * Pagination.
  *
- * Pagination ui for an archive.
+ * Pagination UI for an archive.
  *
  * @package Irving_Components
  */
