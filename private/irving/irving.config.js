@@ -1,9 +1,9 @@
-import styledComponentsConfig from '@irvingjs/styled';
+// import styledComponentsConfig from '@irvingjs/styled';
 
 const config = {
   name: 'irving-dev-app',
   packages: [
-    styledComponentsConfig,
+    // styledComponentsConfig,
   ],
 };
 
