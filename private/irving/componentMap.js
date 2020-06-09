@@ -1,15 +1,26 @@
 import { Helmet } from 'react-helmet';
 import * as materialComponents from '@material-ui/core';
-import App from '@irvingjs/core/component-candidates/layouts/app';
-import Byline from '@irvingjs/core/component-candidates/wordpress/post/byline';
-import Permalink from
-  '@irvingjs/core/component-candidates/wordpress/post/permalink';
-import Container from '@irvingjs/core/component-candidates/layouts/container';
-import Fragment from '@irvingjs/core/component-candidates/layouts/fragment';
-import HTML from '@irvingjs/core/component-candidates/common/html';
-import Link from '@irvingjs/core/component-candidates/common/link';
-import Logo from '@irvingjs/core/component-candidates/modules/logo';
-import Menu from '@irvingjs/core/component-candidates/modules/menu';
+import {
+  HTML,
+  Link,
+  App,
+  Container,
+  Fragment,
+  Logo,
+  Menu,
+  Byline,
+  Permalink,
+} from '@irvingjs/styled-components';
+// import App from '@irvingjs/core/component-candidates/layouts/app';
+// import Byline from '@irvingjs/core/component-candidates/wordpress/post/byline';
+// import Permalink from
+//   '@irvingjs/core/component-candidates/wordpress/post/permalink';
+// import Container from '@irvingjs/core/component-candidates/layouts/container';
+// import Fragment from '@irvingjs/core/component-candidates/layouts/fragment';
+// import HTML from '@irvingjs/core/component-candidates/common/html';
+// import Link from '@irvingjs/core/component-candidates/common/link';
+// import Logo from '@irvingjs/core/component-candidates/modules/logo';
+// import Menu from '@irvingjs/core/component-candidates/modules/menu';
 
 // Icons.
 import { Search as SearchIcon } from '@material-ui/icons';
