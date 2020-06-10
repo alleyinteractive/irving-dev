@@ -9,7 +9,6 @@ import {
   Link,
   Logo,
   Menu,
-  Permalink,
 } from '@irvingjs/styled-components';
 
 // Icons.
@@ -21,14 +20,18 @@ const transformName = (original) => original
 
 export default {
   '': Fragment,
+  'irving/body-wrapper': Fragment,
+  'irving/byline': Byline,
   'irving/container': Container,
+  'irving/footer-wrapper': Fragment,
   'irving/fragment': Fragment,
+  'irving/header-wrapper': Fragment,
   'irving/helmet': Helmet,
   'irving/html': HTML,
   'irving/link': Link,
   'irving/logo': Logo,
   'irving/menu': Menu,
-  'irving/post-byline': Byline,
+  'irving/text': Fragment,
   'material-icon/search': SearchIcon,
   app: App,
   ...Object.keys(materialComponents)
