@@ -12,14 +12,6 @@ namespace Irving_Example;
 define( 'IRVING_EXAMPLE_PATH', dirname( __FILE__ ) );
 define( 'IRVING_EXAMPLE_URL', get_template_directory_uri() );
 
-add_filter(
-	'wp_irving_component_registry_directories',
-	function( $directories ) {
-		// $directories['private-components'] = WP_CONTENT_DIR . '/private/irving/components/';
-		return $directories;
-	}
-);
-
 // WordPress utilities.
 require_once IRVING_EXAMPLE_PATH . '/inc/class-wp-utils.php';
 
