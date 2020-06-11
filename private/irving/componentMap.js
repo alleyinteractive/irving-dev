@@ -11,6 +11,8 @@ import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
 import SocialSharingItem from
   'component-candidates/wordpress/post/socialSharingItem';
+import SocialSharingList from
+  'component-candidates/wordpress/post/SocialSharingList';
 
 // Icons.
 import {
@@ -42,6 +44,7 @@ export default {
   'irving/post-featured-media': Fragment,
   'irving/post-list': Fragment,
   'irving/social-sharing-item': SocialSharingItem,
+  'irving/social-sharing-list': SocialSharingList,
   'material-icon/facebook': FacebookIcon,
   'material-icon/search': SearchIcon,
 

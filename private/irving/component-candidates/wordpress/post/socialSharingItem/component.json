@@ -7,9 +7,15 @@
 			"required": true,
 			"type": "integer"
 		},
-		"query_args": {
-			"type": "array",
-			"required": false
+		"service": {
+			"default": "",
+			"required": true,
+			"type": "string"
+		},
+		"url": {
+			"default": "",
+			"required": true,
+			"type": "string"
 		}
 	},
 	"use_context": {

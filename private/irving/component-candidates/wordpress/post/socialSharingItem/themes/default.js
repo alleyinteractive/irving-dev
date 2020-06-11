@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-/* eslint-disable import/prefer-default-export */
-export const SocialSharingLinkWrapper = styled.li`
-  border: 1px solid red;
+export const SocialSharingItemWrapper = styled.li`
+  display: inline-block;
+`;
+
+export const IconWrapper = styled.span`
+  margin: 5px;
 `;
