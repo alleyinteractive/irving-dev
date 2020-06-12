@@ -90,6 +90,12 @@
 					},
 					"children": [
 						{
+							"name": "irving/social-sharing",
+							"config": {
+								"cta": "Share this post"
+							}
+						},
+						{
 							"name": "material/grid",
 							"config": {
 								"container": true,
