@@ -25,11 +25,11 @@ const socialIconMap = {
 
 const SocialSharingItem = (props) => {
   const {
-    service,
+    platform,
     theme,
     url,
   } = props;
-  const IconComponent = socialIconMap[service];
+  const IconComponent = socialIconMap[platform];
 
   const {
     IconWrapper,
@@ -42,7 +42,9 @@ const SocialSharingItem = (props) => {
         href={url}
       >
         <IconWrapper>
-          <IconComponent />
+          <IconComponent
+            title={platform}
+          />
         </IconWrapper>
       </Link>
     </SocialSharingItemWrapper>
@@ -56,9 +58,9 @@ SocialSharingItem.defaultProps = {
 
 SocialSharingItem.propTypes = {
   /**
-   * Service for the item.
+   * Social sharing platform for the item.
    */
-  service: PropTypes.string.isRequired,
+  platform: PropTypes.string.isRequired,
   /**
    * Theme (styles) to apply to the component.
    */
