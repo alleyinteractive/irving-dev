@@ -9,17 +9,10 @@ import HTML from 'component-candidates/common/html';
 import Link from 'component-candidates/common/link';
 import Logo from 'component-candidates/modules/logo';
 import Menu from 'component-candidates/modules/menu';
-import SocialSharingItem from
-  'component-candidates/wordpress/post/socialSharingItem';
-import SocialSharingList from
-  'component-candidates/wordpress/post/SocialSharingList';
+import SocialSharing from 'component-candidates/wordpress/post/social-sharing';
 
 // Icons.
-import {
-  Facebook as FacebookIcon,
-  Search as SearchIcon,
-} from '@material-ui/icons';
-
+import { Search as SearchIcon } from '@material-ui/icons';
 
 const transformName = (original) => original
   .replace(/(^[A-Z])/, ([first]) => first.toLowerCase())
@@ -43,9 +36,7 @@ export default {
   'irving/post-byline': Byline,
   'irving/post-featured-media': Fragment,
   'irving/post-list': Fragment,
-  'irving/social-sharing-item': SocialSharingItem,
-  'irving/social-sharing-list': SocialSharingList,
-  'material-icon/facebook': FacebookIcon,
+  'irving/social-sharing': SocialSharing,
   'material-icon/search': SearchIcon,
 
   app: App,
