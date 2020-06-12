@@ -22,12 +22,7 @@
 												"component": "h3"
 											},
 											"children": [
-												{
-													"name": "irving/text",
-													"config": {
-														"content": "Archive Title"
-													}
-												}
+												{ "name": "irving/archive-title" }
 											]
 										}
 									],
@@ -47,6 +42,14 @@
 										{ "name": "template-parts/post-card" }
 									],
 									"after": [
+										{
+											"name": "irving/pagination",
+											"config": {
+												"style": {
+													"margin-bottom": "1rem"
+												}
+											}
+										}
 									]
 								}
 							}
