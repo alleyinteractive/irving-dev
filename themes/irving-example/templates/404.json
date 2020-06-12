@@ -4,9 +4,128 @@
 			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "irving/fragment",
+					"name": "irving/container",
+					"config": {
+						"max_width": "lg",
+						"style": {
+							"align_items": "center",
+							"display": "flex",
+							"flex_direction": "column",
+							"justify_content": "center",
+							"margin_bottom": "4rem",
+							"padding_top": "2rem"
+						}
+					},
 					"children": [
-						"404.json"
+						{
+							"name": "material/typography",
+							"config": {
+								"component": "h1",
+								"gutter_bottom": true,
+								"variant": "h3"
+							},
+							"children": [
+								{
+									"name": "irving/text",
+									"config": {
+										"content": "Page not found."
+									}
+								}
+							]
+						},
+						{
+							"name": "material/typography",
+							"config": {
+								"align": "center",
+								"color": "inherit",
+								"component": "p"
+							},
+							"children": [
+								{
+									"name": "irving/text",
+									"config": {
+										"content": "We could not find anything for that URL."
+									}
+								}
+							]
+						},
+						{
+							"name": "irving/link",
+							"config": {
+								"href": "/",
+								"style": {
+									"display": "inline-block",
+									"margin_top": "1rem",
+									"text_decoration": "underline"
+								}
+							},
+							"children": [
+								{
+									"name": "irving/text",
+									"config": {
+										"content": "Return to the homepage."
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "irving/container",
+					"config": {
+						"max_width": "lg",
+						"style": {
+							"margin_bottom": "4rem"
+						}
+					},
+					"children": [
+							{
+								"name": "irving/post-list",
+								"config":{
+									"query_args": {
+										"posts_per_page": 3,
+										"exclude": true
+									},
+									"templates": {
+										"before": [
+											{
+												"name": "material/box",
+												"component": "div",
+												"children": [
+													{
+														"name": "material/typography",
+														"config": {
+															"component": "h3",
+															"gutter_bottom": true,
+															"variant": "h5"
+														},
+														"children": [
+															{
+																"name": "irving/text",
+																"config": {
+																	"content": "Latest Posts"
+																}
+															}
+														]
+													}
+												]
+											}
+										],
+										"wrapper": [
+											{
+												"name": "material/grid",
+												"config": {
+													"container": true,
+													"spacing": 3
+												}
+											}
+										],
+										"item": [
+											{ "name": "template-parts/post-card" }
+										]
+									}
+								}
+							}
 					]
 				}
 			]

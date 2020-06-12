@@ -13,7 +13,7 @@ Irving Dev is a headless [Irving](https://github.com/alleyinteractive/irving) pr
 
 _Deploys from `staging` branch._ Merge code to this branch at-will.
 
-- [Irving](https://irving-staging.herokuapp.com/)
+- [Irving](https://irving-staging.alleydev.com/)
   - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-staging)
 - [WordPress admin](https://staging-irving.alleydev.com/wp-admin/) (Creds in 1Pass)
   - [Pantheon dashboard](https://dashboard.pantheon.io/sites/a09a2cd1-6f16-4dc0-b0ec-5befb350af6f#staging/deploys)
@@ -23,7 +23,7 @@ _Deploys from `staging` branch._ Merge code to this branch at-will.
 
 _Deploys from `production` branch._ All merges to this branch must have peer code review and pass continuous integration checks.
 
-- [Irving](https://irving-production.herokuapp.com/)
+- [Irving](https://irving-production.alleydev.com/)
   - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-production)
 - [WordPress admin](https://live-irving.alleydev.com/wp-admin/) (Creds in 1Pass)
   - [Pantheon dashboard](https://dashboard.pantheon.io/sites/a09a2cd1-6f16-4dc0-b0ec-5befb350af6f#live/deploys)

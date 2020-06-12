@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet';
 import ComponentMap from '@irvingjs/styled-components';
 import * as materialComponents from '@material-ui/core';
+import AdminBar from '@irvingjs/wp-admin-bar';
 
 // Icons.
 import { Search as SearchIcon } from '@material-ui/icons';
@@ -11,6 +12,7 @@ const transformName = (original) => original
 
 export default {
   ...ComponentMap,
+  'irving/admin-bar': AdminBar,
   'irving/helmet': Helmet,
   'material-icon/search': SearchIcon,
   ...Object.keys(materialComponents)

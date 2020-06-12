@@ -42,7 +42,14 @@
 										{ "name": "template-parts/post-card-small" }
 									],
 									"after": [
-										{ "name": "irving/pagination"}
+										{
+											"name": "irving/pagination",
+											"config": {
+												"style": {
+													"margin-bottom": "1rem"
+												}
+											}
+										}
 									]
 								}
 							}

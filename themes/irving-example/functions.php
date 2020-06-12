@@ -12,6 +12,14 @@ namespace Irving_Example;
 define( 'IRVING_EXAMPLE_PATH', dirname( __FILE__ ) );
 define( 'IRVING_EXAMPLE_URL', get_template_directory_uri() );
 
+// Set the domain for cross-domain cookies.
+add_filter(
+	'wp_irving_jwt_token_cookie_domain',
+	function () {
+		return strstr( home_url(), 'alley.test' ) ? '.alley.test' : '.alleydev.com';
+	}
+);
+
 // WordPress utilities.
 require_once IRVING_EXAMPLE_PATH . '/inc/class-wp-utils.php';
 
