@@ -16,11 +16,11 @@
 				}
 			},
 			"children": [
-				{ "name": "irving/logo" }
+				{ "name": "irving/site-logo" }
 			]
 		},
 		{
-			"name": "irving/menu",
+			"name": "irving/site-menu",
 			"config": {
 				"location": "primary"
 			}
