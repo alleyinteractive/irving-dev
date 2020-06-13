@@ -36,19 +36,15 @@
 											"name": "material/box",
 											"children": [
 												{
-													"name": "material/typography",
+													"name": "irving/text",
 													"config": {
-														"color": "#5d3a09",
-														"component": "h3",
-														"gutter_bottom": true,
+														"content": "Latest Posts",
+														"tag": "h2",
 														"style": {
+															"color": "#5d3a09",
 															"margin-bottom": "1rem"
-														},
-														"variant": "h5"
-													},
-													"children": [
-														"Latest Posts"
-													]
+														}
+													}
 												}
 											]
 										}

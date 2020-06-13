@@ -22,9 +22,7 @@
 												"component": "h3"
 											},
 											"children": [
-												{
-													"name": "irving/archive-title"
-												}
+												{ "name": "irving/archive-title" }
 											]
 										}
 									],

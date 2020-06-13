@@ -9,9 +9,6 @@
 	"children": [
 		{
 			"name": "irving/post-permalink",
-			"config": {
-				"underline": "none"
-			},
 			"children": [
 				{
 					"name": "material/card",
@@ -36,30 +33,16 @@
 									"name": "material/card-content",
 									"children": [
 										{
-											"name": "material/typography",
+											"name": "irving/post-title",
+											"theme": "h4",
 											"config": {
-												"gutter_bottom": true,
-												"variant": "h6",
-												"component": "h2"
-											},
-											"children": [
-												{ "name": "irving/post-title" }
-											]
+												"tag": "h3"
+											}
+										},
+										{
+											"name": "irving/post-excerpt",
+											"tag": "p"
 										}
-									]
-								}
-							]
-						},
-						{
-							"name": "material/card-actions",
-							"children": [
-								{
-									"name": "material/button",
-									"config": {
-										"size": "small"
-									},
-									"children": [
-										"Read More"
 									]
 								}
 							]

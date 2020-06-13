@@ -15,15 +15,15 @@
 								"templates": {
 									"before": [
 										{
-											"name": "material/typography",
+											"name": "irving/site-search-results-found",
 											"config": {
-												"gutter_bottom": true,
-												"variant": "h4",
-												"component": "h3"
-											},
-											"children": [
-												{ "name": "irving/archive-title" }
-											]
+												"content": "Search Results",
+												"tag": "h1",
+												"style": {
+													"font-size": "2rem",
+													"margin-bottom": "1rem"
+												}
+											}
 										}
 									],
 									"wrapper": [
