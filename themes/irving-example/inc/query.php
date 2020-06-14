@@ -20,7 +20,7 @@ function modify_archives( \WP_Query $wp_query ) {
 		return;
 	}
 
-	if ( $wp_query->is_archive() ) {
+	if ( $wp_query->is_archive() || $wp_query->is_search() ) {
 		$wp_query->set( 'posts_per_page', 12 );
 	}
 }

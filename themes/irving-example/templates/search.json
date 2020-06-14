@@ -15,7 +15,7 @@
 								"templates": {
 									"before": [
 										{
-											"name": "irving/site-search-results-found",
+											"name": "irving/query-search-results-found",
 											"config": {
 												"content": "Search Results",
 												"tag": "h1",
@@ -38,13 +38,24 @@
 											}
 										}
 									],
+									"no_results": [
+										{
+											"name": "irving/text",
+											"config": {
+												"content": "No results found"
+											}
+										}
+									],
 									"item": [
 										{ "name": "template-parts/post-card-small" }
 									],
 									"after": [
 										{
-											"name": "irving/pagination",
+											"name": "irving/query-pagination",
 											"config": {
+												"current_page": 1,
+												"total_pages": 1,
+												"base_url": "/search/",
 												"style": {
 													"margin-bottom": "1rem"
 												}
