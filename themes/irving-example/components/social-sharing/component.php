@@ -1,8 +1,8 @@
 <?php
 /**
- * Social Sharing List Component.
+ * Social Sharing Component.
  *
- * Wrapper for social sharing items.
+ * Displays list of social sharing icons.
  *
  *
  * @package Irving_Components

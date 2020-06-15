@@ -7,13 +7,13 @@
 			"required": true,
 			"type": "integer"
 		},
-    "cta": {
+		"cta": {
 			"default": "",
 			"required": false,
 			"type": "string"
 		},
-    "platforms": {
-      "default": ["email", "facebook", "linkedin", "pinterest", "reddit", "twitter", "whatsapp"],
+		"platforms": {
+			"default": ["email", "facebook", "linkedin", "pinterest", "reddit", "twitter", "whatsapp"],
 			"required": true,
 			"type": "array"
 		},
