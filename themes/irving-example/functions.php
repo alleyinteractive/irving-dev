@@ -12,15 +12,6 @@ namespace Irving_Example;
 define( 'IRVING_EXAMPLE_PATH', dirname( __FILE__ ) );
 define( 'IRVING_EXAMPLE_URL', get_template_directory_uri() );
 
-add_filter(
-	'wp_irving_component_registry_directories',
-	function( $directories ) {
-		$directories['irving-betas'] = WP_CONTENT_DIR . '/private/irving/component-betas/';
-		$directories['irving']       = WP_CONTENT_DIR . '/private/irving/component-candidates/';
-		return $directories;
-	}
-);
-
 // Set the domain for cross-domain cookies.
 add_filter(
 	'wp_irving_jwt_token_cookie_domain',

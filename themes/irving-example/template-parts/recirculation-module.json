@@ -15,12 +15,7 @@
 						"variant": "h5"
 					},
 					"children": [
-						{
-							"name": "irving/text",
-							"config": {
-								"content": "Related Posts"
-							}
-						}
+						"Related Posts"
 					]
 				}
 			],

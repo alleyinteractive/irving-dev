@@ -27,11 +27,11 @@
 					}
 				},
 				"children": [
-					{ "name": "irving/logo" }
+					{ "name": "irving/site-logo" }
 				]
 			},
 			{
-				"name": "material/link",
+				"name": "irving/link",
 				"config": {
 					"href": "/search/"
 				},
@@ -59,7 +59,7 @@
 		},
 		"children": [
 			{
-				"name": "irving/menu",
+				"name": "irving/site-menu",
 				"config": {
 					"location": "primary"
 				}
