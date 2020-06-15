@@ -17,10 +17,30 @@
 										{
 											"name": "irving/query-search-results-found",
 											"config": {
-												"content": "Search Results",
-												"tag": "h1",
+												"content_format": "%2$s results for: \"%1$s\"",
+												"tag": "h2",
 												"style": {
 													"font-size": "2rem",
+													"margin-bottom": ".5rem"
+												}
+											}
+										},
+										{
+											"name": "irving/query-search-results-found",
+											"config": {
+												"content_format": "Page %3$s of %4$s",
+												"tag": "p",
+												"style": {
+													"font-size": "1rem",
+													"margin-bottom": "1rem"
+												}
+											}
+										},
+										{
+											"name": "irving/query-search-form",
+											"config": {
+												"base_url": "/search/",
+												"style": {
 													"margin-bottom": "1rem"
 												}
 											}
@@ -40,9 +60,23 @@
 									],
 									"no_results": [
 										{
-											"name": "irving/text",
+											"name": "irving/query-search-results-found",
+											"theme": "h2",
 											"config": {
-												"content": "No results found"
+												"content_format": "No results for \"%1$s\"",
+												"tag": "h2",
+												"style": {
+													"margin-bottom": "1rem"
+												}
+											}
+										},
+										{
+											"name": "irving/query-search-form",
+											"config": {
+												"base_url": "/search/",
+												"style": {
+													"margin-bottom": "1rem"
+												}
 											}
 										}
 									],
@@ -53,8 +87,6 @@
 										{
 											"name": "irving/query-pagination",
 											"config": {
-												"current_page": 1,
-												"total_pages": 1,
 												"base_url": "/search/",
 												"style": {
 													"margin-bottom": "1rem"
