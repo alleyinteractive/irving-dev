@@ -33,20 +33,12 @@
 								"templates": {
 									"before": [
 										{
-											"name": "material/box",
-											"children": [
-												{
-													"name": "irving/text",
-													"config": {
-														"content": "Latest Posts",
-														"tag": "h2",
-														"style": {
-															"color": "#5d3a09",
-															"margin-bottom": "1rem"
-														}
-													}
-												}
-											]
+											"name": "irving/text",
+											"theme": "h2",
+											"config": {
+												"content": "Latest Posts",
+												"tag": "h2"
+											}
 										}
 									],
 									"wrapper": [
