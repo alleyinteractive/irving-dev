@@ -7,16 +7,14 @@
 		},
 		"templates": {
 			"before": [
+
 				{
-					"name": "material/typography",
+					"name": "irving/text",
+					"theme": "h3",
 					"config": {
-						"component": "h3",
-						"gutter_bottom": true,
-						"variant": "h5"
-					},
-					"children": [
-						"Related Posts"
-					]
+						"content": "Related Posts",
+						"tag": "h3"
+					}
 				}
 			],
 			"wrapper": [
