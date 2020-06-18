@@ -76,7 +76,19 @@
 										}
 									]
 								},
-								{ "name": "irving/post-byline" }
+								{
+									"name": "irving/container",
+									"children": [
+										{ "name": "irving/post-byline" },
+										{
+											"name": "irving/post-published-timestamp",
+											"config": {
+												"content_format": "Published on %1$s, updated at %2$s",
+												"published_date_format": "F j, Y \\a\\t g:ia"
+											}
+										}
+									]
+								}
 							]
 						},
 						{ "name": "hr" },
