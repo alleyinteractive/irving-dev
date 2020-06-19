@@ -8,9 +8,9 @@
 	},
 	"children": [
 		{
-			"name": "material/container",
+			"name": "irving/container",
 			"config": {
-				"maxWidth": "xl"
+				"max_width": "lg"
 			},
 			"children": [
 				{
@@ -47,15 +47,10 @@
 											"children": [
 												{ "name": "irving/site-logo" },
 												{
-													"name": "irving/html",
-													"children": [
-														{
-															"name": "irving/bloginfo",
-															"config": {
-																"show": "description"
-															}
-														}
-													]
+													"name": "irving/bloginfo",
+													"config": {
+														"show": "description"
+													}
 												}
 											]
 										}

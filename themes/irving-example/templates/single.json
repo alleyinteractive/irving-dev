@@ -13,28 +13,18 @@
 					},
 					"children": [
 						{
-							"name": "material/typography",
+							"name": "irving/post-title",
+							"theme": "h1",
 							"config": {
-								"color": "#1f1303",
-								"component": "h1",
-								"gutter_bottom": true,
-								"variant": "h3"
-							},
-							"children": [
-								{ "name": "irving/post-title" }
-							]
+								"tag": "h1"
+							}
 						},
 						{
-							"name": "material/typography",
+							"name": "irving/post-excerpt",
+							"theme": "h4",
 							"config": {
-								"color": "#5d3a09",
-								"component": "h2",
-								"gutter_bottom": true,
-								"variant": "h5"
-							},
-							"children": [
-								{ "name": "irving/post-excerpt" }
-							]
+								"tag": "h2"
+							}
 						}
 					]
 				},
