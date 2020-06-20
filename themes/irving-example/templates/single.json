@@ -4,7 +4,7 @@
 			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "material/container",
+					"name": "irving/container",
 					"config": {
 						"max_width": "md",
 						"style": {
@@ -28,7 +28,29 @@
 						}
 					]
 				},
-				{ "name": "irving/post-featured-media" },
+				{
+					"name": "irving/container",
+					"config": {
+						"max_width": "lg",
+						"style": {
+							"margin-bottom": "1rem"
+						}
+					},
+					"children": [
+						{ "name": "text", "config": { "content": "hi" }},
+						{
+							"name": "irving/image",
+							"config": {
+								"caption": "<strong>Hello</strong> World.",
+								"src": "https://source.unsplash.com/random/800x600",
+								"style": {
+									"margin": "auto"
+								}
+							}
+						},
+						{ "name": "irving/post-featured-media" }
+					]
+				},
 				{
 					"name": "material/container",
 					"config": {

@@ -43,18 +43,15 @@
 									],
 									"wrapper": [
 										{
-											"name": "material/grid",
+											"name": "irving/grid",
 											"config": {
-												"container": true,
-												"spacing": 2,
-												"style": {
-													"margin-bottom": "2rem"
-												}
+												"columns": "repeat(auto-fit, minmax(400px, 1fr))",
+												"gap": "1rem"
 											}
 										}
 									],
 									"item": [
-										{ "name": "template-parts/post-card" }
+										{ "name": "template-parts/post-card-new" }
 									]
 								}
 							}

@@ -1,0 +1,54 @@
+{
+	"name": "irving/grid-cell",
+	"children": [
+		{
+			"name": "irving/post-permalink",
+			"config": {
+				"style": {
+					"text-decoration": "none"
+				}
+			},
+			"children": [
+				{
+					"name": "material/card",
+					"config": {
+						"style": {
+							"maxWidth": "100%"
+						}
+					},
+					"children": [
+						{
+							"name": "material/card-action-area",
+							"children": [
+								{
+									"name": "material/card-media",
+									"config": {
+										"style": {
+											"height": "250px"
+										}
+									}
+								},
+								{
+									"name": "material/card-content",
+									"children": [
+										{
+											"name": "irving/post-title",
+											"theme": "h2",
+											"config": {
+												"tag": "h2"
+											}
+										},
+										{
+											"name": "irving/post-excerpt",
+											"tag": "p"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
