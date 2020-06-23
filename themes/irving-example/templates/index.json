@@ -13,20 +13,6 @@
 							"name": "irving/post-list",
 							"config":{
 								"query_args": {
-									"posts_per_page": 1,
-									"exclude": true
-								},
-								"templates": {
-									"item": [
-										{ "name": "template-parts/post-hero" }
-									]
-								}
-							}
-						},
-						{
-							"name": "irving/post-list",
-							"config":{
-								"query_args": {
 									"posts_per_page": 12,
 									"exclude": true
 								},

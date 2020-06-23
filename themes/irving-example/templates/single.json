@@ -37,18 +37,12 @@
 						}
 					},
 					"children": [
-						{ "name": "text", "config": { "content": "hi" }},
 						{
-							"name": "irving/image",
+							"name": "irving/post-featured-media",
 							"config": {
-								"caption": "<strong>Hello</strong> World.",
-								"src": "https://source.unsplash.com/random/800x600",
-								"style": {
-									"margin": "auto"
-								}
+								"aspect_ratio": "16:9"
 							}
-						},
-						{ "name": "irving/post-featured-media" }
+						}
 					]
 				},
 				{
