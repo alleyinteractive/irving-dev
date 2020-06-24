@@ -15,25 +15,24 @@
 								"templates": {
 									"before": [
 										{
-											"name": "material/typography",
+											"name": "irving/archive-title",
+											"theme": "h2",
 											"config": {
-												"gutter_bottom": true,
-												"variant": "h4",
-												"component": "h3"
-											},
-											"children": [
-												{ "name": "irving/archive-title" }
-											]
+												"tag": "h2",
+												"style": {
+													"margin-bottom": "1rem"
+												}
+											}
 										}
 									],
 									"wrapper": [
 										{
-											"name": "material/grid",
+											"name": "styled-css-grid/grid",
 											"config": {
-												"container": true,
-												"spacing": 2,
+												"columns": "repeat(auto-fit, minmax(400px, 1fr))",
+												"gap": "1rem",
 												"style": {
-													"margin-bottom": "2rem"
+													"margin-bottom": "1rem"
 												}
 											}
 										}
@@ -46,7 +45,7 @@
 											"name": "irving/pagination",
 											"config": {
 												"style": {
-													"margin-bottom": "1rem"
+													"margin-bottom": "2rem"
 												}
 											}
 										}

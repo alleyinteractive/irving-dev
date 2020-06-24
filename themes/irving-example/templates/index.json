@@ -6,23 +6,12 @@
 				{
 					"name": "irving/container",
 					"config": {
-						"max_width": "lg"
+						"max_width": "lg",
+						"style": {
+							"margin-bottom": "1rem"
+						}
 					},
 					"children": [
-						{
-							"name": "irving/post-list",
-							"config":{
-								"query_args": {
-									"posts_per_page": 1,
-									"exclude": true
-								},
-								"templates": {
-									"item": [
-										{ "name": "template-parts/post-hero" }
-									]
-								}
-							}
-						},
 						{
 							"name": "irving/post-list",
 							"config":{
@@ -43,13 +32,10 @@
 									],
 									"wrapper": [
 										{
-											"name": "material/grid",
+											"name": "styled-css-grid/grid",
 											"config": {
-												"container": true,
-												"spacing": 2,
-												"style": {
-													"margin-bottom": "2rem"
-												}
+												"columns": "repeat(auto-fit, minmax(400px, 1fr))",
+												"gap": "1rem"
 											}
 										}
 									],
