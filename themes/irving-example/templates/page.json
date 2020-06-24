@@ -4,7 +4,7 @@
 			"name": "irving/body-wrapper",
 			"children": [
 				{
-					"name": "material/container",
+					"name": "irving/container",
 					"config": {
 						"max_width": "md",
 						"style": {
@@ -13,22 +13,41 @@
 					},
 					"children": [
 						{
-							"name": "material/typography",
+							"name": "irving/post-title",
+							"theme": "h1",
 							"config": {
-								"color": "#1f1303",
-								"component": "h1",
-								"gutter_bottom": true,
-								"variant": "h3"
-							},
-							"children": [
-								{ "name": "irving/post-title" }
-							]
+								"tag": "h1"
+							}
+						},
+						{
+							"name": "irving/post-excerpt",
+							"theme": "h4",
+							"config": {
+								"tag": "h2"
+							}
 						}
 					]
 				},
-				{ "name": "irving/post-featured-media" },
 				{
-					"name": "material/container",
+					"name": "irving/container",
+					"config": {
+						"max_width": "lg",
+						"style": {
+							"margin-bottom": "1rem"
+						}
+					},
+					"children": [
+						{
+							"name": "irving/post-featured-media",
+							"config": {
+								"aspect_ratio": "16:9",
+								"object-fit": "fill"
+							}
+						}
+					]
+				},
+				{
+					"name": "irving/container",
 					"config": {
 						"max_width": "md",
 						"style": {

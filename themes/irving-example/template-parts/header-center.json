@@ -1,45 +1,62 @@
 [
 	{
-		"name": "material/toolbar",
+		"name": "irving/container",
 		"config": {
 			"style": {
+				"text-align": "center",
 				"border-bottom": "1px solid #AAAAA"
 			}
 		},
 		"children": [
 			{
-				"name": "material/button",
+				"name": "styled-css-grid/grid",
 				"config": {
-					"size": "small"
-				},
-				"children": [
-					"Subscribe"
-				]
-			},
-			{
-				"name": "material/box",
-				"config": {
-					"color": "inherit",
-					"align": "center",
-					"no_wrap": true,
-					"style": {
-						"flex": 1
-					}
-				},
-				"children": [
-					{ "name": "irving/site-logo" }
-				]
-			},
-			{
-				"name": "irving/link",
-				"config": {
-					"href": "/search/"
+					"columns": "150px 1fr 250px 1fr 150px",
+					"gap": "1rem"
 				},
 				"children": [
 					{
-						"name": "material/icon-button",
+						"name": "styled-css-grid/cell",
+						"config": {
+							"width": 2
+						}
+					},
+					{
+						"name": "styled-css-grid/cell",
+						"config": {
+							"width": 1
+						},
 						"children": [
-							{ "name": "material-icon/search" }
+							{ "name": "irving/site-logo" }
+						]
+					},
+					{
+						"name": "styled-css-grid/cell",
+						"config": {
+							"width": 1
+						}
+					},
+					{
+						"name": "styled-css-grid/cell",
+						"config": {
+							"style": {
+								"align-items": "center",
+								"display": "flex",
+								"justify-content": "center",
+								"padding": "0.5rem"
+							},
+							"width": 1
+						},
+						"children": [
+							{
+								"name": "irving/link",
+								"config": {
+									"href": "/search/"
+								},
+								"children": [
+									{ "name": "material-icon/search" }
+								]
+							}
 						]
 					}
 				]
@@ -47,14 +64,13 @@
 		]
 	},
 	{
-		"name": "material/toolbar",
+		"name": "irving/container",
 		"config": {
-			"component": "nav",
-			"variant": "dense",
+			"tag": "nav",
 			"style": {
-				"justify_content": "space-around",
-				"overflow_x": "auto",
-				"margin_bottom": "2rem"
+				"justify-content": "space-around",
+				"overflow-x": "auto",
+				"margin-bottom": "2rem"
 			}
 		},
 		"children": [

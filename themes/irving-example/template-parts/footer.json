@@ -1,9 +1,9 @@
 {
-	"name": "material/box",
+	"name": "irving/container",
 	"config": {
 		"style": {
 			"background-color": "#d4d4db",
-			"padding": "1rem"
+			"padding": "2rem 0"
 		}
 	},
 	"children": [
@@ -14,149 +14,49 @@
 			},
 			"children": [
 				{
-					"name": "material/grid",
+					"name": "styled-css-grid/grid",
 					"config": {
-						"container": true,
-						"spacing": 2
+						"columns": "3fr 1fr 1fr 1fr",
+						"gap": "20px"
 					},
 					"children": [
 						{
-							"name": "material/grid",
-							"config": {
-								"item": true,
-								"xs": 12,
-								"sm": 12,
-								"md": 6
-							},
+							"name": "irving/container",
 							"children": [
+								{ "name": "irving/site-logo" },
 								{
-									"name": "material/grid",
+									"name": "irving/bloginfo",
 									"config": {
-										"container": true,
-										"spacing": 2
-									},
-									"children": [
-										{
-											"name": "material/grid",
-											"config": {
-												"item": true,
-												"xs": 12,
-												"sm": 12,
-												"md": 10
-											},
-											"children": [
-												{ "name": "irving/site-logo" },
-												{
-													"name": "irving/bloginfo",
-													"config": {
-														"show": "description"
-													}
-												}
-											]
-										}
-									]
+										"show": "description"
+									}
 								}
 							]
 						},
 						{
-							"name": "material/grid",
+							"name": "irving/site-menu",
+							"theme": "default_vertical",
 							"config": {
-								"item": true,
-								"xs": 12,
-								"sm": 12,
-								"md": 6
-							},
-							"children": [
-								{
-									"name": "material/grid",
-									"config": {
-										"container": true,
-										"spacing": 1
-									},
-									"children": [
-										{
-											"name": "material/grid",
-											"config": {
-												"item": true,
-												"xs": 12,
-												"sm": 12,
-												"md": 4
-											},
-											"children": [
-												{
-													"name": "irving/site-menu",
-													"theme": "default_vertical",
-													"config": {
-														"display_name": true,
-														"location": "footer-left"
-													}
-												}
-											]
-										},
-										{
-											"name": "material/grid",
-											"config": {
-												"item": true,
-												"xs": 12,
-												"sm": 12,
-												"md": 4
-											},
-											"children": [
-												{
-													"name": "irving/site-menu",
-													"theme": "default_vertical",
-													"config": {
-														"display_name": true,
-														"location": "footer-center"
-													}
-												}
-											]
-										},
-										{
-											"name": "material/grid",
-											"config": {
-												"item": true,
-												"xs": 12,
-												"sm": 12,
-												"md": 4
-											},
-											"children": [
-												{
-													"name": "irving/site-menu",
-													"theme": "default_vertical",
-													"config": {
-														"display_name": true,
-														"location": "footer-right"
-													}
-												}
-											]
-										}
-									]
-								},
-								{
-									"name": "material/grid",
-									"config": {
-										"container": true,
-										"spacing": 1
-									},
-									"children": [
-										{
-											"name": "material/grid",
-											"config": {
-												"item": true,
-												"xs": 12,
-												"sm": 12,
-												"md": 12,
-												"align": "right"
-											},
-											"children": [
-												"© Irving 2020"
-											]
-										}
-									]
-								}
-							]
+								"display_name": true,
+								"location": "footer-left"
+							}
+						},
+						{
+							"name": "irving/site-menu",
+							"theme": "default_vertical",
+							"config": {
+								"display_name": true,
+								"location": "footer-center"
+							}
+						},
+						{
+							"name": "irving/site-menu",
+							"theme": "default_vertical",
+							"config": {
+								"display_name": true,
+								"location": "footer-right"
+							}
 						}
+
 					]
 				}
 			]

@@ -1,51 +1,54 @@
 {
-	"name": "material/grid",
-	"config": {
-		"item": true,
-		"xs": 12,
-		"sm": 4,
-		"md": 3
-	},
+	"name": "styled-css-grid/cell",
 	"children": [
 		{
-			"name": "irving/post-permalink",
+			"name": "irving/container",
+			"config": {
+				"style": {
+					"background": "#EEE",
+					"border-radius": "3px"
+				}
+			},
 			"children": [
 				{
-					"name": "material/card",
-					"config": {
-						"style": {
-							"maxWidth": "100%"
-						}
-					},
+					"name": "irving/post-permalink",
 					"children": [
 						{
-							"name": "material/card-action-area",
-							"children": [
-								{
-									"name": "material/card-media",
-									"config": {
-										"style": {
-											"height": "150px"
-										}
-									}
+							"name": "irving/post-featured-image",
+							"config": {
+								"aspect_ratio": "16:9",
+								"fallback_src": "https://placehold.it/1200x675&text=Fallback&20Image",
+								"show_meta": false
+							}
+						}
+					]
+				},
+				{
+					"name": "irving/post-permalink",
+					"children": [
+						{
+							"name": "irving/post-title",
+							"theme": "h4",
+							"config": {
+								"style": {
+									"padding": "1rem 1rem 1rem 1rem"
 								},
-								{
-									"name": "material/card-content",
-									"children": [
-										{
-											"name": "irving/post-title",
-											"theme": "h4",
-											"config": {
-												"tag": "h3"
-											}
-										},
-										{
-											"name": "irving/post-excerpt",
-											"tag": "p"
-										}
-									]
-								}
-							]
+								"tag": "h3"
+							}
+						}
+					]
+				},
+				{
+					"name": "irving/post-permalink",
+					"children": [
+						{
+							"name": "irving/post-excerpt",
+							"config": {
+								"style": {
+									"padding": "0 1rem 1rem 1rem"
+								},
+								"tag": "p"
+							}
 						}
 					]
 				}

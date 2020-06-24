@@ -8,46 +8,36 @@
 					"config": {
 						"max_width": "lg",
 						"style": {
-							"align_items": "center",
+							"align-items": "center",
 							"display": "flex",
-							"flex_direction": "column",
-							"justify_content": "center",
-							"margin_bottom": "4rem",
-							"padding_top": "2rem"
+							"flex-direction": "column",
+							"justify-content": "center",
+							"margin-bottom": "4rem",
+							"padding-top": "2rem"
 						}
 					},
 					"children": [
 						{
-							"name": "material/typography",
+							"name": "irving/text",
+							"theme": "h1",
 							"config": {
-								"component": "h1",
-								"gutter_bottom": true,
-								"variant": "h3"
-							},
-							"children": [
-								{
-									"name": "irving/text",
-									"config": {
-										"content": "Page not found."
-									}
-								}
-							]
+								"content": "Page not found.",
+								"style": {
+									"margin-bottom": "1rem"
+								},
+								"tag": "h1"
+							}
 						},
 						{
-							"name": "material/typography",
+							"name": "irving/text",
 							"config": {
-								"align": "center",
-								"color": "inherit",
-								"component": "p"
-							},
-							"children": [
-								{
-									"name": "irving/text",
-									"config": {
-										"content": "We could not find anything for that URL."
-									}
-								}
-							]
+								"content": "We could not find anything for that URL.",
+								"style": {
+									"align": "center",
+									"color": "black"
+								},
+								"tag": "p"
+							}
 						},
 						{
 							"name": "irving/link",
@@ -55,8 +45,8 @@
 								"href": "/",
 								"style": {
 									"display": "inline-block",
-									"margin_top": "1rem",
-									"text_decoration": "underline"
+									"margin-top": "1rem",
+									"text-decoration": "underline"
 								}
 							},
 							"children": [
@@ -75,7 +65,7 @@
 					"config": {
 						"max_width": "lg",
 						"style": {
-							"margin_bottom": "4rem"
+							"margin-bottom": "4rem"
 						}
 					},
 					"children": [
@@ -89,34 +79,23 @@
 									"templates": {
 										"before": [
 											{
-												"name": "material/box",
-												"component": "div",
-												"children": [
-													{
-														"name": "material/typography",
-														"config": {
-															"component": "h3",
-															"gutter_bottom": true,
-															"variant": "h5"
-														},
-														"children": [
-															{
-																"name": "irving/text",
-																"config": {
-																	"content": "Latest Posts"
-																}
-															}
-														]
-													}
-												]
+												"name": "irving/text",
+												"theme": "h3",
+												"config": {
+													"content": "Latest Posts",
+													"style": {
+														"margin-bottom": "1rem"
+													},
+													"tag": "h3"
+												}
 											}
 										],
 										"wrapper": [
 											{
-												"name": "material/grid",
+												"name": "styled-css-grid/grid",
 												"config": {
-													"container": true,
-													"spacing": 3
+													"columns": "repeat(auto-fit, minmax(400px, 1fr))",
+													"gap": "1rem"
 												}
 											}
 										],

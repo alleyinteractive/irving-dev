@@ -1,6 +1,6 @@
 {
 	"defaults": [
-		{
+		 {
 			"name": "irving/header-wrapper",
 			"children": [
 				{ "name": "template-parts/header-center" }

@@ -6,7 +6,10 @@
 				{
 					"name": "irving/container",
 					"config": {
-						"max_width": "lg"
+						"max_width": "lg",
+						"style": {
+							"margin-bottom": "1rem"
+						}
 					},
 					"children": [
 						{
@@ -29,7 +32,7 @@
 									],
 									"wrapper": [
 										{
-											"name": "irving/grid",
+											"name": "styled-css-grid/grid",
 											"config": {
 												"columns": "repeat(auto-fit, minmax(400px, 1fr))",
 												"gap": "1rem"
@@ -37,7 +40,7 @@
 										}
 									],
 									"item": [
-										{ "name": "template-parts/post-card-new" }
+										{ "name": "template-parts/post-card" }
 									]
 								}
 							}
