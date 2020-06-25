@@ -1,0 +1,22 @@
+{
+	"body": {
+		"variant1": "Baskerville, \"Times New Roman\", Times, serif",
+		"variant2": "Garamond, \"Hoefler Text\", \"Times New Roman\", Times, serif",
+		"variant3": "Geneva, \"Lucida Sans\", \"Lucida Grande\", \"Lucida Sans Unicode\", Verdana, sans-serif",
+		"variant4": "GillSans, Calibri, Trebuchet, sans-serif"
+	},
+	"headlines": {
+		"variant1": "Georgia, Times, ‘Times New Roman’, serif",
+		"variant2": "Palatino, ‘Palatino Linotype’, ‘Hoefler Text’, Times, ‘Times New Roman’, serif",
+		"variant3": "Tahoma, Verdana, Geneva",
+		"variant4": "Trebuchet, Tahoma, Arial, sans-serif"
+	},
+	"helvetica_arial_sans_serif": "Frutiger, \"Frutiger Linotype\", Univers, Calibri, \"Gill Sans\", \"Gill Sans MT\", \"Myriad Pro\", Myriad, \"DejaVu Sans Condensed\", \"Liberation Sans\", \"Nimbus Sans L\", Tahoma, Geneva, \"Helvetica Neue\", Helvetica, Arial, sans-serif",
+	"impact_san_serif": "Impact, Haettenschweiler, \"Franklin Gothic Bold\", Charcoal, \"Helvetica Inserat\", \"Bitstream Vera Sans Bold\", \"Arial Black\", sans-serif",
+	"modern_georgia_serif": "Constantia, \"Lucida Bright\", Lucidabright, \"Lucida Serif\", Lucida, \"DejaVu Serif\", \"Bitstream Vera Serif\", \"Liberation Serif\", Georgia, serif",
+	"monospace": "Consolas, \"Andale Mono WT\", \"Andale Mono\", \"Lucida Console\", \"Lucida Sans Typewriter\", \"DejaVu Sans Mono\", \"Bitstream Vera Sans Mono\", \"Liberation Mono\", \"Nimbus Mono L\", Monaco, \"Courier New\", Courier, monospace",
+	"times_new_roman": "Cambria, \"Hoefler Text\", Utopia, \"Liberation Serif\", \"Nimbus Roman No9 L Regular\", Times, \"Times New Roman\", serif",
+	"traditional_serif": "\"Palatino Linotype\", Palatino, Palladio, \"URW Palladio L\", \"Book Antiqua\", Baskerville, \"Bookman Old Style\", \"Bitstream Charter\", \"Nimbus Roman No9 L\", Garamond, \"Apple Garamond\", \"ITC Garamond Narrow\", \"New Century Schoolbook\", \"Century Schoolbook\", \"Century Schoolbook L\", Georgia, serif",
+	"trebuchet_sans_serif": "\"Segoe UI\", Candara, \"Bitstream Vera Sans\", \"DejaVu Sans\", \"Bitstream Vera Sans\", \"Trebuchet MS\", Verdana, \"Verdana Ref\", sans-serif",
+	"verdana_sans_serif": "Corbel, \"Lucida Grande\", \"Lucida Sans Unicode\", \"Lucida Sans\", \"DejaVu Sans\", \"Bitstream Vera Sans\", \"Liberation Sans\", Verdana, \"Verdana Ref\", sans-serif"
+}
