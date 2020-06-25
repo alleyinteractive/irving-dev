@@ -16,6 +16,10 @@
 							"name": "irving/post-title",
 							"theme": "h1",
 							"config": {
+								"style": {
+									"font-family": "fonts.heading.variant4",
+									"color": "colors.secondary.main"
+								},
 								"tag": "h1"
 							}
 						},

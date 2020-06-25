@@ -5,7 +5,7 @@
 		"variant3": "Geneva, \"Lucida Sans\", \"Lucida Grande\", \"Lucida Sans Unicode\", Verdana, sans-serif",
 		"variant4": "GillSans, Calibri, Trebuchet, sans-serif"
 	},
-	"headlines": {
+	"heading": {
 		"variant1": "Georgia, Times, ‘Times New Roman’, serif",
 		"variant2": "Palatino, ‘Palatino Linotype’, ‘Hoefler Text’, Times, ‘Times New Roman’, serif",
 		"variant3": "Tahoma, Verdana, Geneva",
