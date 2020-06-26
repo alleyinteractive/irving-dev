@@ -18,7 +18,7 @@
 							"config": {
 								"style": {
 									"font-family": "fonts.heading.variant4",
-									"color": "colors.secondary.main"
+									"color": "colors.primary.main"
 								},
 								"tag": "h1"
 							}
@@ -27,6 +27,9 @@
 							"name": "irving/post-excerpt",
 							"theme": "h4",
 							"config": {
+								"style": {
+									"color": "colors.secondary.main"
+								},
 								"tag": "h2"
 							}
 						}
