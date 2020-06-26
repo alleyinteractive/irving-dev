@@ -20,22 +20,6 @@ add_filter(
 	}
 );
 
-// Site theme.
-add_filter(
-	'wp_irving_template_site_theme',
-	function ( $theme): array {
-		return [
-			'colors' => [
-				'black' => '#000000',
-				'white' => '#FFFFFF',
-			],
-			'fonts' => [
-				'serif' => 'Arial, Helvetica, sans-serif',
-			],
-		];
-	}
-);
-
 // WordPress utilities.
 require_once IRVING_EXAMPLE_PATH . '/inc/class-wp-utils.php';
 
