@@ -14,22 +14,18 @@
 					"children": [
 						{
 							"name": "irving/post-title",
-							"theme": "h1",
+							"theme": "heading",
 							"config": {
 								"style": {
-									"font-family": "fonts.heading.variant4",
-									"color": "colors.primary.main"
+									"font-family": "fonts.heading.variant3"
 								},
 								"tag": "h1"
 							}
 						},
 						{
 							"name": "irving/post-excerpt",
-							"theme": "h4",
+							"theme": "subheading",
 							"config": {
-								"style": {
-									"color": "colors.secondary.main"
-								},
 								"tag": "h2"
 							}
 						}
