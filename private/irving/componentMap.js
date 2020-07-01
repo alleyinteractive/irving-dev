@@ -1,10 +1,8 @@
 import { Helmet } from 'react-helmet';
 import ComponentMap from '@irvingjs/styled-components';
 import AdminBar from '@irvingjs/wp-admin-bar';
-import userThemes from './themes';
-
-// Icons.
 import { FiSearch } from 'react-icons/fi';
+import userThemes from './themes';
 
 export default {
   ...ComponentMap(userThemes),
