@@ -1,0 +1,29 @@
+{
+  "name": "jfc-2020-irving",
+  "version": "1.0.0",
+  "description": "Irving application for Journalism for Communities.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "irving dev",
+    "build": "irving build",
+    "start": "irving start",
+    "styleguide:dev": "BABEL_ENV=app NODE_ENV=production npx styleguidist build --config ./config/styleguide.config.js",
+    "styleguide:build": "BABEL_ENV=app NODE_ENV=production npx styleguidist build --config ./config/styleguide.config.js"
+  },
+  "engines": {
+    "node": "12.16.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:alleyinteractive/journalism-for-communities.git"
+  },
+  "author": "Alley",
+  "license": "ISC",
+  "dependencies": {
+    "@irvingjs/core": "^2.20.0",
+    "@irvingjs/styled-components": "^2.20.0",
+    "@irvingjs/wp-admin-bar": "^2.20.0",
+    "lodash": "^4.17.15",
+    "react-icons": "^3.10.0"
+  }
+}
