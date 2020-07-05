@@ -28,32 +28,8 @@ if ( WP_Utils::wp_cli() ) {
 	require_once JFC_2020_PATH . '/inc/cli.php';
 }
 
-// Ad integrations.
-require_once JFC_2020_PATH . '/inc/ads.php';
-
-// Ajax.
-require_once JFC_2020_PATH . '/inc/ajax.php';
-
-// Include classes used to integrate with external APIs.
-require_once JFC_2020_PATH . '/inc/api.php';
-
 // Manage static assets (js and css).
 require_once JFC_2020_PATH . '/inc/assets.php';
-
-// Authors.
-require_once JFC_2020_PATH . '/inc/authors.php';
-
-// Cache.
-require_once JFC_2020_PATH . '/inc/cache.php';
-
-// Include comments.
-require_once JFC_2020_PATH . '/inc/comments.php';
-
-// Customizer additions.
-require_once JFC_2020_PATH . '/inc/customizer.php';
-
-// This site's RSS, Atom, JSON, etc. feeds.
-require_once JFC_2020_PATH . '/inc/feeds.php';
 
 // Media includes.
 require_once JFC_2020_PATH . '/inc/media.php';
@@ -70,29 +46,11 @@ require_once JFC_2020_PATH . '/inc/rewrites.php';
 // Search.
 require_once JFC_2020_PATH . '/inc/search.php';
 
-// Shortcodes.
-require_once JFC_2020_PATH . '/inc/shortcodes.php';
-
-// Include sidebars and widgets.
-require_once JFC_2020_PATH . '/inc/sidebars.php';
-
-// Helpers.
-require_once JFC_2020_PATH . '/inc/template-tags.php';
-
 // Theme setup.
 require_once JFC_2020_PATH . '/inc/theme.php';
 
 // Users.
 require_once JFC_2020_PATH . '/inc/users.php';
-
-// Zoninator zones/customizations.
-require_once JFC_2020_PATH . '/inc/zones.php';
-
-// Loader for partials.
-require_once JFC_2020_PATH . '/inc/partials/partials.php';
-
-// Template loader.
-require_once JFC_2020_PATH . '/inc/class-wrapping.php';
 
 // Content types and taxonomies should be included below. In order to scaffold
 // them, leave the Begin and End comments in place.
