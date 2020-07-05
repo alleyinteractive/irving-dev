@@ -20,10 +20,10 @@
   "author": "Alley",
   "license": "ISC",
   "dependencies": {
-    "@irvingjs/core": "^2.19.2",
-    "@irvingjs/styled": "^2.19.2",
-    "@irvingjs/styled-components": "^2.19.2",
-    "@irvingjs/wp-admin-bar": "^2.19.2",
+    "@irvingjs/core": "^2.20.0",
+    "@irvingjs/styled": "^2.20.0",
+    "@irvingjs/styled-components": "^2.20.0",
+    "@irvingjs/wp-admin-bar": "^2.20.0",
     "@material-ui/core": "^4.11.0",
     "lodash": "^4.17.15",
     "react-icons": "^3.10.0"

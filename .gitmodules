@@ -16,3 +16,6 @@
 [submodule "mu-plugins/wpcom-legacy-redirector"]
 	path = mu-plugins/wpcom-legacy-redirector
 	url = https://github.com/Automattic/WPCOM-Legacy-Redirector
+[submodule "themes/irving-example-theme"]
+	path = themes/irving-example-theme
+	url = https://github.com/alleyinteractive/irving-example-theme.git
