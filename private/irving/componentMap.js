@@ -1,13 +1,12 @@
 import { Helmet } from 'react-helmet';
 import ComponentMap from '@irvingjs/styled-components';
 import AdminBar from '@irvingjs/wp-admin-bar';
-
-// Icons.
-import { Search as SearchIcon } from '@material-ui/icons';
+import { FiSearch } from 'react-icons/fi';
+import userThemes from './themes';
 
 export default {
-  ...ComponentMap,
+  ...ComponentMap(userThemes),
   'irving/admin-bar': AdminBar,
   'irving/helmet': Helmet,
-  'material-icon/search': SearchIcon,
+  'irving-icon/search': FiSearch,
 };
