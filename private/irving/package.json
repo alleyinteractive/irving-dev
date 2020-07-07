@@ -20,11 +20,11 @@
   "author": "Alley",
   "license": "ISC",
   "dependencies": {
-    "@irvingjs/core": "^3.0.0-alpha.6",
-    "@irvingjs/styled": "^3.0.0-alpha.6",
-    "@irvingjs/styled-components": "^3.0.0-alpha.6",
-    "@irvingjs/vip-go": "^3.0.0-alpha.7",
-    "@irvingjs/wp-admin-bar": "^3.0.0-alpha.6",
+    "@irvingjs/core": "^3.0.0-alpha.9",
+    "@irvingjs/styled": "^3.0.0-alpha.9",
+    "@irvingjs/styled-components": "^3.0.0-alpha.9",
+    "@irvingjs/vip-go": "^3.0.0-alpha.9",
+    "@irvingjs/wp-admin-bar": "^3.0.0-alpha.9",
     "@material-ui/core": "^4.11.0",
     "lodash": "^4.17.15",
     "react-icons": "^3.10.0"
