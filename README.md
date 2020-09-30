@@ -29,9 +29,8 @@ _Deploys from `production` branch._ All merges to this branch must have peer cod
   - [Pantheon dashboard](https://dashboard.pantheon.io/sites/a09a2cd1-6f16-4dc0-b0ec-5befb350af6f#live/deploys)
 - [Deploybot admin](https://alleyinteractive.deploybot.com/121799--IRV-Irving-Dev)
 
-### VIP/Heroku "Demo" Environment
-
-See [alleyinteractive/alleyinteractive](https://github.com/alleyinteractive/alleyinteractive#irving-demo) for more information on the public demo. Tldr; this is a stable version of the [Irving Example Theme](https://github.com/alleyinteractive/irving-example-theme).
+### VIP Go/Heroku "Demo" Environment
+See [alleyinteractive/alleyinteractive](https://github.com/alleyinteractive/alleyinteractive#irving-demo) for more information on the demo site. Tldr; this is a stable version of the [Irving Example Theme](https://github.com/alleyinteractive/irving-example-theme).
 
 ## New environment setup
 
