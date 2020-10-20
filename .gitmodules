@@ -4,9 +4,6 @@
 [submodule "mu-plugins/safe-redirect-manager"]
 	path = mu-plugins/safe-redirect-manager
 	url = https://github.com/10up/safe-redirect-manager
-[submodule "mu-plugins/wp-components"]
-	path = mu-plugins/wp-components
-	url = https://github.com/alleyinteractive/wp-components
 [submodule "mu-plugins/wordpress-fieldmanager"]
 	path = mu-plugins/wordpress-fieldmanager
 	url = https://github.com/alleyinteractive/wordpress-fieldmanager.git
