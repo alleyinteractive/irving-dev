@@ -7,9 +7,6 @@
 [submodule "mu-plugins/wp-components"]
 	path = mu-plugins/wp-components
 	url = https://github.com/alleyinteractive/wp-components
-[submodule "plugins/pantheon-advanced-page-cache"]
-	path = plugins/pantheon-advanced-page-cache
-	url = https://github.com/pantheon-systems/pantheon-advanced-page-cache.git
 [submodule "mu-plugins/wordpress-fieldmanager"]
 	path = mu-plugins/wordpress-fieldmanager
 	url = https://github.com/alleyinteractive/wordpress-fieldmanager.git
