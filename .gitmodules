@@ -13,3 +13,6 @@
 [submodule "themes/irving-example-theme"]
 	path = themes/irving-example-theme
 	url = https://github.com/alleyinteractive/irving-example-theme.git
+[submodule "plugins/pico"]
+	path = plugins/pico
+	url = https://github.com/alleyinteractive/pico

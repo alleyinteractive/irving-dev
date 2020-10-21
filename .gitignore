@@ -26,8 +26,7 @@ plugins/*
 !plugins/jetpack
 !plugins/jwt-auth
 !plugins/meta-inspector
-!plugins/pantheon-advanced-page-cache
-!plugins/wordpress-fieldmanager
-!plugins/wp-redis
+!plugins/pico
 !plugins/wordpress-importer
 !plugins/wordpress-seo
+!plugins/wp-redis
