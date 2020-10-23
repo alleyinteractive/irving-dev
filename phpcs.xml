@@ -3,7 +3,7 @@
 	<description>PHP_CodeSniffer standard for Irving Dev.</description>
 
 	<!-- Include Alley Rules -->
-	<rule ref="alley-coding-standards" />
+	<rule ref="Alley-Interactive" />
 
 	<!--
 	Pass some flags to PHPCS:
