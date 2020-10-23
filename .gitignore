@@ -20,7 +20,7 @@ bower_components
 .idea
 .vscode
 
-# All plugins aside from specific allowlist
+# Ignore all plugins unless specified.
 plugins/*
 !plugins/gutenberg
 !plugins/jetpack
@@ -30,3 +30,7 @@ plugins/*
 !plugins/wordpress-importer
 !plugins/wordpress-seo
 !plugins/wp-redis
+
+# Ignore all themes unless specified.
+themes/*
+!themes/irving-example-theme

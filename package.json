@@ -1,0 +1,13 @@
+{
+  "name": "irving-dev-environment",
+  "description": "An Irving development sandbox",
+  "author": "Alley Interactive <hello@alley.co>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@wordpress/env": "^2.1.0"
+  },
+  "scripts": {
+    "wp-env": "wp-env"
+  }
+}
