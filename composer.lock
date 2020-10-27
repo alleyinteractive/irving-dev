@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alleyinteractive/alley-coding-standards.git",
-                "reference": "2e8267fa51f7862f0efb340e70ffd07a2c95ce4c"
+                "reference": "d108ec4b531af98781a9294a01ca58c028870bd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alleyinteractive/alley-coding-standards/zipball/2e8267fa51f7862f0efb340e70ffd07a2c95ce4c",
-                "reference": "2e8267fa51f7862f0efb340e70ffd07a2c95ce4c",
+                "url": "https://api.github.com/repos/alleyinteractive/alley-coding-standards/zipball/d108ec4b531af98781a9294a01ca58c028870bd1",
+                "reference": "d108ec4b531af98781a9294a01ca58c028870bd1",
                 "shasum": ""
             },
             "require": {
@@ -34,7 +34,7 @@
                 "GPL-2.0-or-later"
             ],
             "description": "PHPCS sniffs for Alley Interactive",
-            "time": "2020-10-15T16:35:21+00:00"
+            "time": "2020-10-26T15:47:28+00:00"
         },
         {
             "name": "automattic/vipwpcs",
