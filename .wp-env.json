@@ -1,6 +1,6 @@
 {
     "config": {
-        "WP_HOME": "http://localhost:3000"
+        "WP_HOME": "http://localhost:3001"
     },
     "mappings": {
         "wp-content/mu-plugins": "./mu-plugins",
