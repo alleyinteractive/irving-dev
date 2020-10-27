@@ -10,6 +10,11 @@
     "alleyinteractive/alley-coding-standards": "dev-main"
   },
   "scripts": {
-    "phpcs": "phpcs --standard=./phpcs.xml ./themes ./private/irving"
+    "phpcs": [
+      "@composer phpcs:theme",
+      "@composer phpcs:plugin"
+    ],
+    "phpcs:theme": "phpcs --standard=\"./themes/irving-example-theme/phpcs.xml\" ./themes/irving-example-theme/ -ps",
+    "phpcs:plugin": "phpcs --standard=\"./mu-plugins/wp-irving/phpcs.xml\" ./mu-plugins/wp-irving/ -ps"
   }
 }
