@@ -85,7 +85,6 @@ before_script:
         export VENDOR_PATH=${WP_CORE_DIR}wp-content/vendor/
         cd ${WP_CORE_DIR}wp-content
         composer install
-        vendor/bin/phpcs --config-set installed_paths ${VENDOR_PATH}alley/alley-coding-standards,${VENDOR_PATH}/wp-coding-standards/wpcs,${VENDOR_PATH}automattic/vipwpcs
       fi
 
       pwd

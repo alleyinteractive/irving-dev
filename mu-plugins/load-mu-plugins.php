@@ -1,31 +1,50 @@
 <?php
-/*
-Plugin Name: MU Loader
-Description: Wrapper plugin to manually require non-mu compatible plugins
-Author: Alley Interactive
-Version: 1.0
-*/
+/**
+ * Plugin Name: Alley MU Loader
+ * Description: Wrapper plugin to manually require non-mu compatible plugins
+ * Author: Alley Interactive
+ * Version: 1.0
+ * Text Domain: alley-mu-loader
+ *
+ * @package WordPress
+ */
 
-$plugins = array(
-	'/safe-redirect-manager/safe-redirect-manager.php',
-	'/wp-components/wp-components.php',
-	'/wordpress-fieldmanager/fieldmanager.php',
-	'/wp-irving/wp-irving.php',
+// phpcs:disable WordPress.NamingConventions.PrefixAllGlobals
+namespace Alley_MU_Loader;
+
+// Run the plugin loader.
+load_plugins(
+	[
+		'/safe-redirect-manager/safe-redirect-manager.php',
+		'/wp-irving/wp-irving.php',
+	]
 );
 
-// Begin the process of loading the MU Plugins
-if ( is_array( $plugins ) ) {
-	foreach ( $plugins as $plugin_name ) {
-		if ( file_exists( WPMU_PLUGIN_DIR . $plugin_name ) ) {
-			// Require if the file is found
-			require_once WPMU_PLUGIN_DIR . $plugin_name;
-		} else {
-			// Or display an admin notice
-			add_action( 'admin_notices', function() use ( $plugin_name ) {
-				echo '<div class="notice notice-error"><p>';
-				printf( __( 'Could not load the MU-Plugin located in /mu-plugins%1$s', 'load-mu-plugins' ), $plugin_name );
-				echo '</p></div>';
-			} );
+/**
+ * Load must use plugins.
+ *
+ * @param array $plugins A list of plugins to load.
+ */
+function load_plugins( array $plugins ) {
+	// Begin the process of loading the MU Plugins.
+	if ( is_array( $plugins ) ) {
+		foreach ( $plugins as $plugin_path ) {
+			if ( file_exists( WPMU_PLUGIN_DIR . $plugin_path ) ) {
+				// Require if the file is found.
+				require_once WPMU_PLUGIN_DIR . $plugin_path;
+			} else {
+				// Or display an admin notice.
+				add_action(
+					'admin_notices',
+					function() use ( $plugin_path ) {
+						printf(
+							'<div class="notice notice-error"><p>%1$s <strong>%2$s</strong></p></div>',
+							esc_html__( 'Could not load the MU-Plugin:', 'alley-mu-loader' ),
+							esc_html( $plugin_path )
+						);
+					}
+				);
+			}
 		}
 	}
 }
