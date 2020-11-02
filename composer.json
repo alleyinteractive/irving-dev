@@ -6,8 +6,23 @@
       "email": "info@alley.co"
     }
   ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/WP-API/jwt-auth"
+    }
+  ],
+  "require": {
+    "wpackagist-plugin/wordpress-seo": "^15.2.0",
+    "wp-api/jwt-auth": "dev-develop"
+  },
   "require-dev": {
-    "alleyinteractive/alley-coding-standards": "dev-main"
+    "alleyinteractive/alley-coding-standards": "dev-main",
+    "wpackagist-plugin/query-monitor": "dev-trunk"
   },
   "scripts": {
     "phpcs": [
@@ -16,5 +31,10 @@
     ],
     "phpcs:theme": "phpcs --standard=\"./themes/irving-example-theme/phpcs.xml\" ./themes/irving-example-theme/ -ps",
     "phpcs:plugin": "phpcs --standard=\"./mu-plugins/wp-irving/phpcs.xml\" ./mu-plugins/wp-irving/ -ps"
+  },
+  "extra": {
+    "installer-paths": {
+      "plugins/{$name}/": ["type:wordpress-plugin"]
+    }
   }
 }
