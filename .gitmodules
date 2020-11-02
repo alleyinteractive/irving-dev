@@ -1,15 +1,9 @@
 [submodule "mu-plugins/wp-irving"]
 	path = mu-plugins/wp-irving
 	url = https://github.com/alleyinteractive/wp-irving
-[submodule "mu-plugins/safe-redirect-manager"]
-	path = mu-plugins/safe-redirect-manager
-	url = https://github.com/10up/safe-redirect-manager
 [submodule "mu-plugins/wordpress-fieldmanager"]
 	path = mu-plugins/wordpress-fieldmanager
 	url = https://github.com/alleyinteractive/wordpress-fieldmanager.git
-[submodule "mu-plugins/wpcom-legacy-redirector"]
-	path = mu-plugins/wpcom-legacy-redirector
-	url = https://github.com/Automattic/WPCOM-Legacy-Redirector
 [submodule "themes/irving-example-theme"]
 	path = themes/irving-example-theme
 	url = https://github.com/alleyinteractive/irving-example-theme.git
