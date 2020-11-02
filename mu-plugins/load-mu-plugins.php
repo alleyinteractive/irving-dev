@@ -15,7 +15,6 @@ namespace Alley_MU_Loader;
 // Run the plugin loader.
 load_plugins(
 	[
-		'/safe-redirect-manager/safe-redirect-manager.php',
 		'/wp-irving/wp-irving.php',
 	]
 );
