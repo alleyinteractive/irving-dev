@@ -15,6 +15,7 @@ namespace Alley_MU_Loader;
 // Run the plugin loader.
 load_plugins(
 	[
+		'/jwt-auth/jwt-auth.php',
 		'/wp-irving/wp-irving.php',
 	]
 );

@@ -24,6 +24,10 @@ bower_components
 plugins/*
 !plugins/pico
 
+# All mu-plugins aside from specific allowlist.
+mu-plugins/*
+!mu-plugins/wp-irving
+
 # All themes aside from specific allowlist.
 themes/*
 !themes/irving-example-theme

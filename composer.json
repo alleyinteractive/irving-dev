@@ -13,12 +13,20 @@
     },
     {
       "type": "github",
-      "url": "https://github.com/WP-API/jwt-auth"
+      "url": "https://github.com/alleyinteractive/jwt-auth"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/automattic/wpcom-legacy-redirector"
     }
   ],
   "require": {
-    "wpackagist-plugin/wordpress-seo": "^15.2.0",
-    "wp-api/jwt-auth": "dev-develop"
+    "automattic/wpcom-legacy-redirector": "^1.3.0",
+    "wp-api/jwt-auth": "dev-develop",
+    "wpackagist-plugin/amp":"^2.0.5",
+    "wpackagist-plugin/jetpack": "^9.0.2",
+    "wpackagist-plugin/safe-redirect-manager": "^1.9.3",
+    "wpackagist-plugin/wordpress-seo": "^15.2.0"
   },
   "require-dev": {
     "alleyinteractive/alley-coding-standards": "dev-main",
@@ -34,7 +42,10 @@
   },
   "extra": {
     "installer-paths": {
-      "plugins/{$name}/": ["type:wordpress-plugin"]
+      "mu-plugins/{$name}": [
+        "wp-api/jwt-auth"
+      ],
+      "plugins/{$name}": ["type:wordpress-plugin"]
     }
   }
 }
