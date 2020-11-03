@@ -31,3 +31,8 @@ mu-plugins/*
 # All themes aside from specific allowlist.
 themes/*
 !themes/irving-example-theme
+
+# Ignore all local coral files.
+coral/*
+!coral/docker-compose.yml
+!coral/README.md

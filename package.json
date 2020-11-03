@@ -1,0 +1,10 @@
+{
+  "name": "irving-dev-environment",
+  "description": "An Irving development sandbox",
+  "author": "Alley Interactive <hello@alley.co>",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "coral": "./bin/coral.sh"
+  }
+}
