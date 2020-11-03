@@ -2,9 +2,8 @@
     "config": {
         "WP_HOME": "http://localhost:3001"
     },
+    "themes": ["./themes/irving-example-theme"],
     "mappings": {
-        "wp-content/mu-plugins": "./mu-plugins",
-        "wp-content/plugins": "./plugins",
-        "wp-content/themes": "./themes"
+        "wp-content": "."
     }
 }
