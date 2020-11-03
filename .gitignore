@@ -20,17 +20,14 @@ bower_components
 .idea
 .vscode
 
-# Ignore all plugins unless specified.
+# All plugins aside from specific allowlist.
 plugins/*
-!plugins/gutenberg
-!plugins/jetpack
-!plugins/jwt-auth
-!plugins/meta-inspector
 !plugins/pico
-!plugins/wordpress-importer
-!plugins/wordpress-seo
-!plugins/wp-redis
 
-# Ignore all themes unless specified.
+# All mu-plugins aside from specific allowlist.
+mu-plugins/*
+!mu-plugins/wp-irving
+
+# All themes aside from specific allowlist.
 themes/*
 !themes/irving-example-theme
