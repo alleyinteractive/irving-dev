@@ -4,7 +4,11 @@
   "author": "Alley Interactive <hello@alley.co>",
   "license": "MIT",
   "dependencies": {},
+  "devDependencies": {
+    "@wordpress/env": "^2.1.0"
+  },
   "scripts": {
-    "coral": "./bin/coral.sh"
+    "coral": "./bin/coral.sh",
+    "wp-env": "wp-env"
   }
 }

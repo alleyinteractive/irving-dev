@@ -15,6 +15,7 @@ bower_components
 /vendor
 /db.php
 /object-cache.php
+/index.php
 
 # IDEs
 .idea
