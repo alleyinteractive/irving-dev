@@ -8,6 +8,7 @@
     "@wordpress/env": "^2.1.0"
   },
   "scripts": {
+    "coral": "./bin/coral.sh",
     "wp-env": "wp-env"
   }
 }
