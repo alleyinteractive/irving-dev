@@ -1,0 +1,9 @@
+{
+    "config": {
+        "WP_HOME": "http://localhost:3001"
+    },
+    "themes": ["./themes/irving-example-theme"],
+    "mappings": {
+        "wp-content": "."
+    }
+}
