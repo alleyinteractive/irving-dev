@@ -10,3 +10,6 @@
 [submodule "plugins/pico"]
 	path = plugins/pico
 	url = https://github.com/alleyinteractive/pico
+[submodule "themes/irving-2021"]
+	path = themes/irving-2021
+	url = git@github.com:alleyinteractive/irving-2021.git
