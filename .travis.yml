@@ -39,7 +39,8 @@ git:
 php:
   - '7.3'
 
-matrix:
+jobs:
+  fast_finish: true
   include:
     - language: node_js
       node_js: 12
@@ -97,7 +98,6 @@ script:
   - bash bin/script-phpcs.sh
   - bash bin/script-php-lint.sh mu-plugins wp-irving
   - bash bin/script-phpunit.sh mu-plugins wp-irving
-  - bash bin/script-build.sh mu-plugins wp-irving
   - bash bin/script-php-lint.sh themes irving-example-theme
   - bash bin/script-phpunit.sh themes irving-example-theme
   - bash bin/script-build.sh themes irving-example-theme
