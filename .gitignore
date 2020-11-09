@@ -32,7 +32,7 @@ mu-plugins/*
 # All themes aside from specific allowlist.
 themes/*
 !themes/irving-example-theme
-!themes/irving-2021
+!themes/irving-twentytwentyone
 
 # Ignore all local coral files.
 coral/*
