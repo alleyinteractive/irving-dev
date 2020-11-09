@@ -24,7 +24,8 @@ branches:
 
 cache:
   directories:
-    - $HOME/.composer/cache
+    - $HOME/.config/composer/cache
+    - vendor
     - themes/irving-dev/node_modules
     - themes/irving-example/node_modules
     - private/irving/node_modules
@@ -62,8 +63,8 @@ before_script:
       phpenv config-rm xdebug.ini || echo "Xdebug not available"
 
       # Set up Composer.
-      export PATH="$HOME/.composer/vendor/bin:$PATH"
-      composer global require "phpunit/phpunit=6.1.*"
+      export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+      composer global require "phpunit/phpunit=^7.5"
 
       # Set up the WordPress installation.
       export WP_CORE_DIR=/tmp/wordpress/
