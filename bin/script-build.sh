@@ -8,12 +8,12 @@ if [[ $BUILD != "1" ]]; then
 fi
 
 # Bail early if there is no package.json.
-if [[ ! -f $1/package.json ]]; then
+if [[ ! -f $1/$2/package.json ]]; then
 	echo "No package.json."
 	exit 0
 fi
 
-echo "Building $1 ..."
-cd $1
+echo "Building $1/$2 ..."
+cd $1/$2
 npm install --quiet
 npm run build

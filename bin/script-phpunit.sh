@@ -8,11 +8,14 @@ if [[ $BUILD == "1" ]]; then
 fi
 
 # Bail early if the requested directory does not exist.
-if [[ ! -d $1s/$2/tests ]]; then
+if [[ ! -d $1/$2/tests ]]; then
 	exit 0
 fi
 
-echo "Running phpunit on $1s/$2 ..."
+echo "Running phpunit on $1/$2 ..."
 cd "${WP_CORE_DIR}wp-content"
-cd $1s/$2
+cd $1/$2
+# Output version for debugging.
+phpunit --version
 phpunit
+WP_MULTISITE=1 phpunit
