@@ -95,13 +95,9 @@ before_script:
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
   - bash bin/script-phpcs.sh
-  - bash bin/script-php-lint.sh theme irving-dev
-  - bash bin/script-phpunit.sh theme irving-dev
-  - bash bin/script-build.sh themes/irving-dev
-  - bash bin/script-php-lint.sh theme irving-example
-  - bash bin/script-phpunit.sh theme irving-example
-  - bash bin/script-build.sh themes/irving-example
-  - bash bin/script-build.sh private/irving
+  - bash bin/script-php-lint.sh theme irving-example-theme
+  - bash bin/script-phpunit.sh theme irving-example-theme
+  - bash bin/script-build.sh themes/irving-example-theme
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
