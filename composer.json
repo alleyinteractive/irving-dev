@@ -42,9 +42,6 @@
   },
   "extra": {
     "installer-paths": {
-      "mu-plugins/{$name}": [
-        "wp-api/jwt-auth"
-      ],
       "plugins/{$name}": ["type:wordpress-plugin"]
     }
   }
