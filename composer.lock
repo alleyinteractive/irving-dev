@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2efce4dcf15ffec1a3581ba9e7f3c0d5",
+    "content-hash": "d8cd3f8a857d14ec95d7105ccbe6febf",
     "packages": [
         {
             "name": "automattic/wpcom-legacy-redirector",
