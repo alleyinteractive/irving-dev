@@ -188,12 +188,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/alleyinteractive/jwt-auth.git",
-                "reference": "5ca835e09ff0a01f42562ab5b9687efa1cc27483"
+                "reference": "02414d5b76d0ae466319279aa2d26bc313d035e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/alleyinteractive/jwt-auth/zipball/5ca835e09ff0a01f42562ab5b9687efa1cc27483",
-                "reference": "5ca835e09ff0a01f42562ab5b9687efa1cc27483",
+                "url": "https://api.github.com/repos/alleyinteractive/jwt-auth/zipball/02414d5b76d0ae466319279aa2d26bc313d035e3",
+                "reference": "02414d5b76d0ae466319279aa2d26bc313d035e3",
                 "shasum": ""
             },
             "require": {
@@ -256,7 +256,7 @@
             "support": {
                 "source": "https://github.com/alleyinteractive/jwt-auth/tree/develop"
             },
-            "time": "2020-04-21T14:18:29+00:00"
+            "time": "2020-11-10T18:04:08+00:00"
         },
         {
             "name": "wpackagist-plugin/amp",
@@ -278,15 +278,15 @@
         },
         {
             "name": "wpackagist-plugin/jetpack",
-            "version": "9.0.2",
+            "version": "9.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/jetpack/",
-                "reference": "tags/9.0.2"
+                "reference": "tags/9.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/jetpack.9.0.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/jetpack.9.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
