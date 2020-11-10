@@ -101,6 +101,9 @@ script:
   - bash bin/script-php-lint.sh themes irving-example-theme
   - bash bin/script-phpunit.sh themes irving-example-theme
   - bash bin/script-build.sh themes irving-example-theme
+  - bash bin/script-php-lint.sh themes irving-twentytwentyone
+  - bash bin/script-phpunit.sh themes irving-twentytwentyone
+  - bash bin/script-build.sh themes irving-twentytwentyone
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
