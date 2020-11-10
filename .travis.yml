@@ -100,6 +100,9 @@ script:
   - bash bin/script-php-lint.sh theme irving-example
   - bash bin/script-phpunit.sh theme irving-example
   - bash bin/script-build.sh themes/irving-example
+  - bash bin/script-php-lint.sh theme irving-twentytwentyone
+  - bash bin/script-phpunit.sh theme irving-twentytwentyone
+  - bash bin/script-build.sh themes/irving-twentytwentyone
   - bash bin/script-build.sh private/irving
 
 # Receive notifications for build results.
