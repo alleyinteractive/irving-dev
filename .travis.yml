@@ -24,7 +24,8 @@ branches:
 
 cache:
   directories:
-    - $HOME/.composer/cache
+    - $HOME/.config/composer/cache
+    - vendor
     - themes/irving-dev/node_modules
     - themes/irving-example/node_modules
     - private/irving/node_modules
@@ -38,7 +39,8 @@ git:
 php:
   - '7.3'
 
-matrix:
+jobs:
+  fast_finish: true
   include:
     - language: node_js
       node_js: 12
@@ -62,8 +64,8 @@ before_script:
       phpenv config-rm xdebug.ini || echo "Xdebug not available"
 
       # Set up Composer.
-      export PATH="$HOME/.composer/vendor/bin:$PATH"
-      composer global require "phpunit/phpunit=6.1.*"
+      export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+      composer global require "phpunit/phpunit=^7.5"
 
       # Set up the WordPress installation.
       export WP_CORE_DIR=/tmp/wordpress/
@@ -94,16 +96,14 @@ before_script:
 # All commands must exit with code 0 on success. Anything else is considered failure.
 script:
   - bash bin/script-phpcs.sh
-  - bash bin/script-php-lint.sh theme irving-dev
-  - bash bin/script-phpunit.sh theme irving-dev
-  - bash bin/script-build.sh themes/irving-dev
-  - bash bin/script-php-lint.sh theme irving-example
-  - bash bin/script-phpunit.sh theme irving-example
-  - bash bin/script-build.sh themes/irving-example
-  - bash bin/script-php-lint.sh theme irving-twentytwentyone
-  - bash bin/script-phpunit.sh theme irving-twentytwentyone
-  - bash bin/script-build.sh themes/irving-twentytwentyone
-  - bash bin/script-build.sh private/irving
+  - bash bin/script-php-lint.sh mu-plugins wp-irving
+  - bash bin/script-phpunit.sh mu-plugins wp-irving
+  - bash bin/script-php-lint.sh themes irving-example-theme
+  - bash bin/script-phpunit.sh themes irving-example-theme
+  - bash bin/script-build.sh themes irving-example-theme
+  - bash bin/script-php-lint.sh themes irving-twentytwentyone
+  - bash bin/script-phpunit.sh themes irving-twentytwentyone
+  - bash bin/script-build.sh themes irving-twentytwentyone
 
 # Receive notifications for build results.
 # @link http://docs.travis-ci.com/user/notifications/#Email-notifications
