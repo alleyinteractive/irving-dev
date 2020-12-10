@@ -2,62 +2,44 @@
 
 ## Project Overview
 
-Irving Dev is a headless [Irving](https://github.com/alleyinteractive/irving) project. The purpose of this project is to facilitate development of the Irving framework outside of a client-project context.
+Irving Dev is a headless [Irving](https://github.com/alleyinteractive/irving) project. The purpose of this project is to serve as a sandbox WordPress environment for developing Irving core or Irving-related projects.
 
-### Local
+## Installing this project
 
-- [Frontend Irving](https://irving.alley.test)
-- [WP Admin](https://irving-dev.alley.test/wp-admin/) (alley:interactive)
+This repo is structured to be a drop in replacement of the `wp-content` directory of a WordPress install. You can install it in any working WordPress environment using one of the following methods.
 
-### Pantheon/Heroku Staging Environment
+### Alley's "Broadway" environment
 
-_Deploys from `staging` branch._ Merge code to this branch at-will.
+Run `apm install irving` to create a new site at `~/broadway/www/irving-dev`, which is accessible from http://irving-dev.alley.test/.
 
-- [Irving](https://irving-staging.alleydev.com/)
-  - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-staging)
-- [WordPress admin](https://staging-irving.alleydev.com/wp-admin/) (Creds in 1Pass)
-  - [Pantheon dashboard](https://dashboard.pantheon.io/sites/a09a2cd1-6f16-4dc0-b0ec-5befb350af6f#staging/deploys)
-- [Deploybot admin](https://alleyinteractive.deploybot.com/121799--IRV-Irving-Dev)
+You may need to run `vagrant provision` if you haven't in a while.
 
-### Pantheon/Heroku "Production" Environment
+### Generic WordPress install
 
-_Deploys from `production` branch._ All merges to this branch must have peer code review and pass continuous integration checks.
+From the root directory of a WordPress install delete or move your `wp-content` directory and replace it by cloning this repo to your WordPress folder and installing submodules.
 
-- [Irving](https://irving-production.alleydev.com/)
-  - [Heroku dashboard](https://dashboard.heroku.com/apps/irving-production)
-- [WordPress admin](https://live-irving.alleydev.com/wp-admin/) (Creds in 1Pass)
-  - [Pantheon dashboard](https://dashboard.pantheon.io/sites/a09a2cd1-6f16-4dc0-b0ec-5befb350af6f#live/deploys)
-- [Deploybot admin](https://alleyinteractive.deploybot.com/121799--IRV-Irving-Dev)
+Example:
+```
+mv wp-content old-wp-content
 
-### VIP Go/Heroku "Demo" Environment
-See [alleyinteractive/alleyinteractive](https://github.com/alleyinteractive/alleyinteractive#irving-demo) for more information on the demo site. Tldr; this is a stable version of the [Irving Example Theme](https://github.com/alleyinteractive/irving-example-theme).
+git clone git@github.com:alleyinteractive/irving-dev.git wp-content
 
-## New environment setup
+cd wp-content
 
-### Alley developers
+git submodule update --init --recursive
+```
+Once installed
+## Setting up WordPress for Irving
 
-1. `apm install irving`
-1. `vagrant provision` (only if you haven't since May 2020).
-1. `cd private/irving/ && npm ci`
-1. To run the app, `npm run dev`
+Once you have this project running in a WordPress site, ensure the following are properly configured in your WordPress site:
 
-## Frontend Codebase
+1. Set `WP_HOME` to the location of your Irving front end, e.g. http://localhost:3001, in your `wp-config.php` file.
+2. Make sure permalinks are not set to "plain" under `Settings > Permalinks` in the admin, in order for the REST API to work as expected.
+3. Activate an Irving compatible theme. This project includes two out of the box: `irving-example-theme` and `irving-twentytwentyone`.
 
-The frontend codebase lives in `private/irving` and uses the Irving Core npm package. For more information, see the [Irving wiki](https://github.com/alleyinteractive/irving/wiki).
+## Setting up and running an Irving application
 
-### Starting Irving
-
-Use `npm run dev` to start your local server. The application will automatically open `https://irving.alley.test`.
-
-## Backend Codebase
-
-The backend is WordPress, and this repo lives in `/wp-content/`.
-
-### Branch Workflow
-
-1. Branch off of `production`, prefixing feature with the ticket number (let's call the new branch `feature/IRV-123/feature-name-description`).
-1. Make all commits for the new feature into `feature/IRV-123/feature-name-description`.
-1. Make a pull request for `feature/IRV-123/feature-name-description` into `production` and code review by Alley members. Merge the PR once approved.
-
-### Developing for Irving Core with `npm link`
-Visit the [wiki page](https://github.com/alleyinteractive/irving-dev/wiki/Developing-for-Irving-Core-with-npm-link) for instructions as well as a video tutorial.
+1. Navigate to the Irving app folder, i.e. `cd themes/irving-example-theme/client/irving`
+1. Install Node modules by running `npm ci`.
+1. Copy the `.env.example` file to `.env` and update the `API_ROOT_URL` value to point to the URL for your local WordPress install.
+1. Use `npm run dev` to start your local server. The application will automatically open to the URL defined in your .env file, the default is http://localhost:3001.
