@@ -9,7 +9,7 @@
 	url = https://github.com/alleyinteractive/irving-example-theme.git
 [submodule "plugins/pico"]
 	path = plugins/pico
-	url = https://github.com/alleyinteractive/pico
+	url = https://github.com/JoinLede/pico.git
 [submodule "themes/irving-twentytwentyone"]
 	path = themes/irving-twentytwentyone
 	url = https://github.com/alleyinteractive/irving-twentytwentyone.git
